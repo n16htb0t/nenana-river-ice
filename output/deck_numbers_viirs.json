@@ -2694,6 +2694,1141 @@
    "0.817"
   ]
  ],
+ "run22": {
+  "metrics": {
+   "rf": {
+    "rule50": [
+     0.7708311552535285,
+     0.6193264544910113
+    ],
+    "rule90": [
+     0.8601150026136958,
+     0.6713155777930774
+    ]
+   },
+   "unetpp": {
+    "rule50": [
+     0.7403031887088343,
+     0.5692286628370615
+    ],
+    "rule90": [
+     0.756508102456874,
+     0.45880043592959885
+    ]
+   },
+   "cnn2d": {
+    "rule50": [
+     0.807318348144276,
+     0.6296920593824145
+    ],
+    "rule90": [
+     0.8797699947726084,
+     0.6744992161439336
+    ]
+   }
+  },
+  "per_date": {
+   "2023-05-05": {
+    "rf": 0.7608832807570978,
+    "unetpp": 0.7419558359621451,
+    "cnn2d": 0.8006309148264984
+   },
+   "2023-07-24": {
+    "rf": 0.9718137254901961,
+    "unetpp": 0.8474264705882353,
+    "cnn2d": 0.9718137254901961
+   },
+   "2023-10-04": {
+    "rf": 0.6458200382897256,
+    "unetpp": 0.4709636247606892,
+    "cnn2d": 0.6604977664326739
+   },
+   "2024-04-21": {
+    "rf": 0.38861689106487146,
+    "unetpp": 0.6193390452876377,
+    "cnn2d": 0.6309669522643819
+   },
+   "2024-06-22": {
+    "rf": 0.998165137614679,
+    "unetpp": 0.9425076452599388,
+    "cnn2d": 0.999388379204893
+   },
+   "2026-03-26": {
+    "rf": 0.8611111111111112,
+    "unetpp": 0.8141534391534392,
+    "cnn2d": 0.7718253968253969
+   }
+  },
+  "cells": 9565,
+  "split": {
+   "2023-05-05": {
+    "Landsat truth": {
+     "river + buffer": {
+      "water_pct": 24.59320817142725,
+      "land_pct": 75.40679574012756,
+      "open_water_pct_of_water": 4.898295686919698,
+      "ice_pct_of_water": 95.1017043130803,
+      "snow_pct_of_land": 77.11462212835644,
+      "snow_free_pct_of_land": 22.88537787164356,
+      "open_water_pct": 1.2046480551362038,
+      "ice_pct": 23.388560116291046,
+      "snow_pct": 58.14966559410095,
+      "snow_free_land_pct": 17.25713014602661
+     },
+     "whole VIIRS image": {
+      "water_pct": 4.09541002009064,
+      "land_pct": 95.90459167957306,
+      "open_water_pct_of_water": 5.186863815231456,
+      "ice_pct_of_water": 94.81313618476854,
+      "snow_pct_of_land": 73.12659964230846,
+      "snow_free_pct_of_land": 26.87340035769154,
+      "open_water_pct": 0.2124233404174447,
+      "ice_pct": 3.882986679673195,
+      "snow_pct": 70.13176679611206,
+      "snow_free_land_pct": 25.772824883461
+     }
+    },
+    "RF": {
+     "river + buffer": {
+      "water_pct": 24.063542186648746,
+      "land_pct": 75.93645780336692,
+      "open_water_pct_of_water": 12.312041156874066,
+      "ice_pct_of_water": 87.68795884312594,
+      "snow_pct_of_land": 64.53450028566765,
+      "snow_free_pct_of_land": 35.465499714332346,
+      "open_water_pct": 2.962713217821947,
+      "ice_pct": 21.1008289688268,
+      "snow_pct": 49.00521357803972,
+      "snow_free_land_pct": 26.931244225327195
+     },
+     "whole VIIRS image": {
+      "water_pct": 6.8219702556048185,
+      "land_pct": 93.17802972021028,
+      "open_water_pct_of_water": 19.858353743124802,
+      "ice_pct_of_water": 80.1416462568752,
+      "snow_pct_of_land": 64.15292299227443,
+      "snow_free_pct_of_land": 35.84707700772557,
+      "open_water_pct": 1.3547309856087602,
+      "ice_pct": 5.467239269996059,
+      "snow_pct": 59.776429652125074,
+      "snow_free_land_pct": 33.401600068085195
+     }
+    },
+    "UNet++": {
+     "river + buffer": {
+      "water_pct": 17.333335959712983,
+      "land_pct": 82.66666667444771,
+      "open_water_pct_of_water": 2.8348757705163217,
+      "ice_pct_of_water": 97.16512422948368,
+      "snow_pct_of_land": 66.57924698454946,
+      "snow_free_pct_of_land": 33.420753015450536,
+      "open_water_pct": 0.49137854134409614,
+      "ice_pct": 16.84195741836889,
+      "snow_pct": 55.03884417907477,
+      "snow_free_land_pct": 27.62782249537293
+     },
+     "whole VIIRS image": {
+      "water_pct": 3.0520073827706327,
+      "land_pct": 96.94799527716627,
+      "open_water_pct_of_water": 5.662056913821306,
+      "ice_pct_of_water": 94.33794308617868,
+      "snow_pct_of_land": 65.6839543083566,
+      "snow_free_pct_of_land": 34.316045691643396,
+      "open_water_pct": 0.1728063950265013,
+      "ice_pct": 2.879200987744131,
+      "snow_pct": 63.67927692072162,
+      "snow_free_land_pct": 33.26871835644466
+     }
+    },
+    "2D CNN": {
+     "river + buffer": {
+      "water_pct": 21.70359012670815,
+      "land_pct": 78.29641178250313,
+      "open_water_pct_of_water": 3.549389754312881,
+      "ice_pct_of_water": 96.45061024568712,
+      "snow_pct_of_land": 88.38080092463754,
+      "snow_free_pct_of_land": 11.619199075362461,
+      "open_water_pct": 0.7703450042754412,
+      "ice_pct": 20.93324512243271,
+      "snow_pct": 69.19899582862854,
+      "snow_free_land_pct": 9.097415953874588
+     },
+     "whole VIIRS image": {
+      "water_pct": 3.6425915430299938,
+      "land_pct": 96.35742008686066,
+      "open_water_pct_of_water": 4.280608608545368,
+      "ice_pct_of_water": 95.71939139145464,
+      "snow_pct_of_land": 85.04528227832421,
+      "snow_free_pct_of_land": 14.954717721675785,
+      "open_water_pct": 0.15592508716508746,
+      "ice_pct": 3.4866664558649063,
+      "snow_pct": 81.94743990898132,
+      "snow_free_land_pct": 14.409980177879333
+     }
+    }
+   },
+   "2023-07-24": {
+    "Landsat truth": {
+     "river + buffer": {
+      "water_pct": 24.177417159080505,
+      "land_pct": 75.82258651964366,
+      "open_water_pct_of_water": 100.0,
+      "ice_pct_of_water": 0.0,
+      "snow_pct_of_land": 0.9189046491897214,
+      "snow_free_pct_of_land": 99.08109535081027,
+      "open_water_pct": 24.177417159080505,
+      "ice_pct": 0.0,
+      "snow_pct": 0.6967372726649046,
+      "snow_free_land_pct": 75.12584924697876
+     },
+     "whole VIIRS image": {
+      "water_pct": 4.036198183894157,
+      "land_pct": 95.96379904542118,
+      "open_water_pct_of_water": 100.0,
+      "ice_pct_of_water": 0.0,
+      "snow_pct_of_land": 0.3804574086264126,
+      "snow_free_pct_of_land": 99.61954259137359,
+      "open_water_pct": 4.036198183894157,
+      "ice_pct": 0.0,
+      "snow_pct": 0.3651013830676675,
+      "snow_free_land_pct": 95.59869766235352
+     }
+    },
+    "RF": {
+     "river + buffer": {
+      "water_pct": 20.61511600828331,
+      "land_pct": 79.38488392356562,
+      "open_water_pct_of_water": 92.32631412092265,
+      "ice_pct_of_water": 7.673685879077355,
+      "snow_pct_of_land": 7.3137808300483025,
+      "snow_free_pct_of_land": 92.6862191699517,
+      "open_water_pct": 19.033176762200256,
+      "ice_pct": 1.5819392460830515,
+      "snow_pct": 5.80603642235784,
+      "snow_free_land_pct": 73.57884750120779
+     },
+     "whole VIIRS image": {
+      "water_pct": 4.50825238827066,
+      "land_pct": 95.491747546564,
+      "open_water_pct_of_water": 92.47702221088569,
+      "ice_pct_of_water": 7.522977789114314,
+      "snow_pct_of_land": 6.147999548264807,
+      "snow_free_pct_of_land": 93.8520004517352,
+      "open_water_pct": 4.169097562423843,
+      "ice_pct": 0.3391548258468174,
+      "snow_pct": 5.870832207792925,
+      "snow_free_land_pct": 89.62091533877107
+     }
+    },
+    "UNet++": {
+     "river + buffer": {
+      "water_pct": 20.83785581777306,
+      "land_pct": 79.16214674108947,
+      "open_water_pct_of_water": 89.03301205426125,
+      "ice_pct_of_water": 10.966987945738742,
+      "snow_pct_of_land": 11.213522116653015,
+      "snow_free_pct_of_land": 88.78647788334699,
+      "open_water_pct": 18.55257068208747,
+      "ice_pct": 2.2852851356855908,
+      "snow_pct": 8.876864832829384,
+      "snow_free_land_pct": 70.2852819082601
+     },
+     "whole VIIRS image": {
+      "water_pct": 4.732559440107634,
+      "land_pct": 95.26744270767585,
+      "open_water_pct_of_water": 78.33008703840945,
+      "ice_pct_of_water": 21.669912961590562,
+      "snow_pct_of_land": 10.470951021091867,
+      "snow_free_pct_of_land": 89.52904897890812,
+      "open_water_pct": 3.7070179285807727,
+      "ice_pct": 1.025541511526862,
+      "snow_pct": 9.975407264967494,
+      "snow_free_land_pct": 85.29203544270835
+     }
+    },
+    "2D CNN": {
+     "river + buffer": {
+      "water_pct": 23.669783724471927,
+      "land_pct": 76.33021268993616,
+      "open_water_pct_of_water": 97.85716593806666,
+      "ice_pct_of_water": 2.14283406193334,
+      "snow_pct_of_land": 3.565302498817768,
+      "snow_free_pct_of_land": 96.43469750118223,
+      "open_water_pct": 23.16257953643799,
+      "ice_pct": 0.5072041880339384,
+      "snow_pct": 2.721402980387211,
+      "snow_free_land_pct": 73.60880970954895
+     },
+     "whole VIIRS image": {
+      "water_pct": 4.010696883779019,
+      "land_pct": 95.98931334912777,
+      "open_water_pct_of_water": 97.39986973444233,
+      "ice_pct_of_water": 2.600130265557671,
+      "snow_pct_of_land": 4.194860955737029,
+      "snow_free_pct_of_land": 95.80513904426297,
+      "open_water_pct": 3.9064135402441025,
+      "ice_pct": 0.10428334353491664,
+      "snow_pct": 4.026618227362633,
+      "snow_free_land_pct": 91.96269512176514
+     }
+    }
+   },
+   "2023-10-04": {
+    "Landsat truth": {
+     "river + buffer": {
+      "water_pct": 22.873397916555405,
+      "land_pct": 77.12659910321236,
+      "open_water_pct_of_water": 49.083944364450275,
+      "ice_pct_of_water": 50.916055635549725,
+      "snow_pct_of_land": 5.418690811798333,
+      "snow_free_pct_of_land": 94.58130918820167,
+      "open_water_pct": 11.227165907621384,
+      "ice_pct": 11.646232008934021,
+      "snow_pct": 4.179251939058304,
+      "snow_free_land_pct": 72.94734716415405
+     },
+     "whole VIIRS image": {
+      "water_pct": 3.7291694432497025,
+      "land_pct": 96.27083577215672,
+      "open_water_pct_of_water": 49.56764021624283,
+      "ice_pct_of_water": 50.43235978375717,
+      "snow_pct_of_land": 6.230968926515512,
+      "snow_free_pct_of_land": 93.76903107348448,
+      "open_water_pct": 1.8484612926840782,
+      "ice_pct": 1.8807081505656242,
+      "snow_pct": 5.998605862259865,
+      "snow_free_land_pct": 90.27222990989685
+     }
+    },
+    "RF": {
+     "river + buffer": {
+      "water_pct": 10.327580587300597,
+      "land_pct": 89.67241932636325,
+      "open_water_pct_of_water": 47.74498991556632,
+      "ice_pct_of_water": 52.25501008443367,
+      "snow_pct_of_land": 17.57183538380579,
+      "snow_free_pct_of_land": 82.42816461619421,
+      "open_water_pct": 4.930902309928655,
+      "ice_pct": 5.396678277371941,
+      "snow_pct": 15.7570899087046,
+      "snow_free_land_pct": 73.91532941765865
+     },
+     "whole VIIRS image": {
+      "water_pct": 1.8478867359722717,
+      "land_pct": 98.15211325449742,
+      "open_water_pct_of_water": 49.358564789312965,
+      "ice_pct_of_water": 50.641435210687035,
+      "snow_pct_of_land": 12.867488213183254,
+      "snow_free_pct_of_land": 87.13251178681675,
+      "open_water_pct": 0.9120903718079942,
+      "ice_pct": 0.9357963641642774,
+      "snow_pct": 12.629711604012734,
+      "snow_free_land_pct": 85.5224016504847
+     }
+    },
+    "UNet++": {
+     "river + buffer": {
+      "water_pct": 8.481582332404102,
+      "land_pct": 91.51841998793479,
+      "open_water_pct_of_water": 53.61695973693542,
+      "ice_pct_of_water": 46.38304026306458,
+      "snow_pct_of_land": 16.206157455521122,
+      "snow_free_pct_of_land": 83.79384254447886,
+      "open_water_pct": 4.547566584220136,
+      "ice_pct": 3.934015748183967,
+      "snow_pct": 14.83161924404983,
+      "snow_free_land_pct": 76.68680074388496
+     },
+     "whole VIIRS image": {
+      "water_pct": 1.4641409176430336,
+      "land_pct": 98.53586124778109,
+      "open_water_pct_of_water": 52.5029047506174,
+      "ice_pct_of_water": 47.49709524938261,
+      "snow_pct_of_land": 10.22284407802953,
+      "snow_free_pct_of_land": 89.77715592197046,
+      "open_water_pct": 0.7687165114049375,
+      "ice_pct": 0.6954244062380963,
+      "snow_pct": 10.073167456304184,
+      "snow_free_land_pct": 88.4626937914769
+     }
+    },
+    "2D CNN": {
+     "river + buffer": {
+      "water_pct": 15.911271050572395,
+      "land_pct": 84.08873230218887,
+      "open_water_pct_of_water": 36.468580014283276,
+      "ice_pct_of_water": 63.531419985716724,
+      "snow_pct_of_land": 8.378674109101713,
+      "snow_free_pct_of_land": 91.62132589089829,
+      "open_water_pct": 5.802614614367485,
+      "ice_pct": 10.10865643620491,
+      "snow_pct": 7.045520842075348,
+      "snow_free_land_pct": 77.04321146011353
+     },
+     "whole VIIRS image": {
+      "water_pct": 2.6504000648856163,
+      "land_pct": 97.34959527850151,
+      "open_water_pct_of_water": 37.30896977045907,
+      "ice_pct_of_water": 62.69103022954093,
+      "snow_pct_of_land": 10.696190579220186,
+      "snow_free_pct_of_land": 89.30380942077981,
+      "open_water_pct": 0.9888369590044022,
+      "ice_pct": 1.6615631058812141,
+      "snow_pct": 10.412698239088058,
+      "snow_free_land_pct": 86.93689703941345
+     }
+    }
+   },
+   "2024-04-21": {
+    "Landsat truth": {
+     "river + buffer": {
+      "water_pct": 24.152617156505585,
+      "land_pct": 75.84737837314606,
+      "open_water_pct_of_water": 10.211211405932932,
+      "ice_pct_of_water": 89.78878859406707,
+      "snow_pct_of_land": 48.42583092905871,
+      "snow_free_pct_of_land": 51.57416907094129,
+      "open_water_pct": 2.4662747979164124,
+      "ice_pct": 21.686342358589172,
+      "snow_pct": 36.72972321510315,
+      "snow_free_land_pct": 39.11765515804291
+     },
+     "whole VIIRS image": {
+      "water_pct": 3.9942963514477015,
+      "land_pct": 96.0057020187378,
+      "open_water_pct_of_water": 10.613739992187403,
+      "ice_pct_of_water": 89.3862600078126,
+      "snow_pct_of_land": 36.22612261784939,
+      "snow_free_pct_of_land": 63.77387738215061,
+      "open_water_pct": 0.423944229260087,
+      "ice_pct": 3.5703521221876144,
+      "snow_pct": 34.77914333343506,
+      "snow_free_land_pct": 61.226558685302734
+     }
+    },
+    "RF": {
+     "river + buffer": {
+      "water_pct": 21.76506685888405,
+      "land_pct": 78.23493313511966,
+      "open_water_pct_of_water": 19.46805705000231,
+      "ice_pct_of_water": 80.53194294999768,
+      "snow_pct_of_land": 47.750236089526105,
+      "snow_free_pct_of_land": 52.24976391047391,
+      "open_water_pct": 4.2372356330586936,
+      "ice_pct": 17.52783122582536,
+      "snow_pct": 37.35736527650253,
+      "snow_free_land_pct": 40.87756785861715
+     },
+     "whole VIIRS image": {
+      "water_pct": 6.709303140621342,
+      "land_pct": 93.29069686917543,
+      "open_water_pct_of_water": 49.74400813426565,
+      "ice_pct_of_water": 50.255991865734345,
+      "snow_pct_of_land": 29.173277212176508,
+      "snow_free_pct_of_land": 70.8267227878235,
+      "open_water_pct": 3.337476300023221,
+      "ice_pct": 3.3718268405981204,
+      "snow_pct": 27.21595361081582,
+      "snow_free_land_pct": 66.07474325835962
+     }
+    },
+    "UNet++": {
+     "river + buffer": {
+      "water_pct": 16.657452502870072,
+      "land_pct": 83.34255030896315,
+      "open_water_pct_of_water": 15.743135669106014,
+      "ice_pct_of_water": 84.25686433089399,
+      "snow_pct_of_land": 48.88026556295555,
+      "snow_free_pct_of_land": 51.11973443704445,
+      "open_water_pct": 2.6224053465437307,
+      "ice_pct": 14.03504715632634,
+      "snow_pct": 40.738059917961024,
+      "snow_free_land_pct": 42.60449039100214
+     },
+     "whole VIIRS image": {
+      "water_pct": 3.057531000803446,
+      "land_pct": 96.94247149705248,
+      "open_water_pct_of_water": 18.842739639171857,
+      "ice_pct_of_water": 81.15726036082813,
+      "snow_pct_of_land": 31.69819833271824,
+      "snow_free_pct_of_land": 68.30180166728177,
+      "open_water_pct": 0.576122605868359,
+      "ice_pct": 2.481408394935087,
+      "snow_pct": 30.72901688377454,
+      "snow_free_land_pct": 66.21345461327793
+     }
+    },
+    "2D CNN": {
+     "river + buffer": {
+      "water_pct": 28.240760415792465,
+      "land_pct": 71.75923883914948,
+      "open_water_pct_of_water": 20.12855493469349,
+      "ice_pct_of_water": 79.87144506530652,
+      "snow_pct_of_land": 52.26323338277598,
+      "snow_free_pct_of_land": 47.73676661722402,
+      "open_water_pct": 5.68445697426796,
+      "ice_pct": 22.556303441524506,
+      "snow_pct": 37.50369846820831,
+      "snow_free_land_pct": 34.25554037094116
+     },
+     "whole VIIRS image": {
+      "water_pct": 8.860887959599495,
+      "land_pct": 91.13911986351013,
+      "open_water_pct_of_water": 38.54983852737131,
+      "ice_pct_of_water": 61.45016147262869,
+      "snow_pct_of_land": 38.90303373829437,
+      "snow_free_pct_of_land": 61.09696626170563,
+      "open_water_pct": 3.4158580005168915,
+      "ice_pct": 5.4450299590826035,
+      "snow_pct": 35.45588254928589,
+      "snow_free_land_pct": 55.68323731422424
+     }
+    }
+   },
+   "2024-06-22": {
+    "Landsat truth": {
+     "river + buffer": {
+      "water_pct": 24.16885495185852,
+      "land_pct": 75.83114295266569,
+      "open_water_pct_of_water": 100.0,
+      "ice_pct_of_water": 0.0,
+      "snow_pct_of_land": 0.9451917648928976,
+      "snow_free_pct_of_land": 99.0548082351071,
+      "open_water_pct": 24.16885495185852,
+      "ice_pct": 0.0,
+      "snow_pct": 0.7167497184127569,
+      "snow_free_land_pct": 75.11439323425293
+     },
+     "whole VIIRS image": {
+      "water_pct": 3.990909457206726,
+      "land_pct": 96.00908367428929,
+      "open_water_pct_of_water": 100.0,
+      "ice_pct_of_water": 0.0,
+      "snow_pct_of_land": 0.34901641737130146,
+      "snow_free_pct_of_land": 99.6509835826287,
+      "open_water_pct": 3.990909457206726,
+      "ice_pct": 0.0,
+      "snow_pct": 0.33508746419101954,
+      "snow_free_land_pct": 95.67399621009827
+     }
+    },
+    "RF": {
+     "river + buffer": {
+      "water_pct": 21.402112795963394,
+      "land_pct": 78.5978872130041,
+      "open_water_pct_of_water": 96.53884422653077,
+      "ice_pct_of_water": 3.4611557734692258,
+      "snow_pct_of_land": 1.749683909115265,
+      "snow_free_pct_of_land": 98.25031609088474,
+      "open_water_pct": 20.66135233328151,
+      "ice_pct": 0.7407604626818829,
+      "snow_pct": 1.3752145854704971,
+      "snow_free_land_pct": 77.22267262753361
+     },
+     "whole VIIRS image": {
+      "water_pct": 3.832446489495176,
+      "land_pct": 96.16755350604281,
+      "open_water_pct_of_water": 96.64210128016137,
+      "ice_pct_of_water": 3.3578987198386323,
+      "snow_pct_of_land": 0.9493534555896388,
+      "snow_free_pct_of_land": 99.05064654441036,
+      "open_water_pct": 3.703756817885917,
+      "ice_pct": 0.12868967160925912,
+      "snow_pct": 0.9129699923656323,
+      "snow_free_land_pct": 95.25458351367718
+     }
+    },
+    "UNet++": {
+     "river + buffer": {
+      "water_pct": 18.42245385298546,
+      "land_pct": 81.57754848825479,
+      "open_water_pct_of_water": 96.67533500625068,
+      "ice_pct_of_water": 3.3246649937493142,
+      "snow_pct_of_land": 1.1305334089486343,
+      "snow_free_pct_of_land": 98.86946659105136,
+      "open_water_pct": 17.80996897874563,
+      "ice_pct": 0.6124848742398293,
+      "snow_pct": 0.922261439860992,
+      "snow_free_land_pct": 80.6552870483938
+     },
+     "whole VIIRS image": {
+      "water_pct": 3.075239253660885,
+      "land_pct": 96.9247626867757,
+      "open_water_pct_of_water": 95.71596428099858,
+      "ice_pct_of_water": 4.284035719001431,
+      "snow_pct_of_land": 0.23653959667649166,
+      "snow_free_pct_of_land": 99.7634604033235,
+      "open_water_pct": 2.9434949055893,
+      "ice_pct": 0.13174434807158533,
+      "snow_pct": 0.22926544273894592,
+      "snow_free_land_pct": 96.69549724403676
+     }
+    },
+    "2D CNN": {
+     "river + buffer": {
+      "water_pct": 24.820711801294237,
+      "land_pct": 75.17928992165253,
+      "open_water_pct_of_water": 99.69477073464031,
+      "ice_pct_of_water": 0.30522926535968026,
+      "snow_pct_of_land": 0.22255510618884003,
+      "snow_free_pct_of_land": 99.77744489381116,
+      "open_water_pct": 24.744951725006104,
+      "ice_pct": 0.07576007628813386,
+      "snow_pct": 0.1673153485171497,
+      "snow_free_land_pct": 75.01197457313538
+     },
+     "whole VIIRS image": {
+      "water_pct": 4.861715532024391,
+      "land_pct": 95.13828346971422,
+      "open_water_pct_of_water": 99.3309390358521,
+      "ice_pct_of_water": 0.6690609641478992,
+      "snow_pct_of_land": 0.09882693818713396,
+      "snow_free_pct_of_land": 99.90117306181287,
+      "open_water_pct": 4.8291876912117,
+      "ice_pct": 0.032527840812690556,
+      "snow_pct": 0.09402225259691477,
+      "snow_free_land_pct": 95.04426121711731
+     }
+    }
+   },
+   "2026-03-26": {
+    "Landsat truth": {
+     "river + buffer": {
+      "water_pct": 25.542058777136845,
+      "land_pct": 74.45794343948364,
+      "open_water_pct_of_water": 0.013975203179351628,
+      "ice_pct_of_water": 99.98602479682064,
+      "snow_pct_of_land": 70.33820126048974,
+      "snow_free_pct_of_land": 29.66179873951026,
+      "open_water_pct": 0.00356955461029429,
+      "ice_pct": 25.53848922252655,
+      "snow_pct": 52.37237811088562,
+      "snow_free_land_pct": 22.085565328598022
+     },
+     "whole VIIRS image": {
+      "water_pct": 4.223186940453161,
+      "land_pct": 95.77681422233582,
+      "open_water_pct_of_water": 0.02660532843431805,
+      "ice_pct_of_water": 99.97339467156569,
+      "snow_pct_of_land": 66.81736144773035,
+      "snow_free_pct_of_land": 33.18263855226965,
+      "open_water_pct": 0.0011235927559027914,
+      "ice_pct": 4.222063347697258,
+      "snow_pct": 63.995540142059326,
+      "snow_free_land_pct": 31.78127408027649
+     }
+    },
+    "RF": {
+     "river + buffer": {
+      "water_pct": 23.634430998234812,
+      "land_pct": 76.36556907535163,
+      "open_water_pct_of_water": 7.095897115099844,
+      "ice_pct_of_water": 92.90410288490015,
+      "snow_pct_of_land": 74.25971488044746,
+      "snow_free_pct_of_land": 25.740285119552542,
+      "open_water_pct": 1.6770749073740074,
+      "ice_pct": 21.957356090860806,
+      "snow_pct": 56.70885386218728,
+      "snow_free_land_pct": 19.656715213164354
+     },
+     "whole VIIRS image": {
+      "water_pct": 5.23679163502207,
+      "land_pct": 94.76320838693249,
+      "open_water_pct_of_water": 7.960013799908653,
+      "ice_pct_of_water": 92.03998620009136,
+      "snow_pct_of_land": 66.19242496617152,
+      "snow_free_pct_of_land": 33.807575033828485,
+      "open_water_pct": 0.41684933682021874,
+      "ice_pct": 4.819942298201852,
+      "snow_pct": 62.726065607057045,
+      "snow_free_land_pct": 32.03714277987545
+     }
+    },
+    "UNet++": {
+     "river + buffer": {
+      "water_pct": 29.07536273144831,
+      "land_pct": 70.92463992630569,
+      "open_water_pct_of_water": 1.4072227336178207,
+      "ice_pct_of_water": 98.59277726638219,
+      "snow_pct_of_land": 81.53723818350295,
+      "snow_free_pct_of_land": 18.462761816497054,
+      "open_water_pct": 0.4091551142387839,
+      "ice_pct": 28.666207617209523,
+      "snow_pct": 57.829992587503696,
+      "snow_free_land_pct": 13.094647338801991
+     },
+     "whole VIIRS image": {
+      "water_pct": 5.16725534548316,
+      "land_pct": 94.83274702035577,
+      "open_water_pct_of_water": 2.054002004921328,
+      "ice_pct_of_water": 97.94599799507866,
+      "snow_pct_of_land": 78.5058746610225,
+      "snow_free_pct_of_land": 21.494125338977494,
+      "open_water_pct": 0.10613552839562859,
+      "ice_pct": 5.061119817087531,
+      "snow_pct": 74.44927751340505,
+      "snow_free_land_pct": 20.383469506950714
+     }
+    },
+    "2D CNN": {
+     "river + buffer": {
+      "water_pct": 18.410809463239275,
+      "land_pct": 81.58919364213943,
+      "open_water_pct_of_water": 0.059513673172191604,
+      "ice_pct_of_water": 99.94048632682781,
+      "snow_pct_of_land": 89.19778233317744,
+      "snow_free_pct_of_land": 10.802217666822559,
+      "open_water_pct": 0.010956948972307146,
+      "ice_pct": 18.399852514266968,
+      "snow_pct": 72.77575135231018,
+      "snow_free_land_pct": 8.813442289829254
+     },
+     "whole VIIRS image": {
+      "water_pct": 3.022909505671123,
+      "land_pct": 96.97709754109383,
+      "open_water_pct_of_water": 0.07093934071360067,
+      "ice_pct_of_water": 99.92906065928639,
+      "snow_pct_of_land": 88.43764277809811,
+      "snow_free_pct_of_land": 11.562357221901888,
+      "open_water_pct": 0.00214443207369186,
+      "ice_pct": 3.020765073597431,
+      "snow_pct": 85.76425909996033,
+      "snow_free_land_pct": 11.2128384411335
+     }
+    }
+   },
+   "2023-04-19": {
+    "RF": {
+     "river + buffer": {
+      "water_pct": 22.971579687178632,
+      "land_pct": 77.02842031282135,
+      "open_water_pct_of_water": 1.3822046436745996,
+      "ice_pct_of_water": 98.61779535632542,
+      "snow_pct_of_land": 82.21232102694768,
+      "snow_free_pct_of_land": 17.78767897305232,
+      "open_water_pct": 0.3175142411615941,
+      "ice_pct": 22.65406544601704,
+      "snow_pct": 63.32685218956327,
+      "snow_free_land_pct": 13.701568123258086
+     },
+     "whole VIIRS image": {
+      "water_pct": 4.700864305157722,
+      "land_pct": 95.29913569484229,
+      "open_water_pct_of_water": 2.6383238811123,
+      "ice_pct_of_water": 97.3616761188877,
+      "snow_pct_of_land": 77.386990885918,
+      "snow_free_pct_of_land": 22.613009114082008,
+      "open_water_pct": 0.12402402558165998,
+      "ice_pct": 4.5768402795760625,
+      "snow_pct": 73.74913345452622,
+      "snow_free_land_pct": 21.550002240316065
+     }
+    },
+    "UNet++": {
+     "river + buffer": {
+      "water_pct": 24.02329903561622,
+      "land_pct": 75.97670257091522,
+      "open_water_pct_of_water": 1.4393219711797631,
+      "ice_pct_of_water": 98.56067802882023,
+      "snow_pct_of_land": 79.7108413810222,
+      "snow_free_pct_of_land": 20.289158618977794,
+      "open_water_pct": 0.3457726212218404,
+      "ice_pct": 23.67752641439438,
+      "snow_pct": 60.56166887283325,
+      "snow_free_land_pct": 15.41503369808197
+     },
+     "whole VIIRS image": {
+      "water_pct": 4.4649781892076135,
+      "land_pct": 95.5350250005722,
+      "open_water_pct_of_water": 5.907426198595977,
+      "ice_pct_of_water": 94.09257380140403,
+      "snow_pct_of_land": 75.94555006225778,
+      "snow_free_pct_of_land": 24.05444993774222,
+      "open_water_pct": 0.2637652913108468,
+      "ice_pct": 4.201212897896767,
+      "snow_pct": 72.55460023880005,
+      "snow_free_land_pct": 22.980424761772156
+     }
+    },
+    "2D CNN": {
+     "river + buffer": {
+      "water_pct": 25.876435195095837,
+      "land_pct": 74.12356659770012,
+      "open_water_pct_of_water": 1.4420627626050715,
+      "ice_pct_of_water": 98.55793723739492,
+      "snow_pct_of_land": 86.47745789657051,
+      "snow_free_pct_of_land": 13.522542103429487,
+      "open_water_pct": 0.37315443623811007,
+      "ice_pct": 25.503280758857727,
+      "snow_pct": 64.10017609596252,
+      "snow_free_land_pct": 10.023390501737595
+     },
+     "whole VIIRS image": {
+      "water_pct": 4.596279421821237,
+      "land_pct": 95.40371894836426,
+      "open_water_pct_of_water": 5.364161816213387,
+      "ice_pct_of_water": 94.63583818378662,
+      "snow_pct_of_land": 78.32858347398815,
+      "snow_free_pct_of_land": 21.671416526011853,
+      "open_water_pct": 0.2465518657118082,
+      "ice_pct": 4.349727556109428,
+      "snow_pct": 74.72838163375854,
+      "snow_free_land_pct": 20.675337314605713
+     }
+    }
+   },
+   "2024-09-02": {
+    "RF": {
+     "river + buffer": {
+      "water_pct": 18.187333692441417,
+      "land_pct": 81.81266630755857,
+      "open_water_pct_of_water": 89.54488727018479,
+      "ice_pct_of_water": 10.455112729815207,
+      "snow_pct_of_land": 3.5160606397554135,
+      "snow_free_pct_of_land": 96.48393936024458,
+      "open_water_pct": 16.285827452349004,
+      "ice_pct": 1.901506240092413,
+      "snow_pct": 2.8765829583745055,
+      "snow_free_land_pct": 78.93608334918406
+     },
+     "whole VIIRS image": {
+      "water_pct": 3.342431792351398,
+      "land_pct": 96.65756820764861,
+      "open_water_pct_of_water": 89.75172050758425,
+      "ice_pct_of_water": 10.248279492415744,
+      "snow_pct_of_land": 2.4990318141042174,
+      "snow_free_pct_of_land": 97.50096818589579,
+      "open_water_pct": 2.9998900404278657,
+      "ice_pct": 0.3425417519235323,
+      "snow_pct": 2.415503380248622,
+      "snow_free_land_pct": 94.24206482739999
+     }
+    },
+    "UNet++": {
+     "river + buffer": {
+      "water_pct": 22.06071764230728,
+      "land_pct": 77.93929046019912,
+      "open_water_pct_of_water": 91.84745219709664,
+      "ice_pct_of_water": 8.152547802903362,
+      "snow_pct_of_land": 1.9725241590101203,
+      "snow_free_pct_of_land": 98.02747584098988,
+      "open_water_pct": 20.262207090854645,
+      "ice_pct": 1.7985105514526367,
+      "snow_pct": 1.5373713336884975,
+      "snow_free_land_pct": 76.40191912651062
+     },
+     "whole VIIRS image": {
+      "water_pct": 4.896450974047184,
+      "land_pct": 95.10355526581407,
+      "open_water_pct_of_water": 77.16571233281246,
+      "ice_pct_of_water": 22.83428766718753,
+      "snow_pct_of_land": 0.955060666106811,
+      "snow_free_pct_of_land": 99.04493933389318,
+      "open_water_pct": 3.778381273150444,
+      "ice_pct": 1.11806970089674,
+      "snow_pct": 0.9082966484129429,
+      "snow_free_land_pct": 94.19525861740112
+     }
+    },
+    "2D CNN": {
+     "river + buffer": {
+      "water_pct": 26.260533556342125,
+      "land_pct": 73.73946383595467,
+      "open_water_pct_of_water": 92.887593578462,
+      "ice_pct_of_water": 7.112406421537994,
+      "snow_pct_of_land": 2.6912907283054093,
+      "snow_free_pct_of_land": 97.3087092716946,
+      "open_water_pct": 24.392777681350708,
+      "ice_pct": 1.867755874991417,
+      "snow_pct": 1.984543353319168,
+      "snow_free_land_pct": 71.7549204826355
+     },
+     "whole VIIRS image": {
+      "water_pct": 5.3999269381165504,
+      "land_pct": 94.60007231682539,
+      "open_water_pct_of_water": 82.43912681187378,
+      "ice_pct_of_water": 17.560873188126223,
+      "snow_pct_of_land": 2.4825597133699255,
+      "snow_free_pct_of_land": 97.51744028663008,
+      "open_water_pct": 4.451652616262436,
+      "ice_pct": 0.9482743218541145,
+      "snow_pct": 2.3485032841563225,
+      "snow_free_land_pct": 92.25156903266907
+     }
+    }
+   },
+   "2025-07-04": {
+    "RF": {
+     "river + buffer": {
+      "water_pct": 23.74001054313383,
+      "land_pct": 76.25998945686618,
+      "open_water_pct_of_water": 96.84139642208176,
+      "ice_pct_of_water": 3.158603577918235,
+      "snow_pct_of_land": 8.069713350059494,
+      "snow_free_pct_of_land": 91.93028664994051,
+      "open_water_pct": 22.99015772072024,
+      "ice_pct": 0.7498528224135914,
+      "snow_pct": 6.153962549954692,
+      "snow_free_land_pct": 70.10602690691148
+     },
+     "whole VIIRS image": {
+      "water_pct": 7.709855550390069,
+      "land_pct": 92.29014444960994,
+      "open_water_pct_of_water": 98.11816824997129,
+      "ice_pct_of_water": 1.8818317500287083,
+      "snow_pct_of_land": 6.140500992551398,
+      "snow_free_pct_of_land": 93.85949900744859,
+      "open_water_pct": 7.564769040761478,
+      "ice_pct": 0.14508650962859093,
+      "snow_pct": 5.667077235955417,
+      "snow_free_land_pct": 86.62306721365451
+     }
+    },
+    "UNet++": {
+     "river + buffer": {
+      "water_pct": 26.810658676549792,
+      "land_pct": 73.18934537470341,
+      "open_water_pct_of_water": 98.24023628014614,
+      "ice_pct_of_water": 1.7597637198538598,
+      "snow_pct_of_land": 2.927645760946925,
+      "snow_free_pct_of_land": 97.07235423905307,
+      "open_water_pct": 26.338854432106018,
+      "ice_pct": 0.4718042444437742,
+      "snow_pct": 2.1427247673273087,
+      "snow_free_land_pct": 71.0466206073761
+     },
+     "whole VIIRS image": {
+      "water_pct": 6.151534058153629,
+      "land_pct": 93.8484687358141,
+      "open_water_pct_of_water": 82.17960038935624,
+      "ice_pct_of_water": 17.820399610643765,
+      "snow_pct_of_land": 3.022460889916709,
+      "snow_free_pct_of_land": 96.97753911008328,
+      "open_water_pct": 5.055306106805801,
+      "ice_pct": 1.096227951347828,
+      "snow_pct": 2.8365332633256912,
+      "snow_free_land_pct": 91.0119354724884
+     }
+    },
+    "2D CNN": {
+     "river + buffer": {
+      "water_pct": 33.4311056882143,
+      "land_pct": 66.56889989972115,
+      "open_water_pct_of_water": 87.1253088375795,
+      "ice_pct_of_water": 12.874691162420506,
+      "snow_pct_of_land": 16.23680030944428,
+      "snow_free_pct_of_land": 83.76319969055572,
+      "open_water_pct": 29.126954078674316,
+      "ice_pct": 4.304151609539986,
+      "snow_pct": 10.808659344911575,
+      "snow_free_land_pct": 55.76024055480957
+     },
+     "whole VIIRS image": {
+      "water_pct": 8.765397034585476,
+      "land_pct": 91.23460501432419,
+      "open_water_pct_of_water": 70.0215923175541,
+      "ice_pct_of_water": 29.978407682445905,
+      "snow_pct_of_land": 24.272629173504868,
+      "snow_free_pct_of_land": 75.72737082649513,
+      "open_water_pct": 6.137670576572418,
+      "ice_pct": 2.6277264580130577,
+      "snow_pct": 22.145037353038788,
+      "snow_free_land_pct": 69.0895676612854
+     }
+    }
+   },
+   "2026-08-01": {
+    "RF": {
+     "river + buffer": {
+      "water_pct": 19.71266514712783,
+      "land_pct": 80.28733485287216,
+      "open_water_pct_of_water": 95.61980266148356,
+      "ice_pct_of_water": 4.380197338516451,
+      "snow_pct_of_land": 3.374064811763239,
+      "snow_free_pct_of_land": 96.62593518823677,
+      "open_water_pct": 18.84921151300268,
+      "ice_pct": 0.8634536341251534,
+      "snow_pct": 2.7089467135732823,
+      "snow_free_land_pct": 77.57838813929888
+     },
+     "whole VIIRS image": {
+      "water_pct": 3.5884672257931247,
+      "land_pct": 96.41153277420688,
+      "open_water_pct_of_water": 95.97504788048879,
+      "ice_pct_of_water": 4.024952119511203,
+      "snow_pct_of_land": 1.9569448922451624,
+      "snow_free_pct_of_land": 98.04305510775482,
+      "open_water_pct": 3.444033138130599,
+      "ice_pct": 0.14443408766252522,
+      "snow_pct": 1.8867205661601123,
+      "snow_free_land_pct": 94.52481220804675
+     }
+    },
+    "UNet++": {
+     "river + buffer": {
+      "water_pct": 25.713172694668174,
+      "land_pct": 74.28683042526245,
+      "open_water_pct_of_water": 97.04624787430618,
+      "ice_pct_of_water": 2.953752125693823,
+      "snow_pct_of_land": 2.538380401535328,
+      "snow_free_pct_of_land": 97.46161959846467,
+      "open_water_pct": 24.95366930961609,
+      "ice_pct": 0.7595033850520849,
+      "snow_pct": 1.8856823444366455,
+      "snow_free_land_pct": 72.4011480808258
+     },
+     "whole VIIRS image": {
+      "water_pct": 5.728130508214235,
+      "land_pct": 94.27187778055668,
+      "open_water_pct_of_water": 81.0284532562404,
+      "ice_pct_of_water": 18.971546743759603,
+      "snow_pct_of_land": 1.8268207616049599,
+      "snow_free_pct_of_land": 98.17317923839504,
+      "open_water_pct": 4.641415551304817,
+      "ice_pct": 1.086714956909418,
+      "snow_pct": 1.7221782356500626,
+      "snow_free_land_pct": 92.54969954490662
+     }
+    },
+    "2D CNN": {
+     "river + buffer": {
+      "water_pct": 20.013560133520514,
+      "land_pct": 79.98644366161898,
+      "open_water_pct_of_water": 99.79754218610344,
+      "ice_pct_of_water": 0.20245781389655995,
+      "snow_pct_of_land": 0.08965628556400877,
+      "snow_free_pct_of_land": 99.910343714436,
+      "open_water_pct": 19.973041117191315,
+      "ice_pct": 0.040519016329199076,
+      "snow_pct": 0.0717128743417561,
+      "snow_free_land_pct": 79.91473078727722
+     },
+     "whole VIIRS image": {
+      "water_pct": 3.2608530338620767,
+      "land_pct": 96.73914155864622,
+      "open_water_pct_of_water": 99.29780984001587,
+      "ice_pct_of_water": 0.7021901599841297,
+      "snow_pct_of_land": 0.02606716400512264,
+      "snow_free_pct_of_land": 99.97393283599487,
+      "open_water_pct": 3.2379556447267532,
+      "ice_pct": 0.022897389135323465,
+      "snow_pct": 0.025217150687240064,
+      "snow_free_land_pct": 96.71392440795898
+     }
+    }
+   }
+  },
+  "images": {
+   "2023-05-05": "/home/nia/Desktop/nenana_crops/daksh/output/22_viirs_river_gauss/predict/images/pred_2023-05-05.jpg",
+   "2023-07-24": "/home/nia/Desktop/nenana_crops/daksh/output/22_viirs_river_gauss/predict/images/pred_2023-07-24.jpg",
+   "2023-10-04": "/home/nia/Desktop/nenana_crops/daksh/output/22_viirs_river_gauss/predict/images/pred_2023-10-04.jpg",
+   "2024-04-21": "/home/nia/Desktop/nenana_crops/daksh/output/22_viirs_river_gauss/predict/images/pred_2024-04-21.jpg",
+   "2024-06-22": "/home/nia/Desktop/nenana_crops/daksh/output/22_viirs_river_gauss/predict/images/pred_2024-06-22.jpg",
+   "2026-03-26": "/home/nia/Desktop/nenana_crops/daksh/output/22_viirs_river_gauss/predict/images/pred_2026-03-26.jpg",
+   "2023-04-19": "/home/nia/Desktop/nenana_crops/daksh/output/22_viirs_river_gauss/predict/images/pred_2023-04-19.jpg",
+   "2024-09-02": "/home/nia/Desktop/nenana_crops/daksh/output/22_viirs_river_gauss/predict/images/pred_2024-09-02.jpg",
+   "2025-07-04": "/home/nia/Desktop/nenana_crops/daksh/output/22_viirs_river_gauss/predict/images/pred_2025-07-04.jpg",
+   "2026-08-01": "/home/nia/Desktop/nenana_crops/daksh/output/22_viirs_river_gauss/predict/images/pred_2026-08-01.jpg"
+  },
+  "summary_img": "/home/nia/Desktop/nenana_crops/daksh/output/22_viirs_river_gauss/images/run22_summary.jpg",
+  "mask_img": "/home/nia/Desktop/nenana_crops/daksh/output/22_viirs_river_gauss/images/water_mask.jpg",
+  "conf": {
+   "rule50": "/home/nia/Desktop/nenana_crops/daksh/output/report_viirs_figures/conf_run22_rule50.png",
+   "rule90": "/home/nia/Desktop/nenana_crops/daksh/output/report_viirs_figures/conf_run22_rule90.png"
+  },
+  "f1_img": "/home/nia/Desktop/nenana_crops/daksh/output/report_viirs_figures/f1_run22.png",
+  "extra": [
+   [
+    "rule50",
+    "RF",
+    "0.771",
+    "0.648",
+    "0.660",
+    "0.616",
+    "0.648",
+    "0.619",
+    "0.783"
+   ],
+   [
+    "rule50",
+    "UNet++",
+    "0.740",
+    "0.565",
+    "0.606",
+    "0.592",
+    "0.565",
+    "0.569",
+    "0.736"
+   ],
+   [
+    "rule50",
+    "2D CNN",
+    "0.807",
+    "0.628",
+    "0.710",
+    "0.642",
+    "0.628",
+    "0.630",
+    "0.808"
+   ],
+   [
+    "rule90",
+    "RF",
+    "0.860",
+    "0.693",
+    "0.770",
+    "0.689",
+    "0.693",
+    "0.671",
+    "0.871"
+   ],
+   [
+    "rule90",
+    "UNet++",
+    "0.757",
+    "0.466",
+    "0.579",
+    "0.469",
+    "0.466",
+    "0.459",
+    "0.729"
+   ],
+   [
+    "rule90",
+    "2D CNN",
+    "0.880",
+    "0.679",
+    "0.802",
+    "0.672",
+    "0.679",
+    "0.674",
+    "0.880"
+   ]
+  ],
+  "vs19": [
+   [
+    "RF",
+    "0.771 / 0.619",
+    "0.860 / 0.671",
+    "0.794 / 0.644",
+    "0.818 / 0.662"
+   ],
+   [
+    "UNet++",
+    "0.740 / 0.569",
+    "0.757 / 0.459",
+    "0.714 / 0.535",
+    "0.742 / 0.477"
+   ],
+   [
+    "2D CNN",
+    "0.807 / 0.630",
+    "0.880 / 0.674",
+    "0.812 / 0.655",
+    "0.854 / 0.664"
+   ]
+  ]
+ },
  "figures": {
   "r17": "/home/nia/Desktop/nenana_crops/daksh/output/report_viirs_figures/r17_r2.png",
   "r17s": "/home/nia/Desktop/nenana_crops/daksh/output/report_viirs_figures/r17_scatter.png",

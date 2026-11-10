@@ -610,6 +610,55 @@ for num in (17, 18, 19, 20):
     out = Path(sys.argv[1]).with_name(f"content_run{num}.json")
     json.dump(B, open(out, "w"))
     print("wrote", out, len(B), "blocks")
+
+
+# ----------------------------------------------------------------------------- run 22 (own report)
+R22 = O / "22_viirs_river_gauss"
+if (R22 / "metrics_all.json").exists():
+    m22 = load(R22 / "metrics_all.json")
+    t22 = load(R22 / "predict" / "totals.json")
+    B = []
+    h(0, "Nenana river ice from VIIRS 375 m: run 22, run 19 with Gaussian (run 17) labels")
+    p("Run 19 repeated with one change: the label of each VIIRS pixel comes from run 17's Gaussian-weighted class shares "
+      "(sigma = 375 m / 2.8 = 134 m, cut at 2 sigma; Oleson et al. 1995) instead of the box count of the Landsat pixels "
+      "inside the VIIRS pixel. Same river + 1 px buffer mask, inputs, models, dates and leave-one-date-out testing.")
+    h(1, "1. Summary")
+    rows = []
+    for mod in models19:
+        if mod in m22:
+            rows.append([MODEL_NAMES[mod]] + [f"{m22[mod][r]['accuracy']:.3f} / {m22[mod][r]['macro_f1']:.3f}"
+                                               for r in ("rule50", "rule90")]
+                        + [f"{m19[mod][r]['accuracy']:.3f} / {m19[mod][r]['macro_f1']:.3f}" for r in ("rule50", "rule90")])
+    table(["model", "run 22 rule50 acc / F1", "run 22 rule90", "run 19 rule50", "run 19 rule90"], rows,
+          [1500, 2000, 1900, 1900, 1900], ["l", "r", "r", "r", "r"])
+    bullets([
+        "Gaussian labels help the strict rule90 for every model (best 2D CNN); rule50 stays about the same.",
+        "The Gaussian footprint reaches past the VIIRS box, so labels at river edges are smoother and a few more edge "
+        f"pixels fail the >= 98 % check ({m22['rf']['rule50']['cells']:,} scored pixels vs {m19['rf']['rule50']['cells']:,} in run 19).",
+        "The yellow totals boxes in the prediction images still come from the run 18 (box) % models.",
+    ])
+    h(1, "2. Labels: box (run 19) vs Gaussian (run 22)")
+    bullets(["Box (runs 18-20): every Landsat pixel inside the VIIRS pixel counts equally (144-169 pixels).",
+             "Gaussian (runs 17, 22): Landsat pixels are weighted by a Gaussian around the VIIRS pixel centre "
+             "(sigma 134 m = 4.4 rows x 10.2 columns of Landsat pixels), cut at 2 sigma, so pixels just outside the box "
+             "count a little and pixels at the box corners less.",
+             "The shares are turned into open water / ice / snow / snow-free land % and the states exactly as in run 19."])
+    for d in labelled:
+        f = R17 / "images" / f"aggregation_{d}_zoom.png"
+        if f.exists():
+            image(f, f"{d}: one VIIRS pixel, Gaussian footprint vs box (the run 22 vs run 19 label).", 600)
+            break
+    river_run(22, 3, m22, t22, R22, "river + 1 px buffer, Gaussian labels",
+              "Same water mask as run 19: alaska_occ_375m.tif, river = occurrence >= 0.05 (988 px) plus a 1-pixel buffer "
+              "(678 px). Labels from the Gaussian shares.")
+    h(1, "4. Per date, run 22 vs run 19 (rule50 accuracy)")
+    table(["date"] + [f"{MODEL_NAMES[mod]} run 22 / run 19" for mod in models19],
+          [[d] + [f"{m22[mod]['per_date'][d]['rule50']['accuracy']:.2f} / {m19[mod]['per_date'][d]['rule50']['accuracy']:.2f}"
+                  for mod in models19] for d in labelled], [1800, 2400, 2400, 2400], ["l", "r", "r", "r"])
+    out = Path(sys.argv[1]).with_name("content_run22.json")
+    json.dump(B, open(out, "w"))
+    deck["run22"]["vs19"] = rows
+    print("wrote", out, len(B), "blocks")
 deck["figures"] = {"r17": str(f_r17), "r17s": str(f_r17s) if f_r17s else None, "compare": str(f_cmp),
                    "r18_summary": str(R18 / "images" / "run18_summary.jpg")}
 (O / "deck_numbers_viirs.json").write_text(json.dumps(deck, indent=1))
