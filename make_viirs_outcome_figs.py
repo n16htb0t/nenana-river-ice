@@ -36,6 +36,42 @@ SHORT_STATES = ["1 open river, no-snow land", "2 open river, snow land", "3 ice 
                 "4 ice river, snow land"]
 
 
+def landsat_tc(date):
+    """Landsat true colour (SR B4 / B3 / B2), 2-98 % stretch, and its extent (lon0, lon1, lat0, lat1)."""
+    f = U.PATCHES / f"nenana_{date.replace('-', '')}" / f"{date}_sr.tif"
+    if not f.exists():
+        return None
+    ds = gdal.Open(str(f))
+    a = ds.ReadAsArray().astype(np.float32)
+    rgb = np.stack([a[2], a[1], a[0]], -1)
+    ok = np.isfinite(rgb).all(-1)
+    lo, hi = np.nanpercentile(rgb[ok], [2, 98], axis=0)
+    rgb = np.clip((rgb - lo) / np.maximum(hi - lo, 1e-6), 0, 1); rgb[~ok] = 0.6
+    gt = ds.GetGeoTransform()
+    return rgb, [gt[0], gt[0] + ds.RasterXSize * gt[1], gt[3] + ds.RasterYSize * gt[5], gt[3]]
+
+
+def viirs_extent(date):
+    ds = gdal.Open(str(U.PATCHES / f"nenana_{date.replace('-', '')}" / f"{date}_viirs_375m.tif"))
+    gt = ds.GetGeoTransform()
+    return [gt[0], gt[0] + ds.RasterXSize * gt[1], gt[3] + ds.RasterYSize * gt[5], gt[3]], gt
+
+
+def landsat_panel(a, date, river, buf, ext, title="Landsat 30 m true colour (B4/B3/B2)"):
+    ls = landsat_tc(date)
+    if ls is None:
+        a.set_title("no Landsat this day", fontsize=10); return
+    a.imshow(ls[0], extent=ls[1], interpolation="nearest")
+    hv, wv = river.shape
+    xs = ext[0] + (np.arange(wv) + 0.5) * (ext[1] - ext[0]) / wv
+    ys = ext[3] - (np.arange(hv) + 0.5) * (ext[3] - ext[2]) / hv
+    a.contour(xs, ys, river.astype(float), levels=[0.5], colors="yellow", linewidths=0.6)
+    if buf.any():
+        a.contour(xs, ys, (river | buf).astype(float), levels=[0.5], colors="orange", linewidths=0.6, linestyles="--")
+    a.set_xlim(ext[0], ext[1]); a.set_ylim(ext[2], ext[3]); a.set_aspect("equal")
+    a.set_title(title, fontsize=10)
+
+
 def labelled_dates():
     return [d for d in U.viirs_dates()
             if (U.RUN16 / f"pred_{d}.tif").exists() or (U.RUN16 / "new_dates" / d / "rf_pred.tif").exists()]
@@ -63,7 +99,8 @@ def overview(date, labelled, area, river, buf):
     pred = predicted(date, labelled)
     rows = [m for m, _ in MODELS if pred[m][0] is not None or pred[m][1] is not None]
     names = dict(MODELS)
-    fig, ax = plt.subplots(len(rows), 6, figsize=(22, 6.6 * len(rows)), constrained_layout=True, squeeze=False)
+    fig, ax = plt.subplots(len(rows), 7, figsize=(25.5, 6.6 * len(rows)), constrained_layout=True, squeeze=False)
+    ext, _ = viirs_extent(date)
     for i, m in enumerate(rows):
         pct, st = pred[m]
         a0 = ax[i, 0]
@@ -72,8 +109,9 @@ def overview(date, labelled, area, river, buf):
         if buf.any():
             a0.contour((river | buf).astype(float), levels=[0.5], colors="orange", linewidths=0.6, linestyles="--")
         a0.set_title(f"VIIRS 375 m (I2/I2/I1) - model input\n{names[m]} row", fontsize=10)
+        landsat_panel(ax[i, 1], date, river, buf, ext, "Landsat 30 m true colour (B4/B3/B2)\nsame day, for checking")
         for k in range(4):
-            a = ax[i, k + 1]
+            a = ax[i, k + 2]
             if pct is None:
                 a.text(0.5, 0.5, f"no {names[m]} % model\n(states only)", ha="center", va="center", transform=a.transAxes)
                 a.set_title(f"{names[m]}: {G.PARTS[k]} %", fontsize=10)
@@ -84,7 +122,7 @@ def overview(date, labelled, area, river, buf):
             a.contour(river.astype(float), levels=[0.5], colors="black", linewidths=0.4)
             a.set_title(f"{names[m]} from VIIRS: {G.PARTS[k]} %\nmean on {R.AREA} {np.nanmean(img):.1f} %", fontsize=10)
             fig.colorbar(im, ax=a, orientation="horizontal", fraction=0.04, pad=0.02)
-        a = ax[i, 5]
+        a = ax[i, 6]
         if st is not None:
             s = np.where(area, st, 0)
             a.imshow(s, cmap=STATE_CMAP, vmin=-0.5, vmax=4.5, interpolation="nearest")
@@ -127,15 +165,27 @@ def zoom(date, labelled, area, river, buf, size=5):
         else:
             ref = G.aggregate(date)["parts"]
 
-    fig = plt.figure(figsize=(21, 9.5), constrained_layout=True)
-    gs = fig.add_gridspec(1, 3, width_ratios=[1.0, 1.0, 1.2])
+    fig = plt.figure(figsize=(26, 9.5), constrained_layout=True)
+    gs = fig.add_gridspec(1, 4, width_ratios=[1.0, 1.0, 1.0, 1.2])
     ax0 = fig.add_subplot(gs[0, 0])
     ax0.imshow(rgb, interpolation="nearest")
     ax0.set_xticks(np.arange(-0.5, size, 1), minor=True); ax0.set_yticks(np.arange(-0.5, size, 1), minor=True)
     ax0.grid(which="minor", color="white", lw=1.5)
     ax0.tick_params(which="both", bottom=False, left=False, labelbottom=False, labelleft=False)
     ax0.set_title(f"VIIRS 375 m (I2/I2/I1), {size} x {size} pixels: the model input", fontsize=10)
-    ax1 = fig.add_subplot(gs[0, 1])
+    axl = fig.add_subplot(gs[0, 1])
+    ext, gtv = viirs_extent(date)
+    sub_ext = [gtv[0] + q0 * gtv[1], gtv[0] + (q0 + size) * gtv[1], gtv[3] + (r0 + size) * gtv[5], gtv[3] + r0 * gtv[5]]
+    ls = landsat_tc(date)
+    if ls is not None:
+        axl.imshow(ls[0], extent=ls[1], interpolation="nearest")
+        for k in range(size + 1):
+            axl.axvline(gtv[0] + (q0 + k) * gtv[1], color="white", lw=1.2)
+            axl.axhline(gtv[3] + (r0 + k) * gtv[5], color="white", lw=1.2)
+        axl.set_xlim(sub_ext[0], sub_ext[1]); axl.set_ylim(sub_ext[2], sub_ext[3]); axl.set_aspect("equal")
+    axl.set_xticks([]); axl.set_yticks([])
+    axl.set_title("Landsat 30 m true colour, same 5 x 5 VIIRS pixels (white grid)", fontsize=10)
+    ax1 = fig.add_subplot(gs[0, 2])
     sub = np.where(area[r0:r0 + size, q0:q0 + size], st_rf[r0:r0 + size, q0:q0 + size], 0)
     ax1.imshow(sub, cmap=STATE_CMAP, vmin=-0.5, vmax=4.5, interpolation="nearest")
     ax1.set_xticks(np.arange(-0.5, size, 1), minor=True); ax1.set_yticks(np.arange(-0.5, size, 1), minor=True)
@@ -154,7 +204,7 @@ def zoom(date, labelled, area, river, buf, size=5):
                      bbox=dict(boxstyle="round,pad=0.2", fc="white", ec="0.4", alpha=1.0))
     ax1.set_title("RF from VIIRS: predicted state (colour) and predicted % per pixel\n"
                   "R = river mask, B = buffer; W/I/S/L = open water / ice / snow / snow-free land %", fontsize=10)
-    axb = fig.add_subplot(gs[0, 2])
+    axb = fig.add_subplot(gs[0, 3])
     ex = [c for c in [(r0 + i) * wv + (q0 + j) for i in range(size) for j in range(size)] if ok[c] and river.ravel()[c]]
     ex = sorted(ex, key=lambda c: -np.sort(p[c])[-2])[:3]
     bars = []
