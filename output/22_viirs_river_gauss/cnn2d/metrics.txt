@@ -1,0 +1,22 @@
+=== 2D CNN: leave-one-date-out, 9565 river + buffer cells
+--- rule50: accuracy 0.807   macro F1 0.630
+state                                     F1  prec   rec   true   pred
+ice_free_river_snow_free_land           0.89  0.94  0.84   3911   3485
+ice_free_river_snow_covered_land        0.12  0.18  0.09    169     87
+ice_covered_river_snow_free_land        0.65  0.61  0.70   2192   2521
+ice_covered_river_snow_covered_land     0.85  0.83  0.88   3293   3472
+confusion (rows true 1-4, columns predicted 1-4): [[3277, 9, 597, 28], [35, 16, 46, 72], [139, 30, 1540, 483], [34, 32, 338, 2889]]
+--- rule90: accuracy 0.880   macro F1 0.674
+state                                     F1  prec   rec   true   pred
+ice_free_river_snow_free_land           0.93  0.93  0.92   3301   3285
+ice_free_river_snow_covered_land        0.14  0.15  0.13    174    145
+ice_covered_river_snow_free_land        0.72  0.68  0.76   1214   1353
+ice_covered_river_snow_covered_land     0.92  0.92  0.91   4876   4782
+confusion (rows true 1-4, columns predicted 1-4): [[3050, 43, 142, 66], [102, 22, 13, 37], [33, 1, 922, 258], [100, 79, 276, 4421]]
+date         cells  rule50 acc  rule90 acc
+2023-05-05    1585       0.801       0.974
+2023-07-24    1632       0.972       0.917
+2023-10-04    1567       0.660       0.701
+2024-04-21    1634       0.631       0.766
+2024-06-22    1635       0.999       0.958
+2026-03-26    1512       0.772       0.964

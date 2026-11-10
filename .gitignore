@@ -18,3 +18,7 @@ __pycache__/
 *.cpg
 output/dem/
 output/**/*.qml
+
+# reports and decks are kept in deliverables/
+!deliverables/**/*.docx
+!deliverables/**/*.pptx
