@@ -44,7 +44,7 @@ import viirs_river_states as R
 
 gdal.UseExceptions()
 OUT = R.OUT / "predict"
-RUN18 = U.HERE / "output" / "18_viirs_states"
+RUN18 = (R.OUT / "pct_models") if R.GAUSS else U.HERE / "output" / "18_viirs_states"   # % models matching the labels
 MODELS = (("rf", "RF"), ("unetpp", "UNet++"), ("cnn2d", "2D CNN"))
 NAMES = {"truth": "Landsat truth", "rf": "RF", "unetpp": "UNet++", "cnn2d": "2D CNN"}
 AREAS = (("river", R.AREA), ("box", "whole VIIRS image"))

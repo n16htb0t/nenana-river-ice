@@ -59,7 +59,8 @@ import rf_viirs_unmix as U
 
 gdal.UseExceptions()
 
-OUT = U.HERE / "output" / "18_viirs_states"
+OUT = U.HERE / "output" / ("22_viirs_river_gauss/pct_models" if os.environ.get("RIVER_LABELS", "box") == "psf"
+                           else "18_viirs_states")          # run 22: % models on Gaussian labels
 PARTS = ["open_river", "ice", "snow", "snow_free_land"]
 STATES = ["ice_free_river_snow_free_land", "ice_free_river_snow_covered_land",
           "ice_covered_river_snow_free_land", "ice_covered_river_snow_covered_land"]

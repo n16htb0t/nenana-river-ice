@@ -1,0 +1,23 @@
+=== UNet++: leave-one-date-out, 58466 cells
+part MAE (percentage points) / R2: open_river 1.1 / 0.80, ice 1.3 / 0.78, snow 10.4 / 0.75, snow_free_land 10.8 / 0.76
+--- rule50: state accuracy 0.714   macro F1 0.541
+state                                     F1  prec   rec   true   pred
+ice_free_river_snow_free_land           0.78  0.68  0.91  20676  27703
+ice_free_river_snow_covered_land        0.04  0.03  0.12    229   1103
+ice_covered_river_snow_free_land        0.52  0.71  0.41  19692  11429
+ice_covered_river_snow_covered_land     0.82  0.81  0.83  17869  18231
+confusion (rows true 1-4, columns predicted 1-4): [[18771, 527, 919, 459], [19, 28, 46, 136], [8617, 174, 8117, 2784], [296, 374, 2347, 14852]]
+--- rule90: state accuracy 0.763   macro F1 0.586
+state                                     F1  prec   rec   true   pred
+ice_free_river_snow_free_land           0.68  0.99  0.52  19901  10401
+ice_free_river_snow_covered_land        0.17  0.17  0.17    345    362
+ice_covered_river_snow_free_land        0.61  0.52  0.73  11322  16115
+ice_covered_river_snow_covered_land     0.89  0.82  0.97  26898  31588
+confusion (rows true 1-4, columns predicted 1-4): [[10288, 267, 6898, 2448], [86, 60, 15, 184], [17, 14, 8310, 2981], [10, 21, 892, 25975]]
+date         acc50 acc90   open_river t/p %          ice t/p %         snow t/p %   snow_free_ t/p %
+2023-05-05    0.79  0.98        0.2/0.2            3.9/3.2           70.1/65.0          25.8/31.6   
+2023-07-24    0.83  0.08        4.0/4.3            0.0/1.4            0.4/11.1          95.6/83.2   
+2023-10-04    0.09  0.80        1.8/0.8            1.9/0.5            6.0/10.4          90.3/88.3   
+2024-04-21    0.76  0.82        0.4/0.8            3.6/2.5           34.8/31.8          61.2/65.0   
+2024-06-22    1.00  0.96        4.0/3.2            0.0/0.1            0.3/0.2           95.7/96.4   
+2026-03-26    0.82  0.96        0.0/0.1            4.2/4.2           64.0/73.8          31.8/21.9   

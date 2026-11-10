@@ -78,7 +78,7 @@ def overview(a, date):
     ax[0].contour(on_30m(a["idx"], river).astype(float), levels=[0.5], colors="yellow", linewidths=0.8)
     ax[0].contour(on_30m(a["idx"], river | buf).astype(float), levels=[0.5], colors="orange", linewidths=0.8,
                   linestyles="--")
-    ax[0].set_title(f"Run 16 Landsat 30 m map, {date}\n(the classified labels, before aggregation)", fontsize=10)
+    ax[0].set_title(f"Run 16 Landsat 30 m map, {date}\n(run 16 RF prediction, not ground truth)", fontsize=10)
     cat = np.zeros(hv * wv, np.uint8)
     cat[area19 & used] = 1; cat[area19 & ~used] = 2
     cat[river.ravel() & used] = 3; cat[river.ravel() & ~used] = 4
@@ -107,7 +107,7 @@ def overview(a, date):
                   Line2D([], [], color="orange", lw=1.5, ls="--", label="+ 1 px buffer: run 19"),
                   Line2D([], [], color="black", lw=1, label="river mask outline on the % maps")],
                loc="outside lower center", ncol=9, fontsize=9, frameon=False)
-    fig.suptitle(f"Runs 19-20 labels, {date}: run 16 30 m map -> counts per VIIRS pixel -> 4 part %  "
+    fig.suptitle(f"Runs 19-20 labels, {date}: run 16 30 m prediction -> counts per VIIRS pixel -> 4 part %  "
                  f"(open water = river, snow-free land = forest + shrub + bare; Landsat moved by the run 17 shift "
                  f"{a['shift']} Landsat px)", fontsize=12)
     f = OUT / f"aggregation_{date}_overview.png"
@@ -150,7 +150,7 @@ def zoom(a, date, size=5, river_only=True, run_label="Runs 19-20", out=None):
         ok = a["share"][c] >= MIN_VALID
         ax0.text(xx.mean(), yy.mean(), txt, ha="center", va="center", fontsize=7.2, family="monospace",
                  bbox=dict(boxstyle="round,pad=0.2", fc="white" if ok else "#ffd6d6", ec="0.4", alpha=1.0))
-    ax0.set_title(f"{size} x {size} VIIRS pixels (black grid) over the 30 m run 16 map\n"
+    ax0.set_title(f"{size} x {size} VIIRS pixels (black grid) over the 30 m run 16 prediction map\n"
                   "R = river mask, B = buffer, - = outside; W/I/S/L = open water / ice / snow / snow-free land %",
                   fontsize=10)
     ax0.set_xticks([]); ax0.set_yticks([])
