@@ -6,7 +6,8 @@
   "2024-06-22"
  ],
  "models": [
-  "RF"
+  "RF",
+  "UNet++"
  ],
  "summary": [
   [
@@ -24,6 +25,22 @@
    "0.612",
    "0.771",
    "0.601"
+  ],
+  [
+   "UNet++ (VIIRS), rule labels",
+   "72,989",
+   "0.828",
+   "0.660",
+   "0.754",
+   "0.620"
+  ],
+  [
+   "UNet++ (VIIRS), original labels",
+   "82,721",
+   "0.728",
+   "0.502",
+   "0.613",
+   "0.503"
   ],
   [
    "Run 16 RF (Landsat), rule labels, same dates",
@@ -47,92 +64,113 @@
    "2023-07-24",
    "summer",
    "25,502",
-   "1.000 / 0.86"
+   "1.000 / 0.86",
+   "1.000 / 0.52"
   ],
   [
    "2023-10-04",
    "autumn freeze-up",
    "7,250",
-   "0.738 / 0.52"
+   "0.738 / 0.52",
+   "0.696 / 0.53"
   ],
   [
    "2024-04-21",
    "spring break-up",
    "2,297",
-   "0.715 / 0.47"
+   "0.715 / 0.47",
+   "0.623 / 0.34"
   ],
   [
    "2024-06-22",
    "summer",
    "37,940",
-   "0.994 / 1.00"
+   "0.994 / 1.00",
+   "0.750 / 0.82"
   ]
  ],
  "per_class": [
   [
    "river",
    "0.98",
+   "0.98",
    "0.99"
   ],
   [
    "ice",
    "0.65",
+   "0.52",
    "0.90"
   ],
   [
    "snow",
    "0.04",
+   "0.01",
    "0.57"
   ],
   [
    "forest",
    "0.98",
+   "0.71",
    "0.99"
   ],
   [
    "shrub_grass_wetland",
    "0.97",
+   "0.90",
    "0.98"
   ],
   [
    "bare_developed",
    "0.94",
+   "0.59",
    "0.99"
   ]
  ],
  "conf": {
-  "RF": "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/conf.png"
+  "RF": "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/conf.png",
+  "UNet++": "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/unetpp/images/conf.png"
  },
  "images": {
   "2023-04-19": [
-   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2023-04-19.jpg"
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2023-04-19.jpg",
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/unetpp/images/pred_2023-04-19.jpg"
   ],
   "2023-05-05": [
-   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2023-05-05.jpg"
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2023-05-05.jpg",
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/unetpp/images/pred_2023-05-05.jpg"
   ],
   "2023-07-24": [
-   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2023-07-24.jpg"
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2023-07-24.jpg",
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/unetpp/images/pred_2023-07-24.jpg"
   ],
   "2023-10-04": [
-   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2023-10-04.jpg"
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2023-10-04.jpg",
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/unetpp/images/pred_2023-10-04.jpg"
   ],
   "2024-04-21": [
-   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2024-04-21.jpg"
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2024-04-21.jpg",
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/unetpp/images/pred_2024-04-21.jpg"
   ],
   "2024-06-22": [
-   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2024-06-22.jpg"
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2024-06-22.jpg",
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/unetpp/images/pred_2024-06-22.jpg"
   ],
   "2024-09-02": [
-   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2024-09-02.jpg"
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2024-09-02.jpg",
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/unetpp/images/pred_2024-09-02.jpg"
   ],
   "2025-07-04": [
-   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2025-07-04.jpg"
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2025-07-04.jpg",
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/unetpp/images/pred_2025-07-04.jpg"
   ],
   "2026-03-26": [
-   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2026-03-26.jpg"
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2026-03-26.jpg",
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/unetpp/images/pred_2026-03-26.jpg"
   ],
   "2026-08-01": [
-   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2026-08-01.jpg"
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/random_forest/images/pred_2026-08-01.jpg",
+   "/home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/unetpp/images/pred_2026-08-01.jpg"
   ]
  }
 }

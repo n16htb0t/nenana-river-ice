@@ -1,1 +1,8 @@
 labelled dates ['2023-07-24', '2023-10-04', '2024-04-21', '2024-06-22'] inputs 46
+  fold 1/5 done
+  fold 2/5 done
+  fold 3/5 done
+  fold 4/5 done
+  fold 5/5 done
+rule labels: acc 0.828 F1 0.620 | original: acc 0.728 F1 0.503
+wrote /home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16/2_with_daksh/unetpp
