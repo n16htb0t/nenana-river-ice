@@ -1,4 +1,4 @@
-# code + small results only: big rasters, arrays, images and documents stay local
+# code, small results and images; big rasters, arrays and documents stay local
 __pycache__/
 *.pyc
 *.tif
@@ -6,9 +6,6 @@ __pycache__/
 *.npz
 *.npy
 *.pt
-*.jpg
-*.jpeg
-*.png
 *.docx
 *.pptx
 *.pdf

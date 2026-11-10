@@ -1,0 +1,22 @@
+=== UNet++: leave-one-date-out, 9565 river + buffer cells
+--- rule50: accuracy 0.740   macro F1 0.569
+state                                     F1  prec   rec   true   pred
+ice_free_river_snow_free_land           0.83  0.89  0.78   3911   3402
+ice_free_river_snow_covered_land        0.12  0.20  0.08    169     71
+ice_covered_river_snow_free_land        0.55  0.57  0.53   2192   2015
+ice_covered_river_snow_covered_land     0.78  0.71  0.87   3293   4077
+confusion (rows true 1-4, columns predicted 1-4): [[3032, 31, 548, 300], [57, 14, 27, 71], [194, 13, 1157, 828], [119, 13, 283, 2878]]
+--- rule90: accuracy 0.757   macro F1 0.459
+state                                     F1  prec   rec   true   pred
+ice_free_river_snow_free_land           0.83  0.80  0.87   3301   3595
+ice_free_river_snow_covered_land        0.02  0.02  0.01    174     82
+ice_covered_river_snow_free_land        0.16  0.26  0.12   1214    535
+ice_covered_river_snow_covered_land     0.83  0.79  0.87   4876   5353
+confusion (rows true 1-4, columns predicted 1-4): [[2873, 28, 179, 221], [124, 2, 7, 41], [177, 25, 141, 871], [421, 27, 208, 4220]]
+date         cells  rule50 acc  rule90 acc
+2023-05-05    1585       0.742       0.854
+2023-07-24    1632       0.847       0.864
+2023-10-04    1567       0.471       0.285
+2024-04-21    1634       0.619       0.670
+2024-06-22    1635       0.943       0.881
+2026-03-26    1512       0.814       0.987

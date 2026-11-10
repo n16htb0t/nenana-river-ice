@@ -50,6 +50,7 @@ Outputs: output/18_viirs_states/
 """
 
 import json
+import os
 import numpy as np
 from osgeo import gdal
 from scipy.ndimage import uniform_filter
@@ -93,7 +94,12 @@ def load_day(date, shift, cache):
     cls, gt_f, v, gt_v, ds_v, _, source = U.load_date(date, cache)
     hv, wv = v.shape[1:]
     n = hv * wv
-    w, mapped = U.weights(cls, gt_f, gt_v, (hv, wv), tuple(shift), "box")
+    if os.environ.get("RIVER_LABELS", "box") == "psf":      # run 22: run 17's Gaussian footprint shares
+        if ("blur", date) not in cache:
+            cache[("blur", date)] = U.blur(cls, gt_f)[0]
+        w, mapped = U.weights(cls, gt_f, gt_v, (hv, wv), tuple(shift), "psf", cache[("blur", date)])
+    else:                                                  # runs 18-20: box counts
+        w, mapped = U.weights(cls, gt_f, gt_v, (hv, wv), tuple(shift), "box")
     pct = np.stack([w[:, 0], w[:, 1], w[:, 2], w[:, 3:].sum(1)], 1)          # (n, 4) fractions
     idx = cell_index(cls.shape, gt_f, gt_v, (hv, wv), tuple(shift))
     if "jrc" not in cache:

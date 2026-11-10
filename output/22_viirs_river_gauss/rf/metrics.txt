@@ -1,0 +1,22 @@
+=== Random Forest: leave-one-date-out, 9565 river + buffer cells
+--- rule50: accuracy 0.771   macro F1 0.619
+state                                     F1  prec   rec   true   pred
+ice_free_river_snow_free_land           0.85  0.86  0.84   3911   3806
+ice_free_river_snow_covered_land        0.17  0.12  0.32    169    468
+ice_covered_river_snow_free_land        0.60  0.58  0.62   2192   2330
+ice_covered_river_snow_covered_land     0.85  0.90  0.81   3293   2961
+confusion (rows true 1-4, columns predicted 1-4): [[3289, 23, 572, 27], [17, 54, 83, 15], [419, 164, 1360, 249], [81, 227, 315, 2670]]
+--- rule90: accuracy 0.860   macro F1 0.671
+state                                     F1  prec   rec   true   pred
+ice_free_river_snow_free_land           0.88  0.93  0.83   3301   2924
+ice_free_river_snow_covered_land        0.17  0.11  0.36    174    553
+ice_covered_river_snow_free_land        0.70  0.80  0.63   1214    953
+ice_covered_river_snow_covered_land     0.93  0.91  0.96   4876   5135
+confusion (rows true 1-4, columns predicted 1-4): [[2727, 408, 99, 67], [60, 63, 6, 45], [76, 32, 760, 346], [61, 50, 88, 4677]]
+date         cells  rule50 acc  rule90 acc
+2023-05-05    1585       0.761       0.974
+2023-07-24    1632       0.972       0.739
+2023-10-04    1567       0.646       0.675
+2024-04-21    1634       0.389       0.827
+2024-06-22    1635       0.998       0.962
+2026-03-26    1512       0.861       0.989

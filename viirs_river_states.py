@@ -54,9 +54,11 @@ gdal.UseExceptions()
 MASK_FILE = Path.home() / "Desktop" / "nenana_crops" / "alaska_occ_375m.tif"
 RIVER_CUT = 0.05
 BUFFER_CELLS = int(os.environ.get("RIVER_BUFFER", "1"))     # 1 = run 19 (river + 1 px buffer), 0 = run 20 (river only)
-RUN = "19" if BUFFER_CELLS else "20"
+GAUSS = os.environ.get("RIVER_LABELS", "box") == "psf"       # run 22: labels from run 17's Gaussian shares
+RUN = "22" if GAUSS else ("19" if BUFFER_CELLS else "20")
 AREA = "river + buffer" if BUFFER_CELLS else "river only"
-OUT = U.HERE / "output" / ("19_viirs_river_states" if BUFFER_CELLS else "20_viirs_river_only")
+OUT = U.HERE / "output" / ("22_viirs_river_gauss" if GAUSS else
+                           ("19_viirs_river_states" if BUFFER_CELLS else "20_viirs_river_only"))
 RULES = list(V.RULES)
 SEED = 0
 GREY = "#9a9a9a"
