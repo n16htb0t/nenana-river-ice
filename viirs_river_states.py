@@ -177,7 +177,7 @@ def predict_unet(model, day):
 
 def viirs_rgb(date):
     v = gdal.Open(str(U.PATCHES / f"nenana_{date.replace('-', '')}" / f"{date}_viirs_375m.tif")).ReadAsArray()
-    rgb = np.stack([v[2], v[1], v[0]], -1).astype(np.float32)
+    rgb = np.stack([v[1], v[1], v[0]], -1).astype(np.float32)          # display bands I2 / I2 / I1
     ok = np.isfinite(rgb).all(-1)
     lo, hi = np.nanpercentile(rgb[ok], [2, 98], axis=0)
     rgb = np.clip((rgb - lo) / np.maximum(hi - lo, 1e-6), 0, 1)

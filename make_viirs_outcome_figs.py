@@ -71,7 +71,7 @@ def overview(date, labelled, area, river, buf):
         a0.contour(river.astype(float), levels=[0.5], colors="yellow", linewidths=0.6)
         if buf.any():
             a0.contour((river | buf).astype(float), levels=[0.5], colors="orange", linewidths=0.6, linestyles="--")
-        a0.set_title(f"VIIRS 375 m (I3/I2/I1) - model input\n{names[m]} row", fontsize=10)
+        a0.set_title(f"VIIRS 375 m (I2/I2/I1) - model input\n{names[m]} row", fontsize=10)
         for k in range(4):
             a = ax[i, k + 1]
             if pct is None:
@@ -134,7 +134,7 @@ def zoom(date, labelled, area, river, buf, size=5):
     ax0.set_xticks(np.arange(-0.5, size, 1), minor=True); ax0.set_yticks(np.arange(-0.5, size, 1), minor=True)
     ax0.grid(which="minor", color="white", lw=1.5)
     ax0.tick_params(which="both", bottom=False, left=False, labelbottom=False, labelleft=False)
-    ax0.set_title(f"VIIRS 375 m (I3/I2/I1), {size} x {size} pixels: the model input", fontsize=10)
+    ax0.set_title(f"VIIRS 375 m (I2/I2/I1), {size} x {size} pixels: the model input", fontsize=10)
     ax1 = fig.add_subplot(gs[0, 1])
     sub = np.where(area[r0:r0 + size, q0:q0 + size], st_rf[r0:r0 + size, q0:q0 + size], 0)
     ax1.imshow(sub, cmap=STATE_CMAP, vmin=-0.5, vmax=4.5, interpolation="nearest")
