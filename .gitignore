@@ -1,10 +1,6 @@
-# code, small results and images; big rasters, arrays and documents stay local
+# everything except model weights (*.pt, ~100 MB each) and caches
 __pycache__/
 *.pyc
-*.tif
-*.tif.aux.xml
-*.npz
-*.npy
 *.pt
 *.docx
 *.pptx
@@ -17,7 +13,6 @@ __pycache__/
 *.prj
 *.cpg
 output/dem/
-output/**/*.qml
 
 # reports and decks are kept in deliverables/
 !deliverables/**/*.docx

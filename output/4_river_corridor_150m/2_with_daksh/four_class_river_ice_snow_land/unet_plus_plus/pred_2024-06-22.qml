@@ -1,0 +1,8 @@
+<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<qgis version="3.34" styleCategories="Symbology"><pipe>
+  <rasterrenderer type="paletted" band="1" opacity="1"><colorPalette>
+    <paletteEntry value="1" color="#0066ff" alpha="255" label="1 river"/>
+    <paletteEntry value="2" color="#ff00ff" alpha="255" label="2 ice"/>
+    <paletteEntry value="3" color="#00ffff" alpha="255" label="3 snow"/>
+    <paletteEntry value="4" color="#8b4513" alpha="255" label="4 land"/>
+  </colorPalette></rasterrenderer></pipe></qgis>
