@@ -1,0 +1,20 @@
+2023-04-19 inputs 46
+2023-05-05 inputs 46
+2023-07-24 inputs 46
+2023-10-04 inputs 46
+2024-04-21 inputs 46
+2024-06-22 inputs 46
+2024-09-02 inputs 46
+2025-07-04 inputs 46
+2026-03-26 inputs 46
+2026-08-01 inputs 46
+
+=== with_daksh: 46 inputs, top 25, dates ['2023-07-24', '2023-10-04', '2024-04-21', '2024-06-22'], 82,721 labelled px
+  fold 1/5 done
+  fold 2/5 done
+  fold 3/5 done
+  fold 4/5 done
+  fold 5/5 done
+rule labels: acc 0.962 F1 0.761 | original: acc 0.845 F1 0.601
+run 16 (Landsat) on the same dates: rule acc 0.985 F1 0.904; original acc 0.864 F1 0.675
+wrote /home/nia/Desktop/nenana_crops/daksh/output/21_viirs_run16

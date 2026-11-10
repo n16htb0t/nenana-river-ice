@@ -1,0 +1,16 @@
+2023-05-05 valid px 1612648 inputs 29
+2023-07-24 valid px 1623555 inputs 29
+2023-10-04 valid px 1614589 inputs 29
+2024-04-21 valid px 1623259 inputs 29
+2024-06-22 valid px 1625830 inputs 29
+2026-03-26 valid px 1618111 inputs 29
+2023-04-19 valid px 1624806 inputs 29
+2024-09-02 valid px 1613678 inputs 29
+2025-07-04 valid px 1622562 inputs 29
+2026-08-01 valid px 1623533 inputs 29
+hand-labelled px: {'2023-07-24': 31028, '2023-10-04': 7902, '2024-04-21': 3060, '2024-06-22': 40877}
+rf     2023-05-05  acc 0.734  F1 0.361  375m acc50 0.782
+rf     2023-07-24  acc 0.942  F1 0.794  375m acc50 0.960
+rf     2023-10-04  acc 0.912  F1 0.717  375m acc50 0.063
+/usr/lib/python3.14/multiprocessing/resource_tracker.py:396: UserWarning: resource_tracker: There appear to be 2 leaked semaphore objects to clean up at shutdown: {'/loky-119353-uypgq006', '/loky-119353-3qmozpqj'}
+  warnings.warn(
