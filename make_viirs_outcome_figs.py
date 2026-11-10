@@ -50,7 +50,7 @@ def predicted(date, labelled):
     out = {}
     for m, _ in MODELS:
         if labelled:
-            pct = read(PCT_LODO / m / f"pct_{date}.tif")
+            pct = read((R.OUT / "pct_models" / m if m == "cnn2d" else PCT_LODO / m) / f"pct_{date}.tif")
             st = read(R.OUT / m / "rule50" / f"class_{date}.tif")
         else:
             pct = read(R.OUT / "predict" / m / f"pct_{date}.tif")
