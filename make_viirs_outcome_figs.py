@@ -103,6 +103,35 @@ def hand_panel(a, date, river, buf, ext):
     a.set_title(f"Ground truth: hand labels on Landsat\n{int((yh != 255).sum()):,} labelled 30 m px", fontsize=10)
 
 
+def run16_panel(a, date, river, buf, ext, sub_ext=None, grid=None):
+    """Run 16 Landsat 30 m map (ground truth on days without hand labels; the label source of runs 17-22)."""
+    import viirs_30m as M30
+    f = M30.run16_map(date)
+    if f is None:
+        a.set_title("no run 16 map", fontsize=10); a.set_xticks([]); a.set_yticks([]); return
+    ds = gdal.Open(str(f)); gt = ds.GetGeoTransform()
+    e = [gt[0], gt[0] + ds.RasterXSize * gt[1], gt[3] + ds.RasterYSize * gt[5], gt[3]]
+    a.imshow(ds.ReadAsArray(), cmap=ListedColormap(["#ffffff"] + G.COLOURS), vmin=-0.5, vmax=6.5,
+             extent=e, interpolation="nearest")
+    if grid is None:
+        hv, wv = river.shape
+        xs = ext[0] + (np.arange(wv) + 0.5) * (ext[1] - ext[0]) / wv
+        ys = ext[3] - (np.arange(hv) + 0.5) * (ext[3] - ext[2]) / hv
+        a.contour(xs, ys, river.astype(float), levels=[0.5], colors="yellow", linewidths=0.6)
+        if buf.any():
+            a.contour(xs, ys, (river | buf).astype(float), levels=[0.5], colors="orange", linewidths=0.6, linestyles="--")
+        a.set_xlim(ext[0], ext[1]); a.set_ylim(ext[2], ext[3])
+    else:
+        gtv, r0, q0, size = grid
+        for k in range(size + 1):
+            a.axvline(gtv[0] + (q0 + k) * gtv[1], color="black", lw=1.0)
+            a.axhline(gtv[3] + (r0 + k) * gtv[5], color="black", lw=1.0)
+        a.set_xlim(sub_ext[0], sub_ext[1]); a.set_ylim(sub_ext[2], sub_ext[3])
+    a.set_aspect("equal"); a.set_xticks([]); a.set_yticks([])
+    a.set_title("Ground truth: run 16 Landsat 30 m map" + ("" if hand_labels().get(date) is not None
+                                                            else "\n(no hand labels this day)"), fontsize=10)
+
+
 def labelled_dates():
     return [d for d in U.viirs_dates()
             if (U.RUN16 / f"pred_{d}.tif").exists() or (U.RUN16 / "new_dates" / d / "rf_pred.tif").exists()]
@@ -130,7 +159,7 @@ def overview(date, labelled, area, river, buf):
     pred = predicted(date, labelled)
     rows = [m for m, _ in MODELS if pred[m][0] is not None or pred[m][1] is not None]
     names = dict(MODELS)
-    fig, ax = plt.subplots(len(rows), 8, figsize=(29, 6.6 * len(rows)), constrained_layout=True, squeeze=False)
+    fig, ax = plt.subplots(len(rows), 9, figsize=(32.5, 6.6 * len(rows)), constrained_layout=True, squeeze=False)
     ext, _ = viirs_extent(date)
     for i, m in enumerate(rows):
         pct, st = pred[m]
@@ -141,9 +170,10 @@ def overview(date, labelled, area, river, buf):
             a0.contour((river | buf).astype(float), levels=[0.5], colors="orange", linewidths=0.6, linestyles="--")
         a0.set_title(f"VIIRS 375 m (I2/I2/I1) - model input\n{names[m]} row", fontsize=10)
         landsat_panel(ax[i, 1], date, river, buf, ext, "Landsat 30 m true colour (B4/B3/B2)\nsame day, for checking")
-        hand_panel(ax[i, 2], date, river, buf, ext)
+        run16_panel(ax[i, 2], date, river, buf, ext)
+        hand_panel(ax[i, 3], date, river, buf, ext)
         for k in range(4):
-            a = ax[i, k + 3]
+            a = ax[i, k + 4]
             if pct is None:
                 a.text(0.5, 0.5, f"no {names[m]} % model\n(states only)", ha="center", va="center", transform=a.transAxes)
                 a.set_title(f"{names[m]}: {G.PARTS[k]} %", fontsize=10)
@@ -154,7 +184,7 @@ def overview(date, labelled, area, river, buf):
             a.contour(river.astype(float), levels=[0.5], colors="black", linewidths=0.4)
             a.set_title(f"{names[m]} from VIIRS: {G.PARTS[k]} %\nmean on {R.AREA} {np.nanmean(img):.1f} %", fontsize=10)
             fig.colorbar(im, ax=a, orientation="horizontal", fraction=0.04, pad=0.02)
-        a = ax[i, 7]
+        a = ax[i, 8]
         if st is not None:
             s = np.where(area, st, 0)
             a.imshow(s, cmap=STATE_CMAP, vmin=-0.5, vmax=4.5, interpolation="nearest")
@@ -198,8 +228,8 @@ def zoom(date, labelled, area, river, buf, size=5):
         else:
             ref = G.aggregate(date)["parts"]
 
-    fig = plt.figure(figsize=(31, 9.5), constrained_layout=True)
-    gs = fig.add_gridspec(1, 5, width_ratios=[1.0, 1.0, 1.0, 1.0, 1.2])
+    fig = plt.figure(figsize=(36, 9.5), constrained_layout=True)
+    gs = fig.add_gridspec(1, 6, width_ratios=[1.0, 1.0, 1.0, 1.0, 1.0, 1.2])
     ax0 = fig.add_subplot(gs[0, 0])
     ax0.imshow(rgb, interpolation="nearest")
     ax0.set_xticks(np.arange(-0.5, size, 1), minor=True); ax0.set_yticks(np.arange(-0.5, size, 1), minor=True)
@@ -218,7 +248,8 @@ def zoom(date, labelled, area, river, buf, size=5):
         axl.set_xlim(sub_ext[0], sub_ext[1]); axl.set_ylim(sub_ext[2], sub_ext[3]); axl.set_aspect("equal")
     axl.set_xticks([]); axl.set_yticks([])
     axl.set_title("Landsat 30 m true colour, same 5 x 5 VIIRS pixels (white grid)", fontsize=10)
-    axh = fig.add_subplot(gs[0, 2])
+    run16_panel(fig.add_subplot(gs[0, 2]), date, river, buf, ext, sub_ext, (gtv, r0, q0, size))
+    axh = fig.add_subplot(gs[0, 3])
     yh = hand_labels().get(date)
     if ls is not None and yh is not None:
         import viirs_30m as M30
@@ -227,12 +258,12 @@ def zoom(date, labelled, area, river, buf, size=5):
             axh.axvline(gtv[0] + (q0 + k) * gtv[1], color="black", lw=1.0)
             axh.axhline(gtv[3] + (r0 + k) * gtv[5], color="black", lw=1.0)
         axh.set_xlim(sub_ext[0], sub_ext[1]); axh.set_ylim(sub_ext[2], sub_ext[3]); axh.set_aspect("equal")
-        axh.set_title("Ground truth: hand labels in these 5 x 5 VIIRS pixels", fontsize=10)
+        axh.set_title("Ground truth: hand labels in these 5 x 5 VIIRS pixels\n(grey = no hand label here)", fontsize=10)
     else:
         axh.text(0.5, 0.5, "no hand labels this day", ha="center", va="center", transform=axh.transAxes)
         axh.set_title("Ground truth: hand labels", fontsize=10)
     axh.set_xticks([]); axh.set_yticks([])
-    ax1 = fig.add_subplot(gs[0, 3])
+    ax1 = fig.add_subplot(gs[0, 4])
     sub = np.where(area[r0:r0 + size, q0:q0 + size], st_rf[r0:r0 + size, q0:q0 + size], 0)
     ax1.imshow(sub, cmap=STATE_CMAP, vmin=-0.5, vmax=4.5, interpolation="nearest")
     ax1.set_xticks(np.arange(-0.5, size, 1), minor=True); ax1.set_yticks(np.arange(-0.5, size, 1), minor=True)
@@ -251,7 +282,7 @@ def zoom(date, labelled, area, river, buf, size=5):
                      bbox=dict(boxstyle="round,pad=0.2", fc="white", ec="0.4", alpha=1.0))
     ax1.set_title("RF from VIIRS: predicted state (colour) and predicted % per pixel\n"
                   "R = river mask, B = buffer; W/I/S/L = open water / ice / snow / snow-free land %", fontsize=10)
-    axb = fig.add_subplot(gs[0, 4])
+    axb = fig.add_subplot(gs[0, 5])
     ex = [c for c in [(r0 + i) * wv + (q0 + j) for i in range(size) for j in range(size)] if ok[c] and river.ravel()[c]]
     ex = sorted(ex, key=lambda c: -np.sort(p[c])[-2])[:3]
     bars = []
@@ -275,8 +306,9 @@ def zoom(date, labelled, area, river, buf, size=5):
                   + (" vs run 16 reference (hatched)" if ref is not None else ""), fontsize=10)
     axb.legend(handles=[Patch(color=c, label=n) for c, n in zip(G.PART_COLOURS, G.PARTS)], ncol=4, fontsize=8,
                loc="upper center", bbox_to_anchor=(0.5, -0.07))
-    fig.legend(handles=[Patch(fc=c, ec="k", lw=0.3, label=n) for c, n in zip(V.COLOURS, SHORT_STATES)],
-               loc="outside lower center", ncol=4, fontsize=9, frameon=False)
+    fig.legend(handles=[Patch(fc=c, ec="k", lw=0.3, label=n) for c, n in zip(V.COLOURS, SHORT_STATES)]
+               + [Patch(color=c, label=f"run 16 / hand label: {n}") for c, n in zip(G.COLOURS, G.NAMES)],
+               loc="outside lower center", ncol=5, fontsize=9, frameon=False)
     fig.suptitle(f"Run {R.RUN} VIIRS outcome, {date}: 4 parts and 4 states predicted from VIIRS per 375 m pixel",
                  fontsize=13)
     f = OUT / f"viirs_outcome_{date}_zoom.png"
