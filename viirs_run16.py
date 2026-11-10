@@ -201,7 +201,7 @@ def conf_image(out, s, title):
     return f
 
 
-def date_image(out, day30, hand, res, dataset):
+def date_image(out, day30, hand, res, dataset, model_name="RF"):
     date = day30["date"]
     ls = M30.landsat_rgb(date)
     yh = hand.get(date)
@@ -215,7 +215,7 @@ def date_image(out, day30, hand, res, dataset):
         panels.append(("Ground truth: no hand labels this day", "rgb", None if ls is None else 0.45 * ls + 0.5))
     p16 = M30.run16_map(date)
     panels.append(("Run 16 (Landsat) map", "cls", gdal.Open(str(p16)).ReadAsArray() if p16 else None))
-    t = "Run 21 RF from VIIRS at 30 m"
+    t = f"Run 21 {model_name} from VIIRS at 30 m"
     if date in res["per_date"]:
         t += f"\nCV acc vs hand labels {res['per_date'][date]['rule']['accuracy']:.3f} (rule)"
     panels.append((t, "cls", gdal.Open(str(out / f"pred_{date}.tif")).ReadAsArray()))
