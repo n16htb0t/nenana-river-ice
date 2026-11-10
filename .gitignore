@@ -1,0 +1,23 @@
+# code + small results only: big rasters, arrays, images and documents stay local
+__pycache__/
+*.pyc
+*.tif
+*.tif.aux.xml
+*.npz
+*.npy
+*.pt
+*.jpg
+*.jpeg
+*.png
+*.docx
+*.pptx
+*.pdf
+*.zip
+*.gpkg
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+output/dem/
+output/**/*.qml

@@ -1,0 +1,79 @@
+UNet++ — 5-fold spatial CV, all labelled dates
+
+class             n  precision   recall     F1
+not_river    43,825      0.971    0.931  0.951
+river        42,065      0.931    0.971  0.951
+
+overall accuracy 0.951   macro F1 0.951
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river     40,819     3,006
+river          1,231    40,834
+
+--- 2023-07-24
+
+class             n  precision   recall     F1
+not_river         7      0.000    0.000  0.000
+river        31,021      1.000    0.997  0.999
+
+overall accuracy 0.997   macro F1 0.499
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river          0         7
+river             78    30,943
+
+--- 2023-10-04
+
+class             n  precision   recall     F1
+not_river     5,738      0.929    0.894  0.911
+river         2,282      0.757    0.829  0.791
+
+overall accuracy 0.876   macro F1 0.851
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river      5,131       607
+river            390     1,892
+
+--- 2024-03-12
+
+class             n  precision   recall     F1
+not_river       190      0.547    0.216  0.309
+river           342      0.674    0.901  0.771
+
+overall accuracy 0.656   macro F1 0.540
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river         41       149
+river             34       308
+
+--- 2024-04-21
+
+class             n  precision   recall     F1
+not_river       771      0.931    0.909  0.920
+river         2,310      0.970    0.977  0.974
+
+overall accuracy 0.960   macro F1 0.947
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river        701        70
+river             52     2,258
+
+--- 2024-06-22
+
+class             n  precision   recall     F1
+not_river    37,119      0.981    0.941  0.961
+river         6,110      0.714    0.889  0.792
+
+overall accuracy 0.934   macro F1 0.877
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river     34,946     2,173
+river            677     5,433
+
+settings: {'iters': 1500, 'batch': 8, 'lr': 0.001, 'encoder': 'resnet34', 'skip_cv': False, 'task': 'river', 'dataset': 'with_daksh'}

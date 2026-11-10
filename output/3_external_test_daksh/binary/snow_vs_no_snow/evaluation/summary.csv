@@ -1,0 +1,5 @@
+model,dates,class,n_test_px,precision,recall,f1
+Random Forest,all dates,no_snow,40,0.667,0.05,0.093
+Random Forest,all dates,snow,492,0.928,0.998,0.962
+UNet++,all dates,no_snow,40,0.176,0.95,0.297
+UNet++,all dates,snow,492,0.994,0.638,0.777

@@ -1,0 +1,77 @@
+Random Forest — 5-fold spatial CV, all labelled dates
+
+class             n  precision   recall     F1
+not_river    43,635      0.964    0.951  0.957
+river        41,723      0.949    0.963  0.956
+
+overall accuracy 0.957   macro F1 0.957
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river     41,488     2,147
+river          1,559    40,164
+
+--- 2023-07-24
+
+class             n  precision   recall     F1
+not_river         7      0.003    0.143  0.005
+river        31,021      1.000    0.987  0.993
+
+overall accuracy 0.987   macro F1 0.499
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river          1         6
+river            397    30,624
+
+--- 2023-10-04
+
+class             n  precision   recall     F1
+not_river     5,738      0.936    0.917  0.927
+river         2,282      0.802    0.843  0.822
+
+overall accuracy 0.896   macro F1 0.874
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river      5,263       475
+river            359     1,923
+
+--- 2024-04-21
+
+class             n  precision   recall     F1
+not_river       771      0.919    0.812  0.862
+river         2,310      0.940    0.976  0.958
+
+overall accuracy 0.935   macro F1 0.910
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river        626       145
+river             55     2,255
+
+--- 2024-06-22
+
+class             n  precision   recall     F1
+not_river    37,119      0.979    0.959  0.969
+river         6,110      0.779    0.878  0.825
+
+overall accuracy 0.948   macro F1 0.897
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river     35,598     1,521
+river            748     5,362
+
+feature importance (final model)
+  NDWI       0.202
+  SR_B3      0.168
+  SR_B2      0.132
+  NDSI       0.132
+  ST_B10     0.077
+  NDVI       0.074
+  SR_B4      0.061
+  water_occ  0.051
+  SR_B5      0.042
+  SR_B7      0.032
+  SR_B6      0.030

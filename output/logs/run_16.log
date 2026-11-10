@@ -1,0 +1,163 @@
+/home/nia/Desktop/nenana_crops/daksh/rf_all_bands.py:86: RuntimeWarning: divide by zero encountered in divide
+  add("EVI", 2.5 * (N - R) / (N + 6 * R - 7.5 * B + 1))
+/home/nia/Desktop/nenana_crops/daksh/rf_all_bands.py:86: RuntimeWarning: divide by zero encountered in divide
+  add("EVI", 2.5 * (N - R) / (N + 6 * R - 7.5 * B + 1))
+
+=== exclude_daksh: pool 83 inputs, top 25, depth 16, zone JRC >= 5 %
+label changes for the rule (water zone = JRC >= 5 %)
+class                  labelled  in zone  -> ice  dropped
+river                     39991    32251       0     7740
+ice                        1732     1506       0      226
+snow                        564      375     375        0
+forest                    22173       70       0       70
+shrub_grass_wetland       15626       82       0       82
+bare_developed             2726     1616       0     1616
+
+water-zone RF — 5-fold spatial CV, all labelled dates, rule labels
+
+class                       n  precision   recall     F1
+river                  32,251      0.991    0.994  0.992
+ice                     1,881      0.887    0.848  0.867
+snow                      189      0.378    0.931  0.537
+forest                 22,103      0.988    0.983  0.985
+shrub_grass_wetland    15,544      0.984    0.975  0.980
+bare_developed          1,110      0.995    0.986  0.990
+
+overall accuracy 0.982   macro F1 0.892
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                             32,047                 204                   0                   0                   0                   0
+ice                                  286               1,595                   0                   0                   0                   0
+snow                                   0                   0                 176                   4                   6                   3
+forest                                 0                   0                 144              21,719                 238                   2
+shrub_grass_wetland                    0                   0                 130                 260              15,154                   0
+bare_developed                         0                   0                  16                   0                   0               1,094
+
+water-zone RF — 5-fold spatial CV, all labelled dates, original hand labels
+
+class                       n  precision   recall     F1
+river                  39,991      0.940    0.801  0.865
+ice                     1,732      0.683    0.715  0.699
+snow                      564      0.114    0.312  0.167
+forest                 22,173      0.838    0.980  0.903
+shrub_grass_wetland    15,626      0.879    0.970  0.922
+bare_developed          2,726      0.495    0.401  0.443
+
+overall accuracy 0.863   macro F1 0.667
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                             32,047                 204                 877               3,921               1,832               1,110
+ice                                  267               1,239                 204                  13                   8                   1
+snow                                  19                 356                 176                   4                   6                   3
+forest                                70                   0                 144              21,719                 238                   2
+shrub_grass_wetland                   81                   1                 130                 260              15,154                   0
+bare_developed                     1,602                  14                  16                   0                   0               1,094
+wrote /home/nia/Desktop/nenana_crops/daksh/output/16_rf_water_zone/1_exclude_daksh/six_class/random_forest
+
+=== with_daksh: pool 66 inputs, top 25, depth 16, zone JRC >= 5 %
+label changes for the rule (water zone = JRC >= 5 %)
+class                  labelled  in zone  -> ice  dropped
+river                     39991    32251       0     7740
+ice                        2074     1687       0      387
+snow                        714      387     387        0
+forest                    22208       70       0       70
+shrub_grass_wetland       15627       82       0       82
+bare_developed             2726     1616       0     1616
+
+water-zone RF — 5-fold spatial CV, all labelled dates, rule labels
+
+class                       n  precision   recall     F1
+river                  32,251      0.995    0.993  0.994
+ice                     2,074      0.901    0.927  0.913
+snow                      327      0.527    0.951  0.678
+forest                 22,138      0.988    0.982  0.985
+shrub_grass_wetland    15,545      0.984    0.977  0.981
+bare_developed          1,110      0.993    0.986  0.989
+
+overall accuracy 0.984   macro F1 0.923
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                             32,039                 212                   0                   0                   0                   0
+ice                                  152               1,922                   0                   0                   0                   0
+snow                                   0                   0                 311                   4                   7                   5
+forest                                 0                   0                 164              21,732                 240                   2
+shrub_grass_wetland                    0                   0                  99                 257              15,188                   1
+bare_developed                         0                   0                  16                   0                   0               1,094
+
+water-zone RF — 5-fold spatial CV, all labelled dates, original hand labels
+
+class                       n  precision   recall     F1
+river                  39,991      0.944    0.801  0.867
+ice                     2,074      0.716    0.742  0.729
+snow                      714      0.175    0.436  0.249
+forest                 22,208      0.840    0.979  0.904
+shrub_grass_wetland    15,627      0.867    0.972  0.917
+bare_developed          2,726      0.528    0.401  0.456
+
+overall accuracy 0.863   macro F1 0.687
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                             32,039                 212                 829               3,874               2,068                 969
+ice                                  148               1,539                 363                  15                   8                   1
+snow                                   4                 383                 311                   4                   7                   5
+forest                                70                   0                 164              21,732                 240                   2
+shrub_grass_wetland                   81                   1                  99                 257              15,188                   1
+bare_developed                     1,602                  14                  16                   0                   0               1,094
+wrote /home/nia/Desktop/nenana_crops/daksh/output/16_rf_water_zone/2_with_daksh/six_class/random_forest
+
+=== external_daksh: pool 66 inputs, top 25, depth 16, zone JRC >= 5 %
+label changes for the rule (water zone = JRC >= 5 %)
+class                  labelled  in zone  -> ice  dropped
+river                         0        0       0        0
+ice                         342      181       0      161
+snow                        150       12      12        0
+forest                       35        0       0        0
+shrub_grass_wetland           1        0       0        0
+bare_developed                0        0       0        0
+
+external test 2024-03-12, rule labels
+
+class                       n  precision   recall     F1
+river                       0      0.000    0.000  0.000
+ice                       193      1.000    1.000  1.000
+snow                      138      0.793    1.000  0.885
+forest                     35      0.000    0.000  0.000
+shrub_grass_wetland         1      0.000    0.000  0.000
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.902   macro F1 0.471
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                                  0                   0                   0                   0                   0                   0
+ice                                    0                 193                   0                   0                   0                   0
+snow                                   0                   0                 138                   0                   0                   0
+forest                                 0                   0                  35                   0                   0                   0
+shrub_grass_wetland                    0                   0                   1                   0                   0                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+
+external test 2024-03-12, original hand labels
+
+class                       n  precision   recall     F1
+river                       0      0.000    0.000  0.000
+ice                       342      0.938    0.529  0.677
+snow                      150      0.412    0.920  0.569
+forest                     35      0.000    0.000  0.000
+shrub_grass_wetland         1      0.000    0.000  0.000
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.604   macro F1 0.311
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                                  0                   0                   0                   0                   0                   0
+ice                                    0                 181                 161                   0                   0                   0
+snow                                   0                  12                 138                   0                   0                   0
+forest                                 0                   0                  35                   0                   0                   0
+shrub_grass_wetland                    0                   0                   1                   0                   0                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+wrote /home/nia/Desktop/nenana_crops/daksh/output/16_rf_water_zone/3_external_test_daksh/six_class/random_forest

@@ -1,0 +1,97 @@
+=== RUN 13 Tue Nov  3 08:45:00 AM EST 2026
+
+=== exclude_daksh: pool of 83 inputs
+   10     8   0.895   0.737     0.913  0.019  (25 s)
+   10    12   0.916   0.767     0.943  0.027  (26 s)
+   10    16   0.920   0.775     0.950  0.030  (26 s)
+   15     8   0.926   0.784     0.944  0.018  (25 s)
+   15    12   0.936   0.799     0.960  0.023  (27 s)
+   15    16   0.937   0.800     0.963  0.026  (28 s)
+   20     8   0.931   0.789     0.950  0.019  (28 s)
+   20    12   0.943   0.805     0.964  0.020  (31 s)
+   20    16   0.944   0.806     0.967  0.023  (32 s)
+   25     8   0.934   0.790     0.956  0.023  (31 s)
+   25    12   0.946   0.807     0.970  0.023  (35 s)
+   25    16   0.947   0.808     0.972  0.025  (52 s)
+Random Forest, limited (top 25 inputs, depth 16, leaf 20) — 5-fold spatial CV
+
+class                       n  precision   recall     F1
+river                  39,991      0.983    0.953  0.968
+ice                     1,732      0.642    0.774  0.702
+snow                      564      0.362    0.457  0.404
+forest                 22,173      0.958    0.961  0.959
+shrub_grass_wetland    15,626      0.940    0.946  0.943
+bare_developed          2,726      0.800    0.957  0.871
+
+overall accuracy 0.947   macro F1 0.808
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                             38,121                 312                  26                 393                 489                 650
+ice                                  119               1,340                 258                   7                   8                   0
+snow                                   9                 290                 258                   2                   2                   3
+forest                               285                  68                  72              21,312                 436                   0
+shrub_grass_wetland                  163                  67                  72                 540              14,784                   0
+bare_developed                        77                  10                  26                   0                   5               2,608
+  add("EVI", 2.5 * (N - R) / (N + 6 * R - 7.5 * B + 1))
+wrote /home/nia/Desktop/nenana_crops/daksh/output/13_rf_six_classes_limited/1_exclude_daksh/six_class/random_forest
+
+=== with_daksh: pool of 66 inputs
+   10     8   0.900   0.749     0.925  0.025  (31 s)
+   10    12   0.909   0.762     0.942  0.033  (47 s)
+   10    16   0.910   0.761     0.946  0.036  (46 s)
+   15     8   0.911   0.768     0.938  0.027  (34 s)
+   15    12   0.927   0.783     0.956  0.029  (35 s)
+   15    16   0.929   0.786     0.959  0.030  (40 s)
+   20     8   0.923   0.776     0.944  0.021  (38 s)
+   20    12   0.938   0.793     0.961  0.024  (32 s)
+   20    16   0.939   0.795     0.965  0.025  (30 s)
+   25     8   0.929   0.779     0.951  0.022  (29 s)
+   25    12   0.941   0.796     0.966  0.025  (32 s)
+   25    16   0.943   0.798     0.968  0.026  (33 s)
+Random Forest, limited (top 25 inputs, depth 16, leaf 20) — 5-fold spatial CV
+
+class                       n  precision   recall     F1
+river                  39,991      0.983    0.951  0.967
+ice                     2,074      0.630    0.660  0.644
+snow                      714      0.326    0.521  0.401
+forest                 22,208      0.961    0.961  0.961
+shrub_grass_wetland    15,627      0.938    0.950  0.944
+bare_developed          2,726      0.792    0.964  0.870
+
+overall accuracy 0.943   macro F1 0.798
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                             38,015                 343                  16                 385                 546                 686
+ice                                  109               1,368                 579                   8                   9                   1
+snow                                   6                 328                 372                   1                   4                   3
+forest                               272                  76                  87              21,344                 429                   0
+shrub_grass_wetland                  192                  46                  68                 481              14,839                   1
+bare_developed                        67                  11                  19                   0                   0               2,629
+  add("EVI", 2.5 * (N - R) / (N + 6 * R - 7.5 * B + 1))
+wrote /home/nia/Desktop/nenana_crops/daksh/output/13_rf_six_classes_limited/2_with_daksh/six_class/random_forest
+
+=== external_daksh: pool of 66 inputs
+Random Forest, limited (top 25 inputs, depth 16) — external test on 2024-03-12
+
+class                       n  precision   recall     F1
+river                       0      0.000    0.000  0.000
+ice                       342      0.587    0.079  0.139
+snow                      150      0.280    0.900  0.427
+forest                     35      0.000    0.000  0.000
+shrub_grass_wetland         1      0.000    0.000  0.000
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.307   macro F1 0.142
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                                  0                   0                   0                   0                   0                   0
+ice                                    0                  27                 315                   0                   0                   0
+snow                                   0                  15                 135                   0                   0                   0
+forest                                 0                   4                  31                   0                   0                   0
+shrub_grass_wetland                    0                   0                   1                   0                   0                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+wrote /home/nia/Desktop/nenana_crops/daksh/output/13_rf_six_classes_limited/3_external_test_daksh/six_class/random_forest
+=== RUN 13 END Tue Nov  3 09:01:28 AM EST 2026

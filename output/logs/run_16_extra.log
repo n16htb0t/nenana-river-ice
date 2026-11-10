@@ -1,0 +1,13 @@
+exclude_daksh gap pass
+exclude_daksh {'cutoff': 1.0, 'zone_pct': 4.274092173405252, 'rule_px': 73218, 'all_px': 82812, 'rule_acc': 0.9812341227566992, 'rule_mf1': 0.8864287816895335, 'orig_acc': 0.8629667197990629, 'orig_mf1': 0.6430351100556515, 'river_f1_orig': 0.8695836817029636}
+exclude_daksh {'cutoff': 5.0, 'zone_pct': 3.8494613741490324, 'rule_px': 73078, 'all_px': 82812, 'rule_acc': 0.9823065765346616, 'rule_mf1': 0.891995055172467, 'orig_acc': 0.8625440757378158, 'orig_mf1': 0.6665932588696071, 'river_f1_orig': 0.8652348232244825}
+exclude_daksh {'cutoff': 10.0, 'zone_pct': 3.6311219707098186, 'rule_px': 72529, 'all_px': 82812, 'rule_acc': 0.9818003832949579, 'rule_mf1': 0.8936949073092174, 'orig_acc': 0.8556851664010047, 'orig_mf1': 0.6659143631978021, 'river_f1_orig': 0.85688188461119}
+exclude_daksh {'cutoff': 25.0, 'zone_pct': 3.1346948811334965, 'rule_px': 70240, 'all_px': 82812, 'rule_acc': 0.9818621867881548, 'rule_mf1': 0.9005639791958769, 'orig_acc': 0.8288895329179345, 'orig_mf1': 0.649360697225563, 'river_f1_orig': 0.8198826430818947}
+exclude_daksh {'cutoff': 50.0, 'zone_pct': 2.357659858927666, 'rule_px': 65135, 'all_px': 82812, 'rule_acc': 0.9814692561602825, 'rule_mf1': 0.9169663470239113, 'orig_acc': 0.7690672849345506, 'orig_mf1': 0.6196477363639791, 'river_f1_orig': 0.7263658472357761}
+with_daksh gap pass
+with_daksh {'cutoff': 1.0, 'zone_pct': 4.274092173405252, 'rule_px': 73606, 'all_px': 83340, 'rule_acc': 0.9870798576203027, 'rule_mf1': 0.9228754805545335, 'orig_acc': 0.8668346532277418, 'orig_mf1': 0.666260870077136, 'river_f1_orig': 0.8708944213310648}
+with_daksh {'cutoff': 5.0, 'zone_pct': 3.8494613741490324, 'rule_px': 73445, 'all_px': 83340, 'rule_acc': 0.9842194839675948, 'rule_mf1': 0.9234479930232281, 'orig_acc': 0.8627669786417087, 'orig_mf1': 0.6868708219195812, 'river_f1_orig': 0.8666801920605938}
+with_daksh {'cutoff': 10.0, 'zone_pct': 3.6311219707098186, 'rule_px': 72882, 'all_px': 83340, 'rule_acc': 0.9822041107543701, 'rule_mf1': 0.923952029991823, 'orig_acc': 0.8544396448284137, 'orig_mf1': 0.6804703966493052, 'river_f1_orig': 0.8584574635118715}
+with_daksh {'cutoff': 25.0, 'zone_pct': 3.1346948811334965, 'rule_px': 70548, 'all_px': 83340, 'rule_acc': 0.9841526336678573, 'rule_mf1': 0.9296923829069238, 'orig_acc': 0.8289176865850731, 'orig_mf1': 0.6632829270119279, 'river_f1_orig': 0.8213276535321264}
+with_daksh {'cutoff': 50.0, 'zone_pct': 2.357659858927666, 'rule_px': 65404, 'all_px': 83340, 'rule_acc': 0.9837165922573543, 'rule_mf1': 0.9425979295479466, 'orig_acc': 0.7689464842812574, 'orig_mf1': 0.6273539299072645, 'river_f1_orig': 0.7273744405768275}
+wrote /home/nia/Desktop/nenana_crops/daksh/output/16_rf_water_zone/extra.json

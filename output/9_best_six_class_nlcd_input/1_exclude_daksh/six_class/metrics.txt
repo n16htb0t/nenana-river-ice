@@ -1,0 +1,125 @@
+best six-class model (kind=rf, leaf=10, mf=sqrt) — 5-fold spatial CV, all labelled dates
+
+class                       n  precision   recall     F1
+river                  39,991      0.980    0.964  0.972
+ice                     1,732      0.678    0.805  0.736
+snow                      564      0.448    0.397  0.421
+forest                 22,173      0.972    0.983  0.978
+shrub_grass_wetland    15,626      0.970    0.966  0.968
+bare_developed          2,726      0.850    0.909  0.878
+
+overall accuracy 0.961   macro F1 0.825
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                             38,559                 241                   8                 342                 413                 428
+ice                                  150               1,395                 167                  10                   9                   1
+snow                                  14                 316                 224                   2                   5                   3
+forest                               232                  52                  45              21,802                  36                   6
+shrub_grass_wetland                  179                  47                  35                 269              15,095                   1
+bare_developed                       210                   8                  21                   0                   9               2,478
+
+--- 2023-07-24
+
+class                       n  precision   recall     F1
+river                  31,021      1.000    0.986  0.993
+ice                         0      0.000    0.000  0.000
+snow                        0      0.000    0.000  0.000
+forest                      5      0.000    0.000  0.000
+shrub_grass_wetland         2      0.000    0.000  0.000
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.985   macro F1 0.248
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                             30,577                   0                   0                  96                 150                 198
+ice                                    0                   0                   0                   0                   0                   0
+snow                                   0                   0                   0                   0                   0                   0
+forest                                 5                   0                   0                   0                   0                   0
+shrub_grass_wetland                    2                   0                   0                   0                   0                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+
+--- 2023-10-04
+
+class                       n  precision   recall     F1
+river                     974      0.821    0.779  0.800
+ice                     1,308      0.733    0.779  0.755
+snow                      521      0.469    0.430  0.448
+forest                  2,184      0.900    0.961  0.930
+shrub_grass_wetland     2,703      0.950    0.915  0.932
+bare_developed            157      0.908    0.688  0.783
+
+overall accuracy 0.852   macro F1 0.775
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                                759                  46                   6                  66                  92                   5
+ice                                  102               1,019                 167                  10                   9                   1
+snow                                   3                 284                 224                   2                   5                   3
+forest                                28                  13                  27               2,098                  16                   2
+shrub_grass_wetland                   21                  21                  33                 154               2,474                   0
+bare_developed                        11                   8                  21                   0                   9                 108
+
+--- 2024-04-21
+
+class                       n  precision   recall     F1
+river                   1,886      0.954    0.885  0.918
+ice                       424      0.563    0.887  0.689
+snow                       43      0.000    0.000  0.000
+forest                    654      0.971    0.859  0.912
+shrub_grass_wetland        53      0.605    0.434  0.505
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.859   macro F1 0.504
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                              1,669                 195                   2                  17                   3                   0
+ice                                   48                 376                   0                   0                   0                   0
+snow                                  11                  32                   0                   0                   0                   0
+forest                                19                  39                  18                 562                  12                   4
+shrub_grass_wetland                    2                  26                   2                   0                  23                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+
+--- 2024-06-22
+
+class                       n  precision   recall     F1
+river                   6,110      0.912    0.909  0.911
+ice                         0      0.000    0.000  0.000
+snow                        0      0.000    0.000  0.000
+forest                 19,330      0.986    0.990  0.988
+shrub_grass_wetland    12,868      0.986    0.979  0.983
+bare_developed          2,569      0.913    0.923  0.918
+
+overall accuracy 0.970   macro F1 0.950
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                              5,554                   0                   0                 163                 168                 225
+ice                                    0                   0                   0                   0                   0                   0
+snow                                   0                   0                   0                   0                   0                   0
+forest                               180                   0                   0              19,142                   8                   0
+shrub_grass_wetland                  154                   0                   0                 115              12,598                   1
+bare_developed                       199                   0                   0                   0                   0               2,370
+
+search on exclude_daksh: 78 inputs, 5-fold spatial CV, six classes
+  kind=rf, leaf=5, mf=sqrt                                     macro F1 0.820  accuracy 0.962  (38 s)
+  kind=rf, leaf=5, mf=0.1                                      macro F1 0.822  accuracy 0.962  (33 s)
+  kind=rf, leaf=5, mf=0.2                                      macro F1 0.819  accuracy 0.964  (68 s)
+  kind=rf, leaf=10, mf=sqrt                                    macro F1 0.825  accuracy 0.961  (37 s)
+  kind=rf, leaf=10, mf=0.1                                     macro F1 0.821  accuracy 0.959  (33 s)
+  kind=rf, leaf=10, mf=0.2                                     macro F1 0.825  accuracy 0.963  (67 s)
+  kind=rf, leaf=20, mf=sqrt                                    macro F1 0.815  accuracy 0.956  (37 s)
+  kind=rf, leaf=20, mf=0.1                                     macro F1 0.814  accuracy 0.955  (32 s)
+  kind=rf, leaf=20, mf=0.2                                     macro F1 0.822  accuracy 0.960  (64 s)
+  kind=rf, leaf=40, mf=sqrt                                    macro F1 0.799  accuracy 0.948  (34 s)
+  kind=rf, leaf=40, mf=0.1                                     macro F1 0.798  accuracy 0.947  (30 s)
+  kind=rf, leaf=40, mf=0.2                                     macro F1 0.808  accuracy 0.952  (61 s)
+  kind=rf, leaf=10, mf=sqrt, cw=balanced                       macro F1 0.819  accuracy 0.958  (25 s)
+  kind=rf, leaf=10, mf=sqrt, cw=None                           macro F1 0.803  accuracy 0.958  (38 s)
+  kind=topk, leaf=10, mf=sqrt, k=20                            macro F1 0.810  accuracy 0.945  (36 s)
+  kind=topk, leaf=10, mf=sqrt, k=35                            macro F1 0.812  accuracy 0.948  (41 s)
+  kind=oobw, leaf=10, mf=sqrt                                  macro F1 0.805  accuracy 0.958  (42 s)
+
+best: kind=rf, leaf=10, mf=sqrt  macro F1 0.825  accuracy 0.961

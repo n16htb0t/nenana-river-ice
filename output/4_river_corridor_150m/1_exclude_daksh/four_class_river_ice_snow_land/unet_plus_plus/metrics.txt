@@ -1,0 +1,86 @@
+UNet++ — 5-fold spatial CV, all labelled dates
+
+class            n  precision   recall     F1
+river       39,677      0.948    0.968  0.958
+ice          1,703      0.623    0.681  0.651
+snow           553      0.305    0.212  0.250
+land        18,006      0.930    0.888  0.908
+
+overall accuracy 0.929   macro F1 0.692
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river       38,390      202       13    1,072
+ice            348    1,160      136       59
+snow            58      301      117       77
+land         1,700      199      117   15,990
+
+--- 2023-07-24
+
+class            n  precision   recall     F1
+river       30,909      1.000    0.997  0.998
+ice              0      0.000    0.000  0.000
+snow             0      0.000    0.000  0.000
+land             7      0.000    0.000  0.000
+
+overall accuracy 0.996   macro F1 0.250
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river       30,802        9        4       94
+ice              0        0        0        0
+snow             0        0        0        0
+land             7        0        0        0
+
+--- 2023-10-04
+
+class            n  precision   recall     F1
+river          964      0.543    0.657  0.594
+ice          1,279      0.607    0.710  0.655
+snow           510      0.362    0.216  0.270
+land         2,821      0.883    0.817  0.849
+
+overall accuracy 0.710   macro F1 0.592
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river          633      154        8      169
+ice            183      908      129       59
+snow            30      293      110       77
+land           320      140       57    2,304
+
+--- 2024-04-21
+
+class            n  precision   recall     F1
+river        1,798      0.857    0.977  0.913
+ice            424      0.821    0.594  0.689
+snow            43      0.123    0.163  0.140
+land           267      0.967    0.434  0.599
+
+overall accuracy 0.842   macro F1 0.586
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river        1,756       37        1        4
+ice            165      252        7        0
+snow            28        8        7        0
+land            99       10       42      116
+
+--- 2024-06-22
+
+class            n  precision   recall     F1
+river        6,006      0.803    0.866  0.833
+ice              0      0.000    0.000  0.000
+snow             0      0.000    0.000  0.000
+land        14,911      0.944    0.910  0.927
+
+overall accuracy 0.897   macro F1 0.440
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river        5,199        2        0      805
+ice              0        0        0        0
+snow             0        0        0        0
+land         1,274       49       18   13,570
+
+settings: {'iters': 1500, 'batch': 8, 'lr': 0.001, 'encoder': 'resnet34', 'skip_cv': False, 'task': 'four', 'dataset': 'exclude_daksh'}

@@ -1,0 +1,161 @@
+Random Forest, all bands — 5-fold spatial CV, all labelled dates (best settings {'max_features': 'sqrt', 'min_samples_leaf': 5}, 500 trees)
+
+class            n  precision   recall     F1
+river       39,991      0.970    0.964  0.967
+ice          1,732      0.681    0.760  0.718
+snow           564      0.497    0.284  0.361
+land        43,071      0.969    0.975  0.972
+
+overall accuracy 0.961   macro F1 0.755
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river       38,560      166        1    1,264
+ice            250    1,316      125       41
+snow            18      347      160       39
+land           930      104       36   42,001
+
+--- 2023-07-24
+
+class            n  precision   recall     F1
+river       31,021      1.000    0.991  0.995
+ice              0      0.000    0.000  0.000
+snow             0      0.000    0.000  0.000
+land             7      0.000    0.000  0.000
+
+overall accuracy 0.991   macro F1 0.498
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river       30,738        0        0      283
+ice              0        0        0        0
+snow             0        0        0        0
+land             7        0        0        0
+
+--- 2023-10-04
+
+class            n  precision   recall     F1
+river          974      0.792    0.775  0.784
+ice          1,308      0.722    0.776  0.748
+snow           521      0.502    0.307  0.381
+land         5,217      0.951    0.974  0.962
+
+overall accuracy 0.874   macro F1 0.719
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river          755       37        0      182
+ice            127    1,015      125       41
+snow             0      322      160       39
+land            71       32       34    5,080
+
+--- 2024-04-21
+
+class            n  precision   recall     F1
+river        1,886      0.913    0.914  0.914
+ice            424      0.571    0.710  0.633
+snow            43      0.000    0.000  0.000
+land           728      0.952    0.867  0.907
+
+overall accuracy 0.862   macro F1 0.613
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river        1,724      129        1       32
+ice            123      301        0        0
+snow            18       25        0        0
+land            23       72        2      631
+
+--- 2024-06-22
+
+class            n  precision   recall     F1
+river        6,110      0.866    0.874  0.870
+ice              0      0.000    0.000  0.000
+snow             0      0.000    0.000  0.000
+land        37,119      0.979    0.978  0.978
+
+overall accuracy 0.963   macro F1 0.924
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river        5,343        0        0      767
+ice              0        0        0        0
+snow             0        0        0        0
+land           829        0        0   36,290
+
+tuning (5-fold spatial CV, macro F1 / accuracy)
+  {'max_features': 'sqrt', 'min_samples_leaf': 1}    macro F1 0.727  accuracy 0.961  (83 s)
+  {'max_features': 'sqrt', 'min_samples_leaf': 2}    macro F1 0.735  accuracy 0.962  (84 s)
+  {'max_features': 'sqrt', 'min_samples_leaf': 5}    macro F1 0.755  accuracy 0.961  (83 s)
+  {'max_features': 0.3, 'min_samples_leaf': 2}       macro F1 0.728  accuracy 0.961  (213 s)
+  {'max_features': 'log2', 'min_samples_leaf': 2}    macro F1 0.735  accuracy 0.961  (62 s)
+
+input importance (final model, 68 inputs)
+  green                  0.0624
+  vis_brightness         0.0491
+  blue                   0.0448
+  nd_green_nir           0.0442
+  red                    0.0410
+  thermal                0.0409
+  blue_mean3             0.0403
+  NDWI_mean3             0.0330
+  blue_std7              0.0308
+  blue_std3              0.0303
+  nd_blue_nir            0.0283
+  tc_wetness             0.0262
+  diff_green_swir2       0.0261
+  nd_blue_swir2          0.0237
+  blue_mean7             0.0219
+  nd_green_swir2         0.0198
+  nd_blue_swir1          0.0180
+  diff_green_nir         0.0172
+  diff_blue_nir          0.0165
+  diff_red_swir2         0.0153
+  nir_mean7              0.0141
+  NDVI_mean3             0.0124
+  tc_brightness          0.0121
+  diff_green_red         0.0118
+  diff_red_swir1         0.0117
+  nd_green_red           0.0116
+  diff_nir_swir1         0.0113
+  nir_plus_swir1         0.0111
+  diff_nir_swir2         0.0107
+  nd_red_nir             0.0105
+  nd_green_swir1         0.0104
+  MSAVI                  0.0102
+  diff_red_nir           0.0098
+  NDWI_mean7             0.0098
+  swir2                  0.0096
+  AWEI_sh                0.0091
+  NDSI_mean3             0.0090
+  nir                    0.0090
+  SAVI                   0.0089
+  diff_green_swir1       0.0087
+  swir1                  0.0086
+  NDVI_std7              0.0085
+  NDWI_std7              0.0082
+  nd_red_swir2           0.0082
+  nd_swir1_swir2         0.0082
+  nir_mean3              0.0082
+  diff_blue_swir2        0.0081
+  tc_greenness           0.0081
+  diff_blue_swir1        0.0076
+  diff_swir1_swir2       0.0076
+  nd_red_swir1           0.0071
+  diff_blue_green        0.0064
+  EVI                    0.0061
+  nd_nir_swir2           0.0052
+  nd_blue_green          0.0049
+  NDSI_mean7             0.0047
+  nir_std7               0.0046
+  diff_blue_red          0.0045
+  NDSI_std7              0.0037
+  AWEI_nsh               0.0036
+  BSI                    0.0036
+  nd_blue_red            0.0035
+  NDVI_mean7             0.0035
+  NDSI_std3              0.0034
+  NDWI_std3              0.0033
+  nd_nir_swir1           0.0032
+  nir_std3               0.0032
+  NDVI_std3              0.0028

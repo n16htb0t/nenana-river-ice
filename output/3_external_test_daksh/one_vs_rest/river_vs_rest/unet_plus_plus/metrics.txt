@@ -1,0 +1,12 @@
+UNet++ — external test: trained on 2023-07-24, 2023-10-04, 2024-04-21, 2024-06-22, scored on daksh 2024-03-12
+
+class             n  precision   recall     F1
+not_river       532      1.000    0.959  0.979
+river             0      0.000    0.000  0.000
+
+overall accuracy 0.959   macro F1 0.489
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river        510        22
+river              0         0

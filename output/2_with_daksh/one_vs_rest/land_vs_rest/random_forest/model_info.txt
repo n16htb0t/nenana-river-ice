@@ -1,0 +1,36 @@
+Random Forest — One vs rest: land
+dataset: 2. with_daksh: trained and cross-validated on the 4 patch dates + daksh 2024-03-12
+
+MODEL
+  Random Forest (scikit-learn 1.9)
+  300 trees, minimum 2 samples per leaf, class weights balanced per tree
+  (balanced_subsample). Each pixel is classified on its own inputs, no neighbourhood.
+
+INPUTS
+  9 per pixel: blue, green, red, nir, swir1, water_occ, NDWI, NDSI, NDVI
+
+DATA
+  training dates: 2023-07-24, 2023-10-04, 2024-03-12, 2024-04-21, 2024-06-22
+  test dates:     2023-07-24, 2023-10-04, 2024-03-12, 2024-04-21, 2024-06-22
+  training pixels: not_land 42,779, land 43,111
+  evaluation: 5-fold spatial cross-validation (64-row east-west bands, 12-row buffer), then one final model on all labels for the maps
+
+SCORES (all dates; per-date scores in metrics.txt)
+
+Random Forest — 5-fold spatial CV, all labelled dates
+
+class            n  precision   recall     F1
+not_land    42,779      0.954    0.960  0.957
+land        43,111      0.960    0.954  0.957
+
+overall accuracy 0.957   macro F1 0.957
+
+confusion (rows = true, cols = predicted)
+          not_land     land
+not_land    41,086    1,693
+land         1,971   41,140
+
+FILES
+  metrics.txt       scores, confusion matrix, per date, input importance
+  oof.npz           every scored pixel: date, row, col, true, predicted
+  pred_<date>.tif   30 m map of every date (+ .qml colours for QGIS)

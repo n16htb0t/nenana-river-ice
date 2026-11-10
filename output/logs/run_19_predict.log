@@ -1,0 +1,132 @@
+labelled ['2023-05-05', '2023-07-24', '2023-10-04', '2024-04-21', '2024-06-22', '2026-03-26'] 
+VIIRS only ['2023-04-19', '2024-09-02', '2025-07-04', '2026-08-01']
+2023-05-05 done
+2023-07-24 done
+2023-10-04 done
+2024-04-21 done
+2024-06-22 done
+2026-03-26 done
+final models trained
+2023-04-19 done
+2024-09-02 done
+2025-07-04 done
+2026-08-01 done
+2023-05-05 left-out test day
+   Landsat truth river + buffer      water  24.5 (open   5 / ice  95)  land  75.5 (snow  77 / no snow  23)
+   Landsat truth whole VIIRS image   water   4.0 (open   5 / ice  95)  land  96.0 (snow  73 / no snow  27)
+   RF            river + buffer      water  23.9 (open  12 / ice  88)  land  76.1 (snow  64 / no snow  36)
+   RF            whole VIIRS image   water   6.7 (open  20 / ice  80)  land  93.3 (snow  64 / no snow  36)
+   UNet++        river + buffer      water  17.2 (open   3 / ice  97)  land  82.8 (snow  66 / no snow  34)
+   UNet++        whole VIIRS image   water   3.0 (open   6 / ice  94)  land  97.0 (snow  66 / no snow  34)
+   2D CNN        river + buffer      water  22.8 (open   4 / ice  96)  land  77.2 (snow  87 / no snow  13)
+   2D CNN        whole VIIRS image   water   3.8 (open   5 / ice  95)  land  96.2 (snow  84 / no snow  16)
+   Landsat truth states rule50 2/4/13/82  rule90 0/1/2/97
+   RF            states rule50 0/0/27/73  rule90 0/1/6/93
+   UNet++        states rule50 2/0/25/73  rule90 5/1/3/92
+   2D CNN        states rule50 4/3/22/71  rule90 1/1/2/95
+2023-07-24 left-out test day
+   Landsat truth river + buffer      water  24.2 (open 100 / ice   0)  land  75.8 (snow   1 / no snow  99)
+   Landsat truth whole VIIRS image   water   3.9 (open 100 / ice   0)  land  96.1 (snow   0 / no snow 100)
+   RF            river + buffer      water  20.6 (open  92 / ice   8)  land  79.4 (snow   7 / no snow  93)
+   RF            whole VIIRS image   water   4.4 (open  92 / ice   8)  land  95.6 (snow   6 / no snow  94)
+   UNet++        river + buffer      water  20.8 (open  89 / ice  11)  land  79.2 (snow  11 / no snow  89)
+   UNet++        whole VIIRS image   water   4.7 (open  78 / ice  22)  land  95.3 (snow  11 / no snow  89)
+   2D CNN        river + buffer      water  23.2 (open  97 / ice   3)  land  76.8 (snow   4 / no snow  96)
+   2D CNN        whole VIIRS image   water   3.9 (open  96 / ice   4)  land  96.1 (snow   4 / no snow  96)
+   Landsat truth states rule50 99/1/0/0  rule90 95/5/0/0
+   RF            states rule50 98/0/0/2  rule90 75/23/1/2
+   UNet++        states rule50 81/0/11/8  rule90 88/0/5/7
+   2D CNN        states rule50 97/0/1/2  rule90 93/3/2/3
+2023-10-04 left-out test day
+   Landsat truth river + buffer      water  23.1 (open  49 / ice  51)  land  76.9 (snow   5 / no snow  95)
+   Landsat truth whole VIIRS image   water   3.7 (open  49 / ice  51)  land  96.3 (snow   6 / no snow  94)
+   RF            river + buffer      water  10.6 (open  47 / ice  53)  land  89.4 (snow  18 / no snow  82)
+   RF            whole VIIRS image   water   1.9 (open  48 / ice  52)  land  98.1 (snow  13 / no snow  87)
+   UNet++        river + buffer      water   8.7 (open  53 / ice  47)  land  91.3 (snow  16 / no snow  84)
+   UNet++        whole VIIRS image   water   1.5 (open  51 / ice  49)  land  98.5 (snow  11 / no snow  89)
+   2D CNN        river + buffer      water  22.6 (open  41 / ice  59)  land  77.4 (snow   7 / no snow  93)
+   2D CNN        whole VIIRS image   water   4.0 (open  39 / ice  61)  land  96.0 (snow  10 / no snow  90)
+   Landsat truth states rule50 25/1/72/3  rule90 11/1/65/22
+   RF            states rule50 0/2/95/3  rule90 0/19/51/30
+   UNet++        states rule50 3/1/55/42  rule90 11/2/13/74
+   2D CNN        states rule50 0/0/99/1  rule90 0/0/72/28
+2024-04-21 left-out test day
+   Landsat truth river + buffer      water  24.1 (open  10 / ice  90)  land  75.9 (snow  49 / no snow  51)
+   Landsat truth whole VIIRS image   water   3.9 (open  11 / ice  89)  land  96.1 (snow  36 / no snow  64)
+   RF            river + buffer      water  21.7 (open  20 / ice  80)  land  78.3 (snow  48 / no snow  52)
+   RF            whole VIIRS image   water   6.6 (open  50 / ice  50)  land  93.4 (snow  29 / no snow  71)
+   UNet++        river + buffer      water  16.6 (open  16 / ice  84)  land  83.4 (snow  49 / no snow  51)
+   UNet++        whole VIIRS image   water   3.1 (open  20 / ice  80)  land  96.9 (snow  32 / no snow  68)
+   2D CNN        river + buffer      water  26.1 (open  19 / ice  81)  land  73.9 (snow  51 / no snow  49)
+   2D CNN        whole VIIRS image   water   8.2 (open  37 / ice  63)  land  91.8 (snow  38 / no snow  62)
+   Landsat truth states rule50 3/4/44/49  rule90 0/2/15/83
+   RF            states rule50 13/21/25/41  rule90 6/15/0/79
+   UNet++        states rule50 19/0/33/48  rule90 26/0/17/56
+   2D CNN        states rule50 8/2/35/55  rule90 5/2/20/72
+2024-06-22 left-out test day
+   Landsat truth river + buffer      water  24.2 (open 100 / ice   0)  land  75.8 (snow   1 / no snow  99)
+   Landsat truth whole VIIRS image   water   3.9 (open 100 / ice   0)  land  96.1 (snow   0 / no snow 100)
+   RF            river + buffer      water  21.4 (open  97 / ice   3)  land  78.6 (snow   2 / no snow  98)
+   RF            whole VIIRS image   water   3.7 (open  97 / ice   3)  land  96.3 (snow   1 / no snow  99)
+   UNet++        river + buffer      water  18.4 (open  97 / ice   3)  land  81.6 (snow   1 / no snow  99)
+   UNet++        whole VIIRS image   water   3.0 (open  95 / ice   5)  land  97.0 (snow   0 / no snow 100)
+   2D CNN        river + buffer      water  23.8 (open 100 / ice   0)  land  76.2 (snow   0 / no snow 100)
+   2D CNN        whole VIIRS image   water   4.5 (open  99 / ice   1)  land  95.5 (snow   0 / no snow 100)
+   Landsat truth states rule50 100/0/0/0  rule90 95/5/0/0
+   RF            states rule50 100/0/0/0  rule90 97/3/0/0
+   UNet++        states rule50 86/0/13/0  rule90 92/0/6/2
+   2D CNN        states rule50 99/0/1/0  rule90 96/1/3/0
+2026-03-26 left-out test day
+   Landsat truth river + buffer      water  25.6 (open   0 / ice 100)  land  74.4 (snow  71 / no snow  29)
+   Landsat truth whole VIIRS image   water   4.2 (open   0 / ice 100)  land  95.8 (snow  68 / no snow  32)
+   RF            river + buffer      water  23.1 (open   7 / ice  93)  land  76.9 (snow  74 / no snow  26)
+   RF            whole VIIRS image   water   5.1 (open   8 / ice  92)  land  94.9 (snow  66 / no snow  34)
+   UNet++        river + buffer      water  28.3 (open   1 / ice  99)  land  71.7 (snow  81 / no snow  19)
+   UNet++        whole VIIRS image   water   5.0 (open   2 / ice  98)  land  95.0 (snow  78 / no snow  22)
+   2D CNN        river + buffer      water  19.7 (open   1 / ice  99)  land  80.3 (snow  80 / no snow  20)
+   2D CNN        whole VIIRS image   water   3.3 (open   1 / ice  99)  land  96.7 (snow  76 / no snow  24)
+   Landsat truth states rule50 0/0/21/79  rule90 0/0/4/96
+   RF            states rule50 0/0/20/80  rule90 0/0/2/98
+   UNet++        states rule50 0/0/7/93  rule90 0/0/0/100
+   2D CNN        states rule50 4/6/6/84  rule90 0/1/1/98
+2023-04-19 VIIRS only, final models
+   RF            river + buffer      water  23.6 (open   1 / ice  99)  land  76.4 (snow  83 / no snow  17)
+   RF            whole VIIRS image   water   4.4 (open   2 / ice  98)  land  95.6 (snow  78 / no snow  22)
+   UNet++        river + buffer      water  23.8 (open   2 / ice  98)  land  76.2 (snow  79 / no snow  21)
+   UNet++        whole VIIRS image   water   4.0 (open   3 / ice  97)  land  96.0 (snow  76 / no snow  24)
+   2D CNN        river + buffer      water  24.9 (open   1 / ice  99)  land  75.1 (snow  86 / no snow  14)
+   2D CNN        whole VIIRS image   water   4.2 (open   4 / ice  96)  land  95.8 (snow  76 / no snow  24)
+   RF            states rule50 0/0/10/90  rule90 0/0/1/99
+   UNet++        states rule50 0/0/15/85  rule90 0/0/1/99
+   2D CNN        states rule50 1/1/12/85  rule90 0/1/2/97
+2024-09-02 VIIRS only, final models
+   RF            river + buffer      water  20.1 (open  89 / ice  11)  land  79.9 (snow   4 / no snow  96)
+   RF            whole VIIRS image   water   3.5 (open  89 / ice  11)  land  96.5 (snow   3 / no snow  97)
+   UNet++        river + buffer      water  20.9 (open  96 / ice   4)  land  79.1 (snow   2 / no snow  98)
+   UNet++        whole VIIRS image   water   3.8 (open  90 / ice  10)  land  96.2 (snow   1 / no snow  99)
+   2D CNN        river + buffer      water  24.7 (open  95 / ice   5)  land  75.3 (snow   2 / no snow  98)
+   2D CNN        whole VIIRS image   water   4.4 (open  91 / ice   9)  land  95.6 (snow   2 / no snow  98)
+   RF            states rule50 48/0/52/0  rule90 5/17/77/0
+   UNet++        states rule50 49/0/50/0  rule90 32/0/58/10
+   2D CNN        states rule50 39/0/61/0  rule90 33/1/63/3
+2025-07-04 VIIRS only, final models
+   RF            river + buffer      water  23.6 (open  97 / ice   3)  land  76.4 (snow   7 / no snow  93)
+   RF            whole VIIRS image   water   6.4 (open  98 / ice   2)  land  93.6 (snow   5 / no snow  95)
+   UNet++        river + buffer      water  24.3 (open  99 / ice   1)  land  75.7 (snow   3 / no snow  97)
+   UNet++        whole VIIRS image   water   4.6 (open  90 / ice  10)  land  95.4 (snow   3 / no snow  97)
+   2D CNN        river + buffer      water  29.6 (open  91 / ice   9)  land  70.4 (snow  16 / no snow  84)
+   2D CNN        whole VIIRS image   water   6.5 (open  81 / ice  19)  land  93.5 (snow  22 / no snow  78)
+   RF            states rule50 100/0/0/0  rule90 84/16/0/0
+   UNet++        states rule50 100/0/0/0  rule90 99/1/0/0
+   2D CNN        states rule50 100/0/0/0  rule90 96/4/0/0
+2026-08-01 VIIRS only, final models
+   RF            river + buffer      water  21.0 (open  96 / ice   4)  land  79.0 (snow   3 / no snow  97)
+   RF            whole VIIRS image   water   3.6 (open  96 / ice   4)  land  96.4 (snow   2 / no snow  98)
+   UNet++        river + buffer      water  24.0 (open  98 / ice   2)  land  76.0 (snow   2 / no snow  98)
+   UNet++        whole VIIRS image   water   4.4 (open  92 / ice   8)  land  95.6 (snow   1 / no snow  99)
+   2D CNN        river + buffer      water  22.0 (open 100 / ice   0)  land  78.0 (snow   0 / no snow 100)
+   2D CNN        whole VIIRS image   water   3.5 (open 100 / ice   0)  land  96.5 (snow   0 / no snow 100)
+   RF            states rule50 100/0/0/0  rule90 85/15/0/0
+   UNet++        states rule50 86/0/11/3  rule90 89/0/1/9
+   2D CNN        states rule50 98/0/1/0  rule90 97/2/1/0
+wrote /home/nia/Desktop/nenana_crops/daksh/output/19_viirs_river_states/predict

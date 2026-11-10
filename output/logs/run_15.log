@@ -1,0 +1,174 @@
+=== RUN 15 Tue Nov  3 10:56:31 AM EST 2026
+forced river penalty scan, exclude_daksh: 5-fold spatial CV (top 25, depth 16)
+ scale m  CV acc  macroF1  river F1  river recall
+    None   0.947    0.808     0.968         0.953
+  1200.0   0.947    0.808     0.968         0.953
+   600.0   0.947    0.808     0.968         0.953
+   300.0   0.947    0.808     0.968         0.952
+   150.0   0.946    0.807     0.967         0.950
+forced river penalty scan, with_daksh: 5-fold spatial CV (top 25, depth 16)
+ scale m  CV acc  macroF1  river F1  river recall
+    None   0.943    0.798     0.967         0.951
+  1200.0   0.943    0.798     0.967         0.950
+   600.0   0.942    0.797     0.966         0.950
+   300.0   0.942    0.797     0.966         0.949
+   150.0   0.942    0.797     0.965         0.947
+
+=== exclude_daksh: pool 83 inputs, top 25, depth 16
+WITH river penalty — 5-fold spatial CV, all labelled dates
+
+class                       n  precision   recall     F1
+river                  39,991      0.984    0.953  0.968
+ice                     1,732      0.642    0.774  0.702
+snow                      564      0.362    0.457  0.404
+forest                 22,173      0.957    0.962  0.960
+shrub_grass_wetland    15,626      0.939    0.946  0.943
+bare_developed          2,726      0.798    0.957  0.871
+
+overall accuracy 0.947   macro F1 0.808
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                             38,093                 312                  26                 400                 504                 656
+ice                                  119               1,340                 258                   7                   8                   0
+snow                                   9                 290                 258                   2                   2                   3
+forest                               271                  68                  73              21,325                 436                   0
+shrub_grass_wetland                  159                  67                  72                 540              14,788                   0
+bare_developed                        74                  10                  26                   0                   6               2,610
+without penalty (same forests) — 5-fold spatial CV
+
+class                       n  precision   recall     F1
+river                  39,991      0.983    0.953  0.968
+ice                     1,732      0.642    0.774  0.702
+snow                      564      0.362    0.457  0.404
+forest                 22,173      0.958    0.961  0.959
+shrub_grass_wetland    15,626      0.940    0.946  0.943
+bare_developed          2,726      0.800    0.957  0.871
+
+overall accuracy 0.947   macro F1 0.808
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                             38,121                 312                  26                 393                 489                 650
+ice                                  119               1,340                 258                   7                   8                   0
+snow                                   9                 290                 258                   2                   2                   3
+forest                               285                  68                  72              21,312                 436                   0
+shrub_grass_wetland                  163                  67                  72                 540              14,784                   0
+bare_developed                        77                  10                  26                   0                   5               2,608
+/home/nia/Desktop/nenana_crops/daksh/rf_all_bands.py:86: RuntimeWarning: divide by zero encountered in divide
+  add("EVI", 2.5 * (N - R) / (N + 6 * R - 7.5 * B + 1))
+date        river on NLCD land (% of land px): without penalty -> with penalty
+2023-07-24   24.7 %  ->   10.1 %
+2023-10-04    2.4 %  ->    0.4 %
+2024-04-21   23.0 %  ->    4.3 %
+2024-06-22    2.2 %  ->    1.2 %
+2026-03-26    3.5 %  ->    0.4 %
+2023-05-05   18.3 %  ->    4.4 %
+wrote /home/nia/Desktop/nenana_crops/daksh/output/15_rf_six_classes_river_forced/1_exclude_daksh/six_class/random_forest
+
+=== with_daksh: pool 66 inputs, top 25, depth 16
+WITH river penalty — 5-fold spatial CV, all labelled dates
+
+class                       n  precision   recall     F1
+river                  39,991      0.984    0.950  0.966
+ice                     2,074      0.630    0.660  0.644
+snow                      714      0.326    0.521  0.401
+forest                 22,208      0.960    0.961  0.961
+shrub_grass_wetland    15,627      0.936    0.950  0.943
+bare_developed          2,726      0.790    0.965  0.869
+
+overall accuracy 0.942   macro F1 0.797
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                             37,981                 343                  16                 392                 566                 693
+ice                                  109               1,368                 579                   8                   9                   1
+snow                                   6                 328                 372                   1                   4                   3
+forest                               267                  76                  87              21,349                 429                   0
+shrub_grass_wetland                  182                  46                  68                 484              14,846                   1
+bare_developed                        65                  11                  19                   0                   0               2,631
+without penalty (same forests) — 5-fold spatial CV
+
+class                       n  precision   recall     F1
+river                  39,991      0.983    0.951  0.967
+ice                     2,074      0.630    0.660  0.644
+snow                      714      0.326    0.521  0.401
+forest                 22,208      0.961    0.961  0.961
+shrub_grass_wetland    15,627      0.938    0.950  0.944
+bare_developed          2,726      0.792    0.964  0.870
+
+overall accuracy 0.943   macro F1 0.798
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                             38,015                 343                  16                 385                 546                 686
+ice                                  109               1,368                 579                   8                   9                   1
+snow                                   6                 328                 372                   1                   4                   3
+forest                               272                  76                  87              21,344                 429                   0
+shrub_grass_wetland                  192                  46                  68                 481              14,839                   1
+bare_developed                        67                  11                  19                   0                   0               2,629
+/home/nia/Desktop/nenana_crops/daksh/rf_all_bands.py:86: RuntimeWarning: divide by zero encountered in divide
+  add("EVI", 2.5 * (N - R) / (N + 6 * R - 7.5 * B + 1))
+date        river on NLCD land (% of land px): without penalty -> with penalty
+2023-07-24   11.4 %  ->    5.4 %
+2023-10-04    3.3 %  ->    0.7 %
+2024-04-21   21.8 %  ->    4.4 %
+2024-06-22    1.5 %  ->    1.0 %
+2024-03-12    1.4 %  ->    0.2 %
+2024-04-20   33.5 %  ->    7.6 %
+2024-04-29   89.1 %  ->   28.5 %
+2026-03-26    4.2 %  ->    0.4 %
+2023-05-05   18.1 %  ->    4.6 %
+wrote /home/nia/Desktop/nenana_crops/daksh/output/15_rf_six_classes_river_forced/2_with_daksh/six_class/random_forest
+
+=== external_daksh: pool 66 inputs, top 25, depth 16
+external test 2024-03-12, WITH river penalty (scale 600.0 m)
+
+class                       n  precision   recall     F1
+river                       0      0.000    0.000  0.000
+ice                       342      0.587    0.079  0.139
+snow                      150      0.280    0.900  0.427
+forest                     35      0.000    0.000  0.000
+shrub_grass_wetland         1      0.000    0.000  0.000
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.307   macro F1 0.142
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                                  0                   0                   0                   0                   0                   0
+ice                                    0                  27                 315                   0                   0                   0
+snow                                   0                  15                 135                   0                   0                   0
+forest                                 0                   4                  31                   0                   0                   0
+shrub_grass_wetland                    0                   0                   1                   0                   0                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+external test 2024-03-12, without penalty
+
+class                       n  precision   recall     F1
+river                       0      0.000    0.000  0.000
+ice                       342      0.587    0.079  0.139
+snow                      150      0.280    0.900  0.427
+forest                     35      0.000    0.000  0.000
+shrub_grass_wetland         1      0.000    0.000  0.000
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.307   macro F1 0.142
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                                  0                   0                   0                   0                   0                   0
+ice                                    0                  27                 315                   0                   0                   0
+snow                                   0                  15                 135                   0                   0                   0
+forest                                 0                   4                  31                   0                   0                   0
+shrub_grass_wetland                    0                   0                   1                   0                   0                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+date        river on NLCD land (% of land px): without penalty -> with penalty
+2023-07-24   13.2 %  ->    6.4 %
+2023-10-04    3.0 %  ->    0.6 %
+2024-04-21   17.6 %  ->    3.0 %
+2024-06-22    1.3 %  ->    1.0 %
+2024-03-12    1.6 %  ->    0.2 %
+2024-04-20   34.3 %  ->    8.4 %
+2024-04-29   88.2 %  ->   34.8 %
+wrote /home/nia/Desktop/nenana_crops/daksh/output/15_rf_six_classes_river_forced/3_external_test_daksh/six_class/random_forest
+=== RUN 15 END Tue Nov  3 11:01:52 AM EST 2026

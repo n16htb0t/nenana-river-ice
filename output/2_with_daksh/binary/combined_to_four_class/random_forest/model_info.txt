@@ -1,0 +1,43 @@
+Random Forest — Binary snow + river merged back to four classes
+dataset: 2. with_daksh: trained and cross-validated on the 4 patch dates + daksh 2024-03-12
+
+MODEL
+  Random Forest (scikit-learn 1.9)
+  300 trees, minimum 2 samples per leaf, class weights balanced per tree
+  (balanced_subsample). Each pixel is classified on its own inputs, no neighbourhood.
+  Not trained itself: the binary snow and river models' answers merged
+  (river & no snow = river, river & snow = ice, snow off-river = snow, else land).
+
+INPUTS
+  9 per pixel: blue, green, red, nir, swir1, water_occ, NDWI, NDSI, NDVI
+
+DATA
+  training dates: 2023-07-24, 2023-10-04, 2024-03-12, 2024-04-21, 2024-06-22
+  test dates:     2023-07-24, 2023-10-04, 2024-03-12, 2024-04-21, 2024-06-22
+  training pixels: river 39,991, ice 2,074, snow 714, land 43,111
+  evaluation: 5-fold spatial cross-validation (64-row east-west bands, 12-row buffer), then one final model on all labels for the maps
+
+SCORES (all dates; per-date scores in metrics.txt)
+
+Random Forest binary snow + river combined — 5-fold spatial CV, all labelled dates
+
+class            n  precision   recall     F1
+river       39,991      0.947    0.956  0.952
+ice          2,074      0.679    0.659  0.669
+snow           714      0.372    0.333  0.352
+land        43,111      0.961    0.955  0.958
+
+overall accuracy 0.943   macro F1 0.733
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river       38,246      165        2    1,578
+ice            316    1,367      336       55
+snow            18      400      238       58
+land         1,802       80       63   41,166
+
+FILES
+  metrics.txt       scores, confusion matrix, per date, input importance
+  oof.npz           every scored pixel: date, row, col, true, predicted
+  pred_<date>.tif   30 m map of every date (+ .qml colours for QGIS)
+  scene_mask_*.tif  river/land state per 375 m block; scores in scene_mask_metrics.txt

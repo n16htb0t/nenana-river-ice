@@ -1,0 +1,37 @@
+Random Forest — One vs rest: ice
+dataset: 3. external_test_daksh: trained on the 4 patch dates, tested on daksh 2024-03-12
+
+MODEL
+  Random Forest (scikit-learn 1.9)
+  300 trees, minimum 2 samples per leaf, class weights balanced per tree
+  (balanced_subsample). Each pixel is classified on its own inputs, no neighbourhood.
+
+INPUTS
+  9 per pixel: blue, green, red, nir, swir1, water_occ, NDWI, NDSI, NDVI
+
+DATA
+  training dates: 2023-07-24, 2023-10-04, 2024-04-21, 2024-06-22
+  test dates:     2024-03-12
+  training pixels: not_ice 83,626, ice 1,732
+  test pixels:     not_ice 190, ice 342
+  evaluation: trained once on all training dates, scored on the test date (no cross-validation)
+
+SCORES (all dates; per-date scores in metrics.txt)
+
+Random Forest — external test: trained on 2023-07-24, 2023-10-04, 2024-04-21, 2024-06-22, scored on daksh 2024-03-12
+
+class            n  precision   recall     F1
+not_ice        190      0.360    0.911  0.516
+ice            342      0.673    0.102  0.178
+
+overall accuracy 0.391   macro F1 0.347
+
+confusion (rows = true, cols = predicted)
+           not_ice      ice
+not_ice        173       17
+ice            307       35
+
+FILES
+  metrics.txt       scores, confusion matrix, per date, input importance
+  oof.npz           every scored pixel: date, row, col, true, predicted
+  pred_<date>.tif   30 m map of every date (+ .qml colours for QGIS)

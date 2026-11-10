@@ -1,0 +1,79 @@
+UNet++ — 5-fold spatial CV, all labelled dates
+
+class            n  precision   recall     F1
+not_land    42,779      0.955    0.974  0.964
+land        43,111      0.973    0.955  0.964
+
+overall accuracy 0.964   macro F1 0.964
+
+confusion (rows = true, cols = predicted)
+          not_land     land
+not_land    41,650    1,129
+land         1,942   41,169
+
+--- 2023-07-24
+
+class            n  precision   recall     F1
+not_land    31,021      1.000    0.998  0.999
+land             7      0.000    0.000  0.000
+
+overall accuracy 0.997   macro F1 0.499
+
+confusion (rows = true, cols = predicted)
+          not_land     land
+not_land    30,946       75
+land             7        0
+
+--- 2023-10-04
+
+class            n  precision   recall     F1
+not_land     2,803      0.853    0.877  0.865
+land         5,217      0.933    0.919  0.926
+
+overall accuracy 0.904   macro F1 0.895
+
+confusion (rows = true, cols = predicted)
+          not_land     land
+not_land     2,457      346
+land           422    4,795
+
+--- 2024-03-12
+
+class            n  precision   recall     F1
+not_land       492      0.966    0.990  0.978
+land            40      0.821    0.575  0.676
+
+overall accuracy 0.959   macro F1 0.827
+
+confusion (rows = true, cols = predicted)
+          not_land     land
+not_land       487        5
+land            17       23
+
+--- 2024-04-21
+
+class            n  precision   recall     F1
+not_land     2,353      0.953    0.995  0.974
+land           728      0.982    0.842  0.907
+
+overall accuracy 0.959   macro F1 0.940
+
+confusion (rows = true, cols = predicted)
+          not_land     land
+not_land     2,342       11
+land           115      613
+
+--- 2024-06-22
+
+class            n  precision   recall     F1
+not_land     6,110      0.797    0.887  0.839
+land        37,119      0.981    0.963  0.972
+
+overall accuracy 0.952   macro F1 0.906
+
+confusion (rows = true, cols = predicted)
+          not_land     land
+not_land     5,418      692
+land         1,381   35,738
+
+settings: {'iters': 1500, 'batch': 8, 'lr': 0.001, 'encoder': 'resnet34', 'skip_cv': False, 'task': 'ind_land', 'dataset': 'with_daksh'}

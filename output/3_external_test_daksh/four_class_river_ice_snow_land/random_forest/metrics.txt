@@ -1,0 +1,16 @@
+Random Forest — external test: trained on 2023-07-24, 2023-10-04, 2024-04-21, 2024-06-22, scored on daksh 2024-03-12
+
+class            n  precision   recall     F1
+river            0      0.000    0.000  0.000
+ice            342      0.675    0.152  0.248
+snow           150      0.280    0.847  0.421
+land            40      1.000    0.025  0.049
+
+overall accuracy 0.338   macro F1 0.180
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river            0        0        0        0
+ice              0       52      290        0
+snow             0       23      127        0
+land             1        2       36        1

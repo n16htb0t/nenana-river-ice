@@ -1,0 +1,36 @@
+Random Forest — Binary: snow vs no snow (snow = ice + snow)
+dataset: 1. exclude_daksh: trained and cross-validated on the 4 patch dates
+
+MODEL
+  Random Forest (scikit-learn 1.9)
+  300 trees, minimum 2 samples per leaf, class weights balanced per tree
+  (balanced_subsample). Each pixel is classified on its own inputs, no neighbourhood.
+
+INPUTS
+  11 per pixel: SR_B2, SR_B3, SR_B4, SR_B5, SR_B6, SR_B7, ST_B10, water_occ, NDWI, NDSI, NDVI
+
+DATA
+  training dates: 2023-07-24, 2023-10-04, 2024-04-21, 2024-06-22
+  test dates:     2023-07-24, 2023-10-04, 2024-04-21, 2024-06-22
+  training pixels: no_snow 83,062, snow 2,296
+  evaluation: 5-fold spatial cross-validation (64-row east-west bands, 12-row buffer), then one final model on all labels for the maps
+
+SCORES (all dates; per-date scores in metrics.txt)
+
+Random Forest — 5-fold spatial CV, all labelled dates
+
+class            n  precision   recall     F1
+no_snow     83,062      0.995    0.998  0.997
+snow         2,296      0.932    0.805  0.864
+
+overall accuracy 0.993   macro F1 0.930
+
+confusion (rows = true, cols = predicted)
+           no_snow     snow
+no_snow     82,927      135
+snow           447    1,849
+
+FILES
+  metrics.txt       scores, confusion matrix, per date, input importance
+  oof.npz           every scored pixel: date, row, col, true, predicted
+  pred_<date>.tif   30 m map of every date (+ .qml colours for QGIS)

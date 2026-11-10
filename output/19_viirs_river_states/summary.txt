@@ -1,0 +1,72 @@
+Run 19: four states predicted at once on river + buffer VIIRS cells only.
+Mask: alaska_occ_375m.tif, river = occurrence >= 0.05 (988 px), buffer 1 px (678 px). Labels: run 16 Landsat map (as run 18).
+Leave-one-date-out over 2023-05-05, 2023-07-24, 2023-10-04, 2024-04-21, 2024-06-22, 2026-03-26.
+
+=== Random Forest: leave-one-date-out, 9645 river + buffer cells
+--- rule50: accuracy 0.794   macro F1 0.644
+state                                     F1  prec   rec   true   pred
+ice_free_river_snow_free_land           0.90  0.94  0.87   3745   3451
+ice_free_river_snow_covered_land        0.19  0.13  0.34    145    384
+ice_covered_river_snow_free_land        0.67  0.64  0.71   2403   2655
+ice_covered_river_snow_covered_land     0.82  0.84  0.79   3352   3155
+confusion (rows true 1-4, columns predicted 1-4): [[3244, 34, 425, 42], [21, 49, 47, 28], [158, 117, 1702, 426], [28, 184, 481, 2659]]
+--- rule90: accuracy 0.818   macro F1 0.662
+state                                     F1  prec   rec   true   pred
+ice_free_river_snow_free_land           0.88  0.94  0.83   3298   2916
+ice_free_river_snow_covered_land        0.22  0.14  0.56    244    977
+ice_covered_river_snow_free_land        0.65  0.79  0.55   1377    965
+ice_covered_river_snow_covered_land     0.90  0.89  0.90   4726   4787
+confusion (rows true 1-4, columns predicted 1-4): [[2736, 445, 43, 74], [74, 136, 2, 32], [69, 129, 759, 420], [37, 267, 161, 4261]]
+date         cells  rule50 acc  rule90 acc
+2023-05-05    1599       0.762       0.924
+2023-07-24    1638       0.968       0.781
+2023-10-04    1599       0.682       0.595
+2024-04-21    1639       0.546       0.713
+2024-06-22    1641       0.996       0.940
+2026-03-26    1529       0.804       0.964
+
+=== UNet++: leave-one-date-out, 9645 river + buffer cells
+--- rule50: accuracy 0.714   macro F1 0.535
+state                                     F1  prec   rec   true   pred
+ice_free_river_snow_free_land           0.81  0.89  0.74   3745   3118
+ice_free_river_snow_covered_land        0.03  0.11  0.02    145     27
+ice_covered_river_snow_free_land        0.55  0.56  0.54   2403   2307
+ice_covered_river_snow_covered_land     0.75  0.67  0.84   3352   4193
+confusion (rows true 1-4, columns predicted 1-4): [[2765, 15, 609, 356], [47, 3, 32, 63], [150, 4, 1296, 953], [156, 5, 370, 2821]]
+--- rule90: accuracy 0.742   macro F1 0.477
+state                                     F1  prec   rec   true   pred
+ice_free_river_snow_free_land           0.82  0.78  0.86   3298   3633
+ice_free_river_snow_covered_land        0.01  0.04  0.01    244     52
+ice_covered_river_snow_free_land        0.27  0.39  0.20   1377    722
+ice_covered_river_snow_covered_land     0.81  0.77  0.85   4726   5238
+confusion (rows true 1-4, columns predicted 1-4): [[2830, 17, 193, 258], [169, 2, 11, 62], [194, 22, 282, 879], [440, 11, 236, 4039]]
+date         cells  rule50 acc  rule90 acc
+2023-05-05    1599       0.764       0.903
+2023-07-24    1638       0.797       0.839
+2023-10-04    1599       0.457       0.310
+2024-04-21    1639       0.585       0.570
+2024-06-22    1641       0.859       0.876
+2026-03-26    1529       0.823       0.959
+
+=== 2D CNN: leave-one-date-out, 9645 river + buffer cells
+--- rule50: accuracy 0.812   macro F1 0.655
+state                                     F1  prec   rec   true   pred
+ice_free_river_snow_free_land           0.90  0.93  0.86   3745   3471
+ice_free_river_snow_covered_land        0.19  0.18  0.21    145    177
+ice_covered_river_snow_free_land        0.69  0.66  0.73   2403   2641
+ice_covered_river_snow_covered_land     0.84  0.84  0.84   3352   3356
+confusion (rows true 1-4, columns predicted 1-4): [[3238, 8, 455, 44], [48, 31, 33, 33], [130, 55, 1749, 469], [55, 83, 404, 2810]]
+--- rule90: accuracy 0.854   macro F1 0.664
+state                                     F1  prec   rec   true   pred
+ice_free_river_snow_free_land           0.92  0.93  0.90   3298   3199
+ice_free_river_snow_covered_land        0.17  0.24  0.13    244    136
+ice_covered_river_snow_free_land        0.68  0.63  0.73   1377   1610
+ice_covered_river_snow_covered_land     0.90  0.90  0.89   4726   4700
+confusion (rows true 1-4, columns predicted 1-4): [[2974, 37, 197, 90], [133, 32, 28, 51], [24, 6, 1009, 338], [68, 61, 376, 4221]]
+date         cells  rule50 acc  rule90 acc
+2023-05-05    1599       0.752       0.932
+2023-07-24    1638       0.958       0.908
+2023-10-04    1599       0.717       0.644
+2024-04-21    1639       0.675       0.780
+2024-06-22    1641       0.990       0.921
+2026-03-26    1529       0.771       0.940

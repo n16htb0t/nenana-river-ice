@@ -1,0 +1,33 @@
+UNet++ binary snow + river combined — 5-fold spatial CV, all labelled dates
+
+class            n  precision   recall     F1
+river            0      0.000    0.000  0.000
+ice            342      0.786    0.386  0.518
+snow           150      0.284    0.280  0.282
+land            40      0.263    0.900  0.407
+
+overall accuracy 0.395   macro F1 0.302
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river            0        0        0        0
+ice             40      132      104       66
+snow            37       36       42       35
+land             2        0        2       36
+
+--- 2024-03-12
+
+class            n  precision   recall     F1
+river            0      0.000    0.000  0.000
+ice            342      0.786    0.386  0.518
+snow           150      0.284    0.280  0.282
+land            40      0.263    0.900  0.407
+
+overall accuracy 0.395   macro F1 0.302
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river            0        0        0        0
+ice             40      132      104       66
+snow            37       36       42       35
+land             2        0        2       36

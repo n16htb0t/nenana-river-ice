@@ -1,0 +1,8 @@
+date,scene_class,river_px,ice_px,snow_px,land_px
+2023-07-24,ice_free_river_snow_free_land,638381,288,63,988093
+2023-10-04,ice_free_river_snow_free_land,140652,68372,34055,1379041
+2024-04-21,ice_covered_river_snow_free_land,227218,277856,115031,1006417
+2024-06-22,ice_free_river_snow_free_land,70408,290,15,1556112
+2024-03-12,ice_covered_river_snow_covered_land,353495,617343,560348,95639
+2024-04-20,ice_free_river_snow_free_land,552733,430549,298568,344975
+2024-04-29,ice_free_river_snow_free_land,1050354,73863,18283,484325

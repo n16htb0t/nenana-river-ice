@@ -1,0 +1,25 @@
+model,dates,class,n_test_px,precision,recall,f1
+Random Forest,all dates,no_snow,83102,0.995,0.996,0.995
+Random Forest,all dates,snow,2788,0.883,0.84,0.861
+Random Forest,2023-07-24,no_snow,31028,1.0,1.0,1.0
+Random Forest,2023-07-24,snow,0,0.0,0.0,0.0
+Random Forest,2023-10-04,no_snow,6191,0.941,0.992,0.966
+Random Forest,2023-10-04,snow,1829,0.969,0.791,0.871
+Random Forest,2024-03-12,no_snow,40,0.25,0.025,0.045
+Random Forest,2024-03-12,snow,492,0.926,0.994,0.959
+Random Forest,2024-04-21,no_snow,2614,0.975,0.914,0.944
+Random Forest,2024-04-21,snow,467,0.644,0.869,0.74
+Random Forest,2024-06-22,no_snow,43229,1.0,1.0,1.0
+Random Forest,2024-06-22,snow,0,0.0,0.0,0.0
+UNet++,all dates,no_snow,83102,0.992,0.984,0.988
+UNet++,all dates,snow,2788,0.619,0.76,0.682
+UNet++,2023-07-24,no_snow,31028,1.0,1.0,1.0
+UNet++,2023-07-24,snow,0,0.0,0.0,0.0
+UNet++,2023-10-04,no_snow,6191,0.937,0.828,0.879
+UNet++,2023-10-04,snow,1829,0.583,0.813,0.679
+UNet++,2024-03-12,no_snow,40,0.138,0.875,0.239
+UNet++,2024-03-12,snow,492,0.982,0.557,0.711
+UNet++,2024-04-21,no_snow,2614,0.958,0.959,0.959
+UNet++,2024-04-21,snow,467,0.771,0.764,0.768
+UNet++,2024-06-22,no_snow,43229,1.0,0.997,0.999
+UNet++,2024-06-22,snow,0,0.0,0.0,0.0

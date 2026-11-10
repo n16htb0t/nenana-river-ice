@@ -1,0 +1,40 @@
+UNet++ — Binary: snow vs no snow (snow = ice + snow)
+dataset: 3. external_test_daksh: trained on the 4 patch dates, tested on daksh 2024-03-12
+
+MODEL
+  UNet++ (segmentation-models-pytorch 0.6, PyTorch 2.14, RTX 3080)
+  ResNet-34 encoder with ImageNet weights, 1,500 steps of 8 random 256 x 256 crops
+  centred near labelled pixels, random 90-degree turns and flips, cross-entropy
+  weighted by 1/sqrt(class frequency) on labelled pixels only, AdamW lr 1e-3 with
+  one-cycle schedule, mixed precision. Sees the neighbourhood (shape, texture).
+  Weights + input scaling: unetpp_final.pt.
+
+INPUTS
+  9 per pixel: blue, green, red, nir, swir1, water_occ, NDWI, NDSI, NDVI
+
+DATA
+  training dates: 2023-07-24, 2023-10-04, 2024-04-21, 2024-06-22
+  test dates:     2024-03-12
+  training pixels: no_snow 83,062, snow 2,296
+  test pixels:     no_snow 40, snow 492
+  evaluation: trained once on all training dates, scored on the test date (no cross-validation)
+
+SCORES (all dates; per-date scores in metrics.txt)
+
+UNet++ — external test: trained on 2023-07-24, 2023-10-04, 2024-04-21, 2024-06-22, scored on daksh 2024-03-12
+
+class            n  precision   recall     F1
+no_snow         40      0.176    0.950  0.297
+snow           492      0.994    0.638  0.777
+
+overall accuracy 0.662   macro F1 0.537
+
+confusion (rows = true, cols = predicted)
+           no_snow     snow
+no_snow         38        2
+snow           178      314
+
+FILES
+  metrics.txt       scores, confusion matrix, per date
+  oof.npz           every scored pixel: date, row, col, true, predicted
+  pred_<date>.tif   30 m map of every date (+ .qml colours for QGIS)

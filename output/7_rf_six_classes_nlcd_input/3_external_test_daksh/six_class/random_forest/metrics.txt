@@ -1,0 +1,85 @@
+Random Forest, all bands — external test: trained on 2023-07-24, 2023-10-04, 2024-04-21, 2024-06-22, scored on 2024-03-12
+
+class                       n  precision   recall     F1
+river                       0      0.000    0.000  0.000
+ice                       342      0.412    0.102  0.164
+snow                      150      0.284    0.840  0.425
+forest                     35      0.000    0.000  0.000
+shrub_grass_wetland         1      0.000    0.000  0.000
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.305   macro F1 0.147
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                                  0                   0                   0                   0                   0                   0
+ice                                    0                  35                 307                   0                   0                   0
+snow                                   0                  24                 126                   0                   0                   0
+forest                                 0                  26                   9                   0                   0                   0
+shrub_grass_wetland                    0                   0                   1                   0                   0                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+
+settings (from with_daksh tuning): {'max_features': 'sqrt', 'min_samples_leaf': 5}, 500 trees
+
+input importance (final model, 61 inputs)
+  nlcd_barren            0.0866
+  nlcd_woody_wetland     0.0761
+  green                  0.0506
+  vis_brightness         0.0353
+  nlcd_deciduous_forest  0.0351
+  blue_mean7             0.0350
+  red                    0.0291
+  blue                   0.0287
+  blue_mean3             0.0266
+  nlcd_evergreen_forest  0.0252
+  blue_std7              0.0250
+  NDWI_mean3             0.0242
+  blue_std3              0.0223
+  nd_green_nir           0.0212
+  diff_green_swir1       0.0207
+  diff_red_swir1         0.0195
+  diff_blue_swir1        0.0170
+  nd_green_swir1         0.0170
+  diff_blue_green        0.0156
+  diff_green_nir         0.0156
+  nd_green_red           0.0156
+  diff_green_red         0.0146
+  swir1                  0.0143
+  nd_blue_nir            0.0136
+  nd_red_swir1           0.0135
+  NDWI_std7              0.0131
+  nlcd_shrub             0.0130
+  diff_nir_swir1         0.0130
+  diff_blue_nir          0.0126
+  nlcd_water             0.0125
+  NDWI_mean7             0.0124
+  nd_blue_swir1          0.0123
+  SAVI                   0.0115
+  NDVI_mean3             0.0114
+  nir_mean7              0.0113
+  MSAVI                  0.0111
+  NDVI_std7              0.0111
+  nd_red_nir             0.0111
+  nir_plus_swir1         0.0110
+  diff_red_nir           0.0107
+  nd_blue_green          0.0103
+  nd_nir_swir1           0.0101
+  nir                    0.0091
+  nir_mean3              0.0089
+  nir_std7               0.0086
+  NDSI_mean3             0.0079
+  diff_blue_red          0.0077
+  BSI                    0.0073
+  NDSI_std7              0.0072
+  NDVI_mean7             0.0066
+  EVI                    0.0064
+  NDSI_mean7             0.0058
+  nd_blue_red            0.0055
+  NDWI_std3              0.0047
+  NDVI_std3              0.0043
+  NDSI_std3              0.0043
+  nir_std3               0.0042
+  nlcd_mixed_forest      0.0037
+  nlcd_emergent_wetland  0.0014
+  nlcd_grass_sedge       0.0000
+  nlcd_developed         0.0000

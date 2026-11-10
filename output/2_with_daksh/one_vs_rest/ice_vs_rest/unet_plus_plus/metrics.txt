@@ -1,0 +1,79 @@
+UNet++ — 5-fold spatial CV, all labelled dates
+
+class            n  precision   recall     F1
+not_ice     83,816      0.994    0.943  0.968
+ice          2,074      0.256    0.786  0.386
+
+overall accuracy 0.940   macro F1 0.677
+
+confusion (rows = true, cols = predicted)
+           not_ice      ice
+not_ice     79,068    4,748
+ice            443    1,631
+
+--- 2023-07-24
+
+class            n  precision   recall     F1
+not_ice     31,028      1.000    0.999  1.000
+ice              0      0.000    0.000  0.000
+
+overall accuracy 0.999   macro F1 0.500
+
+confusion (rows = true, cols = predicted)
+           not_ice      ice
+not_ice     31,004       24
+ice              0        0
+
+--- 2023-10-04
+
+class            n  precision   recall     F1
+not_ice      6,712      0.946    0.672  0.786
+ice          1,308      0.323    0.801  0.460
+
+overall accuracy 0.693   macro F1 0.623
+
+confusion (rows = true, cols = predicted)
+           not_ice      ice
+not_ice      4,513    2,199
+ice            260    1,048
+
+--- 2024-03-12
+
+class            n  precision   recall     F1
+not_ice        190      0.403    0.337  0.367
+ice            342      0.662    0.722  0.691
+
+overall accuracy 0.585   macro F1 0.529
+
+confusion (rows = true, cols = predicted)
+           not_ice      ice
+not_ice         64      126
+ice             95      247
+
+--- 2024-04-21
+
+class            n  precision   recall     F1
+not_ice      2,657      0.966    0.935  0.950
+ice            424      0.659    0.792  0.719
+
+overall accuracy 0.915   macro F1 0.835
+
+confusion (rows = true, cols = predicted)
+           not_ice      ice
+not_ice      2,483      174
+ice             88      336
+
+--- 2024-06-22
+
+class            n  precision   recall     F1
+not_ice     43,229      1.000    0.949  0.974
+ice              0      0.000    0.000  0.000
+
+overall accuracy 0.949   macro F1 0.487
+
+confusion (rows = true, cols = predicted)
+           not_ice      ice
+not_ice     41,004    2,225
+ice              0        0
+
+settings: {'iters': 1500, 'batch': 8, 'lr': 0.001, 'encoder': 'resnet34', 'skip_cv': False, 'task': 'ind_ice', 'dataset': 'with_daksh'}

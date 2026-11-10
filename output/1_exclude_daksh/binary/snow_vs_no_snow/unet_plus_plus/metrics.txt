@@ -1,0 +1,66 @@
+UNet++ — 5-fold spatial CV, all labelled dates
+
+class            n  precision   recall     F1
+no_snow     83,062      0.996    0.955  0.975
+snow         2,296      0.349    0.878  0.500
+
+overall accuracy 0.953   macro F1 0.738
+
+confusion (rows = true, cols = predicted)
+           no_snow     snow
+no_snow     79,307    3,755
+snow           280    2,016
+
+--- 2023-07-24
+
+class            n  precision   recall     F1
+no_snow     31,028      1.000    0.998  0.999
+snow             0      0.000    0.000  0.000
+
+overall accuracy 0.998   macro F1 0.499
+
+confusion (rows = true, cols = predicted)
+           no_snow     snow
+no_snow     30,960       68
+snow             0        0
+
+--- 2023-10-04
+
+class            n  precision   recall     F1
+no_snow      6,191      0.957    0.777  0.858
+snow         1,829      0.539    0.881  0.669
+
+overall accuracy 0.801   macro F1 0.763
+
+confusion (rows = true, cols = predicted)
+           no_snow     snow
+no_snow      4,810    1,381
+snow           217    1,612
+
+--- 2024-04-21
+
+class            n  precision   recall     F1
+no_snow      2,614      0.973    0.873  0.920
+snow           467      0.549    0.865  0.672
+
+overall accuracy 0.872   macro F1 0.796
+
+confusion (rows = true, cols = predicted)
+           no_snow     snow
+no_snow      2,282      332
+snow            63      404
+
+--- 2024-06-22
+
+class            n  precision   recall     F1
+no_snow     43,229      1.000    0.954  0.977
+snow             0      0.000    0.000  0.000
+
+overall accuracy 0.954   macro F1 0.488
+
+confusion (rows = true, cols = predicted)
+           no_snow     snow
+no_snow     41,255    1,974
+snow             0        0
+
+settings: {'iters': 1500, 'batch': 8, 'lr': 0.001, 'encoder': 'resnet34', 'skip_cv': False, 'task': 'snow', 'dataset': 'exclude_daksh'}

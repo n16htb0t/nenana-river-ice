@@ -1,0 +1,222 @@
+[
+ {
+  "date": "2023-04-19",
+  "map": "run 16 model, predicted in run 17",
+  "mapped_pixels": 1625801,
+  "nodata_pixels": 1024,
+  "pixels": {
+   "river": 197,
+   "ice": 62424,
+   "snow": 1161427,
+   "forest": 381201,
+   "shrub_grass_wetland": 20435,
+   "bare_developed": 117
+  },
+  "percent": {
+   "river": 0.0121171041228293,
+   "ice": 3.8395843033680013,
+   "snow": 71.43721771606734,
+   "forest": 23.44696552653123,
+   "shrub_grass_wetland": 1.2569188972082068,
+   "bare_developed": 0.007196452702391006
+  }
+ },
+ {
+  "date": "2023-05-05",
+  "map": "run 16",
+  "mapped_pixels": 1617793,
+  "nodata_pixels": 9032,
+  "pixels": {
+   "river": 3438,
+   "ice": 59150,
+   "snow": 1117164,
+   "forest": 389753,
+   "shrub_grass_wetland": 47823,
+   "bare_developed": 465
+  },
+  "percent": {
+   "river": 0.21251173666841183,
+   "ice": 3.65621559742192,
+   "snow": 69.05481727266715,
+   "forest": 24.091648313473975,
+   "shrub_grass_wetland": 2.956064218351792,
+   "bare_developed": 0.028742861416757273
+  }
+ },
+ {
+  "date": "2023-07-24",
+  "map": "run 16",
+  "mapped_pixels": 1626825,
+  "nodata_pixels": 0,
+  "pixels": {
+   "river": 62624,
+   "ice": 0,
+   "snow": 5771,
+   "forest": 1073777,
+   "shrub_grass_wetland": 471514,
+   "bare_developed": 13139
+  },
+  "percent": {
+   "river": 3.8494613741490324,
+   "ice": 0.0,
+   "snow": 0.3547400611620795,
+   "forest": 66.00445653343168,
+   "shrub_grass_wetland": 28.9836952345827,
+   "bare_developed": 0.807646796674504
+  }
+ },
+ {
+  "date": "2023-10-04",
+  "map": "run 16",
+  "mapped_pixels": 1622120,
+  "nodata_pixels": 4705,
+  "pixels": {
+   "river": 29706,
+   "ice": 32371,
+   "snow": 110644,
+   "forest": 1032992,
+   "shrub_grass_wetland": 405136,
+   "bare_developed": 11271
+  },
+  "percent": {
+   "river": 1.831307178260548,
+   "ice": 1.9955983527729144,
+   "snow": 6.82095036125564,
+   "forest": 63.68160185436343,
+   "shrub_grass_wetland": 24.97571079821468,
+   "bare_developed": 0.6948314551327892
+  }
+ },
+ {
+  "date": "2024-04-21",
+  "map": "run 16",
+  "mapped_pixels": 1626522,
+  "nodata_pixels": 303,
+  "pixels": {
+   "river": 6705,
+   "ice": 55916,
+   "snow": 569729,
+   "forest": 758567,
+   "shrub_grass_wetland": 232438,
+   "bare_developed": 3167
+  },
+  "percent": {
+   "river": 0.41222928432569617,
+   "ice": 3.4377647520291763,
+   "snow": 35.02743891567406,
+   "forest": 46.63736488040125,
+   "shrub_grass_wetland": 14.290492228202263,
+   "bare_developed": 0.1947099393675585
+  }
+ },
+ {
+  "date": "2024-06-22",
+  "map": "run 16",
+  "mapped_pixels": 1626825,
+  "nodata_pixels": 0,
+  "pixels": {
+   "river": 62624,
+   "ice": 0,
+   "snow": 5265,
+   "forest": 1084770,
+   "shrub_grass_wetland": 460990,
+   "bare_developed": 13176
+  },
+  "percent": {
+   "river": 3.8494613741490324,
+   "ice": 0.0,
+   "snow": 0.3236365312802545,
+   "forest": 66.68018994052834,
+   "shrub_grass_wetland": 28.336790988582052,
+   "bare_developed": 0.8099211654603292
+  }
+ },
+ {
+  "date": "2024-09-02",
+  "map": "run 16 model, predicted in run 17",
+  "mapped_pixels": 1626455,
+  "nodata_pixels": 370,
+  "pixels": {
+   "river": 62624,
+   "ice": 0,
+   "snow": 11371,
+   "forest": 1084540,
+   "shrub_grass_wetland": 454189,
+   "bare_developed": 13731
+  },
+  "percent": {
+   "river": 3.8503370827966346,
+   "ice": 0.0,
+   "snow": 0.6991278578257621,
+   "forest": 66.6812177404232,
+   "shrub_grass_wetland": 27.925088612965006,
+   "bare_developed": 0.8442287059894064
+  }
+ },
+ {
+  "date": "2025-07-04",
+  "map": "run 16 model, predicted in run 17",
+  "mapped_pixels": 1626825,
+  "nodata_pixels": 0,
+  "pixels": {
+   "river": 62624,
+   "ice": 0,
+   "snow": 4570,
+   "forest": 1085695,
+   "shrub_grass_wetland": 460680,
+   "bare_developed": 13256
+  },
+  "percent": {
+   "river": 3.8494613741490324,
+   "ice": 0.0,
+   "snow": 0.280915279762728,
+   "forest": 66.73704916017395,
+   "shrub_grass_wetland": 28.31773546632244,
+   "bare_developed": 0.814838719591843
+  }
+ },
+ {
+  "date": "2026-03-26",
+  "map": "run 16",
+  "mapped_pixels": 1618111,
+  "nodata_pixels": 8714,
+  "pixels": {
+   "river": 25,
+   "ice": 62596,
+   "snow": 1031471,
+   "forest": 490692,
+   "shrub_grass_wetland": 33152,
+   "bare_developed": 175
+  },
+  "percent": {
+   "river": 0.0015450114361746506,
+   "ice": 3.868461434351537,
+   "snow": 63.74537964330012,
+   "forest": 30.324990065576465,
+   "shrub_grass_wetland": 2.0488087652824807,
+   "bare_developed": 0.010815080053222554
+  }
+ },
+ {
+  "date": "2026-08-01",
+  "map": "run 16 model, predicted in run 17",
+  "mapped_pixels": 1626803,
+  "nodata_pixels": 22,
+  "pixels": {
+   "river": 62624,
+   "ice": 0,
+   "snow": 7493,
+   "forest": 1074880,
+   "shrub_grass_wetland": 468726,
+   "bare_developed": 13080
+  },
+  "percent": {
+   "river": 3.84951343217341,
+   "ice": 0.0,
+   "snow": 0.46059664261745276,
+   "forest": 66.0731508363336,
+   "shrub_grass_wetland": 28.812708115241982,
+   "bare_developed": 0.8040309736335622
+  }
+ }
+]

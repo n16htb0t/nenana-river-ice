@@ -1,0 +1,2539 @@
+{
+ "rf": {
+  "per_date": {
+   "2023-05-05": {
+    "cells": 1599,
+    "rule50": {
+     "cells": 1599,
+     "accuracy": 0.7617260787992496,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 26,
+       "pred_cells": 4
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 56,
+       "pred_cells": 0
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.4486571879936809,
+       "precision": 0.3302325581395349,
+       "recall": 0.6995073891625616,
+       "true_cells": 203,
+       "pred_cells": 430
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.8680919725695845,
+       "precision": 0.9236051502145923,
+       "recall": 0.8188736681887366,
+       "true_cells": 1314,
+       "pred_cells": 1165
+      }
+     },
+     "macro_f1": 0.3291872901408163,
+     "confusion": [
+      [
+       0,
+       0,
+       20,
+       6
+      ],
+      [
+       0,
+       0,
+       34,
+       22
+      ],
+      [
+       0,
+       0,
+       142,
+       61
+      ],
+      [
+       4,
+       0,
+       234,
+       1076
+      ]
+     ]
+    },
+    "rule90": {
+     "cells": 1599,
+     "accuracy": 0.9237023139462164,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 4
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.16666666666666669,
+       "precision": 0.23076923076923078,
+       "recall": 0.13043478260869565,
+       "true_cells": 23,
+       "pred_cells": 13
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.25210084033613445,
+       "precision": 0.16129032258064516,
+       "recall": 0.5769230769230769,
+       "true_cells": 26,
+       "pred_cells": 93
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.960184271141823,
+       "precision": 0.9798522498321021,
+       "recall": 0.9412903225806452,
+       "true_cells": 1550,
+       "pred_cells": 1489
+      }
+     },
+     "macro_f1": 0.4596505927148747,
+     "confusion": [
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       3,
+       0,
+       20
+      ],
+      [
+       0,
+       1,
+       15,
+       10
+      ],
+      [
+       4,
+       9,
+       78,
+       1459
+      ]
+     ]
+    }
+   },
+   "2023-07-24": {
+    "cells": 1638,
+    "rule50": {
+     "cells": 1638,
+     "accuracy": 0.9682539682539683,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.9838709677419355,
+       "precision": 0.99125,
+       "recall": 0.9766009852216748,
+       "true_cells": 1624,
+       "pred_cells": 1600
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 14,
+       "pred_cells": 0
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 6
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 32
+      }
+     },
+     "macro_f1": 0.49193548387096775,
+     "confusion": [
+      [
+       1586,
+       0,
+       6,
+       32
+      ],
+      [
+       14,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ]
+     ]
+    },
+    "rule90": {
+     "cells": 1638,
+     "accuracy": 0.7808302808302808,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.8716289104638619,
+       "precision": 0.9918166939443536,
+       "recall": 0.777421423989737,
+       "true_cells": 1559,
+       "pred_cells": 1222
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.29910714285714285,
+       "precision": 0.18157181571815717,
+       "recall": 0.8481012658227848,
+       "true_cells": 79,
+       "pred_cells": 369
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 9
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 38
+      }
+     },
+     "macro_f1": 0.5853680266605024,
+     "confusion": [
+      [
+       1212,
+       302,
+       9,
+       36
+      ],
+      [
+       10,
+       67,
+       0,
+       2
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ]
+     ]
+    }
+   },
+   "2023-10-04": {
+    "cells": 1599,
+    "rule50": {
+     "cells": 1599,
+     "accuracy": 0.6823014383989994,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 405,
+       "pred_cells": 0
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 9,
+       "pred_cells": 32
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.8141459744168549,
+       "precision": 0.7151354923992069,
+       "recall": 0.9449781659388646,
+       "true_cells": 1145,
+       "pred_cells": 1513
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.19148936170212766,
+       "precision": 0.16666666666666666,
+       "recall": 0.225,
+       "true_cells": 40,
+       "pred_cells": 54
+      }
+     },
+     "macro_f1": 0.2514088340297456,
+     "confusion": [
+      [
+       0,
+       4,
+       397,
+       4
+      ],
+      [
+       0,
+       0,
+       8,
+       1
+      ],
+      [
+       0,
+       23,
+       1082,
+       40
+      ],
+      [
+       0,
+       5,
+       26,
+       9
+      ]
+     ]
+    },
+    "rule90": {
+     "cells": 1599,
+     "accuracy": 0.5947467166979362,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 176,
+       "pred_cells": 0
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.08668730650154799,
+       "precision": 0.046357615894039736,
+       "recall": 0.6666666666666666,
+       "true_cells": 21,
+       "pred_cells": 302
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.7680771290840921,
+       "precision": 0.874390243902439,
+       "recall": 0.6848137535816619,
+       "true_cells": 1047,
+       "pred_cells": 820
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.5288461538461539,
+       "precision": 0.4612159329140461,
+       "recall": 0.6197183098591549,
+       "true_cells": 355,
+       "pred_cells": 477
+      }
+     },
+     "macro_f1": 0.3459026473579485,
+     "confusion": [
+      [
+       0,
+       104,
+       34,
+       38
+      ],
+      [
+       0,
+       14,
+       2,
+       5
+      ],
+      [
+       0,
+       116,
+       717,
+       214
+      ],
+      [
+       0,
+       68,
+       67,
+       220
+      ]
+     ]
+    }
+   },
+   "2024-04-21": {
+    "cells": 1639,
+    "rule50": {
+     "cells": 1639,
+     "accuracy": 0.546064673581452,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.17624521072796936,
+       "precision": 0.1111111111111111,
+       "recall": 0.42592592592592593,
+       "true_cells": 54,
+       "pred_cells": 207
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.2378640776699029,
+       "precision": 0.1396011396011396,
+       "recall": 0.8032786885245902,
+       "true_cells": 61,
+       "pred_cells": 351
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.5534924845269672,
+       "precision": 0.7747524752475248,
+       "recall": 0.4305364511691884,
+       "true_cells": 727,
+       "pred_cells": 404
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.6919945725915876,
+       "precision": 0.7533234859675036,
+       "recall": 0.6398996235884568,
+       "true_cells": 797,
+       "pred_cells": 677
+      }
+     },
+     "macro_f1": 0.4148990863791068,
+     "confusion": [
+      [
+       23,
+       29,
+       2,
+       0
+      ],
+      [
+       2,
+       49,
+       5,
+       5
+      ],
+      [
+       158,
+       94,
+       313,
+       162
+      ],
+      [
+       24,
+       179,
+       84,
+       510
+      ]
+     ]
+    },
+    "rule90": {
+     "cells": 1639,
+     "accuracy": 0.7126296522269676,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 3,
+       "pred_cells": 104
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.23741007194244607,
+       "precision": 0.13865546218487396,
+       "recall": 0.825,
+       "true_cells": 40,
+       "pred_cells": 238
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.04032258064516129,
+       "precision": 1.0,
+       "recall": 0.0205761316872428,
+       "true_cells": 243,
+       "pred_cells": 5
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.8544423440453687,
+       "precision": 0.8746130030959752,
+       "recall": 0.8351810790835181,
+       "true_cells": 1353,
+       "pred_cells": 1292
+      }
+     },
+     "macro_f1": 0.28304374915824404,
+     "confusion": [
+      [
+       0,
+       3,
+       0,
+       0
+      ],
+      [
+       2,
+       33,
+       0,
+       5
+      ],
+      [
+       69,
+       12,
+       5,
+       157
+      ],
+      [
+       33,
+       190,
+       0,
+       1130
+      ]
+     ]
+    }
+   },
+   "2024-06-22": {
+    "cells": 1641,
+    "rule50": {
+     "cells": 1641,
+     "accuracy": 0.9963436928702011,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.9981684981684982,
+       "precision": 0.9969512195121951,
+       "recall": 0.9993887530562348,
+       "true_cells": 1636,
+       "pred_cells": 1640
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 5,
+       "pred_cells": 1
+      }
+     },
+     "macro_f1": 0.4990842490842491,
+     "confusion": [
+      [
+       1635,
+       1,
+       0,
+       0
+      ],
+      [
+       5,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ]
+     ]
+    },
+    "rule90": {
+     "cells": 1641,
+     "accuracy": 0.9402803168799513,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.9688493324856962,
+       "precision": 0.9609079445145019,
+       "recall": 0.9769230769230769,
+       "true_cells": 1560,
+       "pred_cells": 1586
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.27941176470588236,
+       "precision": 0.34545454545454546,
+       "recall": 0.2345679012345679,
+       "true_cells": 81,
+       "pred_cells": 55
+      }
+     },
+     "macro_f1": 0.6241305485957893,
+     "confusion": [
+      [
+       1524,
+       36,
+       0,
+       0
+      ],
+      [
+       62,
+       19,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ]
+     ]
+    }
+   },
+   "2026-03-26": {
+    "cells": 1529,
+    "rule50": {
+     "cells": 1529,
+     "accuracy": 0.8037933289731851,
+     "per_state": {
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.5238095238095238,
+       "precision": 0.5463576158940397,
+       "recall": 0.5030487804878049,
+       "true_cells": 328,
+       "pred_cells": 302
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.8764415156507414,
+       "precision": 0.8671556642216789,
+       "recall": 0.8859283930058285,
+       "true_cells": 1201,
+       "pred_cells": 1227
+      }
+     },
+     "macro_f1": 0.7001255197301326,
+     "confusion": [
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       165,
+       163
+      ],
+      [
+       0,
+       0,
+       137,
+       1064
+      ]
+     ]
+    },
+    "rule90": {
+     "cells": 1529,
+     "accuracy": 0.9640287769784173,
+     "per_state": {
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.4444444444444445,
+       "precision": 0.5789473684210527,
+       "recall": 0.36065573770491804,
+       "true_cells": 61,
+       "pred_cells": 38
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.9814126394052045,
+       "precision": 0.9738430583501007,
+       "recall": 0.989100817438692,
+       "true_cells": 1468,
+       "pred_cells": 1491
+      }
+     },
+     "macro_f1": 0.7129285419248245,
+     "confusion": [
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       22,
+       39
+      ],
+      [
+       0,
+       0,
+       16,
+       1452
+      ]
+     ]
+    }
+   }
+  },
+  "rule50": {
+   "cells": 9645,
+   "accuracy": 0.7935717988595127,
+   "per_state": {
+    "ice_free_river_snow_free_land": {
+     "f1": 0.9016120066703724,
+     "precision": 0.9400173862648508,
+     "recall": 0.8662216288384512,
+     "true_cells": 3745,
+     "pred_cells": 3451
+    },
+    "ice_free_river_snow_covered_land": {
+     "f1": 0.18525519848771266,
+     "precision": 0.12760416666666666,
+     "recall": 0.33793103448275863,
+     "true_cells": 145,
+     "pred_cells": 384
+    },
+    "ice_covered_river_snow_free_land": {
+     "f1": 0.6729932779754845,
+     "precision": 0.6410546139359699,
+     "recall": 0.708281315022888,
+     "true_cells": 2403,
+     "pred_cells": 2655
+    },
+    "ice_covered_river_snow_covered_land": {
+     "f1": 0.8172737052405102,
+     "precision": 0.8427892234548336,
+     "recall": 0.7932577565632458,
+     "true_cells": 3352,
+     "pred_cells": 3155
+    }
+   },
+   "macro_f1": 0.6442835470935199,
+   "confusion": [
+    [
+     3244,
+     34,
+     425,
+     42
+    ],
+    [
+     21,
+     49,
+     47,
+     28
+    ],
+    [
+     158,
+     117,
+     1702,
+     426
+    ],
+    [
+     28,
+     184,
+     481,
+     2659
+    ]
+   ]
+  },
+  "rule90": {
+   "cells": 9645,
+   "accuracy": 0.8182477967858994,
+   "per_state": {
+    "ice_free_river_snow_free_land": {
+     "f1": 0.8805922111361443,
+     "precision": 0.9382716049382716,
+     "recall": 0.8295936931473621,
+     "true_cells": 3298,
+     "pred_cells": 2916
+    },
+    "ice_free_river_snow_covered_land": {
+     "f1": 0.22276822276822278,
+     "precision": 0.13920163766632548,
+     "recall": 0.5573770491803278,
+     "true_cells": 244,
+     "pred_cells": 977
+    },
+    "ice_covered_river_snow_free_land": {
+     "f1": 0.6481639624252775,
+     "precision": 0.7865284974093264,
+     "recall": 0.55119825708061,
+     "true_cells": 1377,
+     "pred_cells": 965
+    },
+    "ice_covered_river_snow_covered_land": {
+     "f1": 0.8958267633764321,
+     "precision": 0.8901190724879883,
+     "recall": 0.9016081252644943,
+     "true_cells": 4726,
+     "pred_cells": 4787
+    }
+   },
+   "macro_f1": 0.6618377899265191,
+   "confusion": [
+    [
+     2736,
+     445,
+     43,
+     74
+    ],
+    [
+     74,
+     136,
+     2,
+     32
+    ],
+    [
+     69,
+     129,
+     759,
+     420
+    ],
+    [
+     37,
+     267,
+     161,
+     4261
+    ]
+   ]
+  }
+ },
+ "unetpp": {
+  "per_date": {
+   "2023-05-05": {
+    "cells": 1599,
+    "rule50": {
+     "cells": 1599,
+     "accuracy": 0.7642276422764228,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.20689655172413793,
+       "precision": 0.1875,
+       "recall": 0.23076923076923078,
+       "true_cells": 26,
+       "pred_cells": 32
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.03333333333333333,
+       "precision": 0.25,
+       "recall": 0.017857142857142856,
+       "true_cells": 56,
+       "pred_cells": 4
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.4605042016806723,
+       "precision": 0.3494897959183674,
+       "recall": 0.6748768472906403,
+       "true_cells": 203,
+       "pred_cells": 392
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.8676056338028169,
+       "precision": 0.9205807002561913,
+       "recall": 0.8203957382039574,
+       "true_cells": 1314,
+       "pred_cells": 1171
+      }
+     },
+     "macro_f1": 0.3920849301352401,
+     "confusion": [
+      [
+       6,
+       0,
+       12,
+       8
+      ],
+      [
+       7,
+       1,
+       21,
+       27
+      ],
+      [
+       7,
+       1,
+       137,
+       58
+      ],
+      [
+       12,
+       2,
+       222,
+       1078
+      ]
+     ]
+    },
+    "rule90": {
+     "cells": 1599,
+     "accuracy": 0.9030644152595372,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 74
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 23,
+       "pred_cells": 8
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.28205128205128205,
+       "precision": 0.21153846153846154,
+       "recall": 0.4230769230769231,
+       "true_cells": 26,
+       "pred_cells": 52
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.9505804311774461,
+       "precision": 0.9781569965870307,
+       "recall": 0.9245161290322581,
+       "true_cells": 1550,
+       "pred_cells": 1465
+      }
+     },
+     "macro_f1": 0.41087723774290935,
+     "confusion": [
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       4,
+       0,
+       0,
+       19
+      ],
+      [
+       2,
+       0,
+       11,
+       13
+      ],
+      [
+       68,
+       8,
+       41,
+       1433
+      ]
+     ]
+    }
+   },
+   "2023-07-24": {
+    "cells": 1638,
+    "rule50": {
+     "cells": 1638,
+     "accuracy": 0.7967032967032966,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.8868501529051988,
+       "precision": 0.9893858984078847,
+       "recall": 0.8035714285714286,
+       "true_cells": 1624,
+       "pred_cells": 1319
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 14,
+       "pred_cells": 5
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 179
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 135
+      }
+     },
+     "macro_f1": 0.4434250764525994,
+     "confusion": [
+      [
+       1305,
+       5,
+       179,
+       135
+      ],
+      [
+       14,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ]
+     ]
+    },
+    "rule90": {
+     "cells": 1638,
+     "accuracy": 0.8388278388278388,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.915028323892036,
+       "precision": 0.9521497919556172,
+       "recall": 0.8806927517639512,
+       "true_cells": 1559,
+       "pred_cells": 1442
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.024096385542168672,
+       "precision": 0.25,
+       "recall": 0.012658227848101266,
+       "true_cells": 79,
+       "pred_cells": 4
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 76
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 116
+      }
+     },
+     "macro_f1": 0.46956235471710234,
+     "confusion": [
+      [
+       1373,
+       3,
+       72,
+       111
+      ],
+      [
+       69,
+       1,
+       4,
+       5
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ]
+     ]
+    }
+   },
+   "2023-10-04": {
+    "cells": 1599,
+    "rule50": {
+     "cells": 1599,
+     "accuracy": 0.45716072545340836,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.08948545861297538,
+       "precision": 0.47619047619047616,
+       "recall": 0.04938271604938271,
+       "true_cells": 405,
+       "pred_cells": 42
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 9,
+       "pred_cells": 10
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.674591381872214,
+       "precision": 0.7791762013729977,
+       "recall": 0.5947598253275109,
+       "true_cells": 1145,
+       "pred_cells": 874
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.08415147265077139,
+       "precision": 0.04457652303120357,
+       "recall": 0.75,
+       "true_cells": 40,
+       "pred_cells": 673
+      }
+     },
+     "macro_f1": 0.2120570782839902,
+     "confusion": [
+      [
+       20,
+       7,
+       182,
+       196
+      ],
+      [
+       0,
+       0,
+       2,
+       7
+      ],
+      [
+       21,
+       3,
+       681,
+       440
+      ],
+      [
+       1,
+       0,
+       9,
+       30
+      ]
+     ]
+    },
+    "rule90": {
+     "cells": 1599,
+     "accuracy": 0.31019387116948094,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.11494252873563218,
+       "precision": 0.11627906976744186,
+       "recall": 0.11363636363636363,
+       "true_cells": 176,
+       "pred_cells": 172
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 21,
+       "pred_cells": 37
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.260731319554849,
+       "precision": 0.7772511848341233,
+       "recall": 0.15663801337153774,
+       "true_cells": 1047,
+       "pred_cells": 211
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.4067796610169491,
+       "precision": 0.26463104325699743,
+       "recall": 0.8788732394366198,
+       "true_cells": 355,
+       "pred_cells": 1179
+      }
+     },
+     "macro_f1": 0.19561337732685757,
+     "confusion": [
+      [
+       20,
+       12,
+       29,
+       115
+      ],
+      [
+       5,
+       0,
+       2,
+       14
+      ],
+      [
+       123,
+       22,
+       164,
+       738
+      ],
+      [
+       24,
+       3,
+       16,
+       312
+      ]
+     ]
+    }
+   },
+   "2024-04-21": {
+    "cells": 1639,
+    "rule50": {
+     "cells": 1639,
+     "accuracy": 0.5851128737034778,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.13186813186813187,
+       "precision": 0.07741935483870968,
+       "recall": 0.4444444444444444,
+       "true_cells": 54,
+       "pred_cells": 310
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.06349206349206349,
+       "precision": 1.0,
+       "recall": 0.03278688524590164,
+       "true_cells": 61,
+       "pred_cells": 2
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.6260869565217392,
+       "precision": 0.7360594795539034,
+       "recall": 0.5447042640990372,
+       "true_cells": 727,
+       "pred_cells": 538
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.6771752837326608,
+       "precision": 0.6806083650190115,
+       "recall": 0.6737766624843162,
+       "true_cells": 797,
+       "pred_cells": 789
+      }
+     },
+     "macro_f1": 0.3746556089036488,
+     "confusion": [
+      [
+       24,
+       0,
+       16,
+       14
+      ],
+      [
+       21,
+       2,
+       9,
+       29
+      ],
+      [
+       122,
+       0,
+       396,
+       209
+      ],
+      [
+       143,
+       0,
+       117,
+       537
+      ]
+     ]
+    },
+    "rule90": {
+     "cells": 1639,
+     "accuracy": 0.5704697986577181,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.004576659038901602,
+       "precision": 0.002304147465437788,
+       "recall": 0.3333333333333333,
+       "true_cells": 3,
+       "pred_cells": 434
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 40,
+       "pred_cells": 0
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.3946869070208729,
+       "precision": 0.36619718309859156,
+       "recall": 0.4279835390946502,
+       "true_cells": 243,
+       "pred_cells": 284
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.7299912049252418,
+       "precision": 0.9011943539630836,
+       "recall": 0.6134515890613451,
+       "true_cells": 1353,
+       "pred_cells": 921
+      }
+     },
+     "macro_f1": 0.28231369274625406,
+     "confusion": [
+      [
+       1,
+       0,
+       1,
+       1
+      ],
+      [
+       16,
+       0,
+       4,
+       20
+      ],
+      [
+       69,
+       0,
+       104,
+       70
+      ],
+      [
+       348,
+       0,
+       175,
+       830
+      ]
+     ]
+    }
+   },
+   "2024-06-22": {
+    "cells": 1641,
+    "rule50": {
+     "cells": 1641,
+     "accuracy": 0.8592321755027422,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.9242871189773844,
+       "precision": 0.9964664310954063,
+       "recall": 0.8618581907090465,
+       "true_cells": 1636,
+       "pred_cells": 1415
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 5,
+       "pred_cells": 3
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 220
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 3
+      }
+     },
+     "macro_f1": 0.4621435594886922,
+     "confusion": [
+      [
+       1410,
+       3,
+       220,
+       3
+      ],
+      [
+       5,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ]
+     ]
+    },
+    "rule90": {
+     "cells": 1641,
+     "accuracy": 0.8756855575868373,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.9352002605014653,
+       "precision": 0.9503639973527466,
+       "recall": 0.9205128205128205,
+       "true_cells": 1560,
+       "pred_cells": 1511
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.023809523809523808,
+       "precision": 0.3333333333333333,
+       "recall": 0.012345679012345678,
+       "true_cells": 81,
+       "pred_cells": 3
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 92
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 35
+      }
+     },
+     "macro_f1": 0.4795048921554946,
+     "confusion": [
+      [
+       1436,
+       2,
+       91,
+       31
+      ],
+      [
+       75,
+       1,
+       1,
+       4
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ]
+     ]
+    }
+   },
+   "2026-03-26": {
+    "cells": 1529,
+    "rule50": {
+     "cells": 1529,
+     "accuracy": 0.8227599738391105,
+     "per_state": {
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 3
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.37962962962962965,
+       "precision": 0.7884615384615384,
+       "recall": 0.25,
+       "true_cells": 328,
+       "pred_cells": 104
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.8966831871902402,
+       "precision": 0.8270042194092827,
+       "recall": 0.9791840133222315,
+       "true_cells": 1201,
+       "pred_cells": 1422
+      }
+     },
+     "macro_f1": 0.6381564084099349,
+     "confusion": [
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       82,
+       246
+      ],
+      [
+       0,
+       3,
+       22,
+       1176
+      ]
+     ]
+    },
+    "rule90": {
+     "cells": 1529,
+     "accuracy": 0.9594506213211249,
+     "per_state": {
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.08823529411764706,
+       "precision": 0.42857142857142855,
+       "recall": 0.04918032786885246,
+       "true_cells": 61,
+       "pred_cells": 7
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.9792642140468226,
+       "precision": 0.961892247043364,
+       "recall": 0.997275204359673,
+       "true_cells": 1468,
+       "pred_cells": 1522
+      }
+     },
+     "macro_f1": 0.5337497540822348,
+     "confusion": [
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       3,
+       58
+      ],
+      [
+       0,
+       0,
+       4,
+       1464
+      ]
+     ]
+    }
+   }
+  },
+  "rule50": {
+   "cells": 9645,
+   "accuracy": 0.713841368584759,
+   "per_state": {
+    "ice_free_river_snow_free_land": {
+     "f1": 0.8057700713973481,
+     "precision": 0.8867864015394483,
+     "recall": 0.7383177570093458,
+     "true_cells": 3745,
+     "pred_cells": 3118
+    },
+    "ice_free_river_snow_covered_land": {
+     "f1": 0.034883720930232565,
+     "precision": 0.1111111111111111,
+     "recall": 0.020689655172413793,
+     "true_cells": 145,
+     "pred_cells": 27
+    },
+    "ice_covered_river_snow_free_land": {
+     "f1": 0.5503184713375796,
+     "precision": 0.5617685305591678,
+     "recall": 0.5393258426966292,
+     "true_cells": 2403,
+     "pred_cells": 2307
+    },
+    "ice_covered_river_snow_covered_land": {
+     "f1": 0.7477799867461895,
+     "precision": 0.672787979966611,
+     "recall": 0.8415871121718377,
+     "true_cells": 3352,
+     "pred_cells": 4193
+    }
+   },
+   "macro_f1": 0.5346880626028375,
+   "confusion": [
+    [
+     2765,
+     15,
+     609,
+     356
+    ],
+    [
+     47,
+     3,
+     32,
+     63
+    ],
+    [
+     150,
+     4,
+     1296,
+     953
+    ],
+    [
+     156,
+     5,
+     370,
+     2821
+    ]
+   ]
+  },
+  "rule90": {
+   "cells": 9645,
+   "accuracy": 0.7416277864178331,
+   "per_state": {
+    "ice_free_river_snow_free_land": {
+     "f1": 0.816620978213822,
+     "precision": 0.778970547756675,
+     "recall": 0.8580958156458459,
+     "true_cells": 3298,
+     "pred_cells": 3633
+    },
+    "ice_free_river_snow_covered_land": {
+     "f1": 0.013513513513513514,
+     "precision": 0.038461538461538464,
+     "recall": 0.00819672131147541,
+     "true_cells": 244,
+     "pred_cells": 52
+    },
+    "ice_covered_river_snow_free_land": {
+     "f1": 0.2686993806574559,
+     "precision": 0.39058171745152354,
+     "recall": 0.2047930283224401,
+     "true_cells": 1377,
+     "pred_cells": 722
+    },
+    "ice_covered_river_snow_covered_land": {
+     "f1": 0.8107185869128865,
+     "precision": 0.7710958381061473,
+     "recall": 0.8546339399068981,
+     "true_cells": 4726,
+     "pred_cells": 5238
+    }
+   },
+   "macro_f1": 0.47738811482441945,
+   "confusion": [
+    [
+     2830,
+     17,
+     193,
+     258
+    ],
+    [
+     169,
+     2,
+     11,
+     62
+    ],
+    [
+     194,
+     22,
+     282,
+     879
+    ],
+    [
+     440,
+     11,
+     236,
+     4039
+    ]
+   ]
+  }
+ },
+ "cnn2d": {
+  "per_date": {
+   "2023-05-05": {
+    "cells": 1599,
+    "rule50": {
+     "cells": 1599,
+     "accuracy": 0.7517198248905566,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.25882352941176473,
+       "precision": 0.1864406779661017,
+       "recall": 0.4230769230769231,
+       "true_cells": 26,
+       "pred_cells": 59
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.4672897196261682,
+       "precision": 0.49019607843137253,
+       "recall": 0.44642857142857145,
+       "true_cells": 56,
+       "pred_cells": 51
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.4065335753176043,
+       "precision": 0.3218390804597701,
+       "recall": 0.5517241379310345,
+       "true_cells": 203,
+       "pred_cells": 348
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.8586558044806517,
+       "precision": 0.9237510955302366,
+       "recall": 0.802130898021309,
+       "true_cells": 1314,
+       "pred_cells": 1141
+      }
+     },
+     "macro_f1": 0.49782565720904726,
+     "confusion": [
+      [
+       11,
+       1,
+       10,
+       4
+      ],
+      [
+       10,
+       25,
+       11,
+       10
+      ],
+      [
+       14,
+       4,
+       112,
+       73
+      ],
+      [
+       24,
+       21,
+       215,
+       1054
+      ]
+     ]
+    },
+    "rule90": {
+     "cells": 1599,
+     "accuracy": 0.9324577861163227,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 17
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.13043478260869565,
+       "precision": 0.13043478260869565,
+       "recall": 0.13043478260869565,
+       "true_cells": 23,
+       "pred_cells": 23
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.18749999999999997,
+       "precision": 0.15789473684210525,
+       "recall": 0.23076923076923078,
+       "true_cells": 26,
+       "pred_cells": 38
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.9651579290133507,
+       "precision": 0.9743589743589743,
+       "recall": 0.9561290322580646,
+       "true_cells": 1550,
+       "pred_cells": 1521
+      }
+     },
+     "macro_f1": 0.4276975705406821,
+     "confusion": [
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       3,
+       0,
+       20
+      ],
+      [
+       0,
+       1,
+       6,
+       19
+      ],
+      [
+       17,
+       19,
+       32,
+       1482
+      ]
+     ]
+    }
+   },
+   "2023-07-24": {
+    "cells": 1638,
+    "rule50": {
+     "cells": 1638,
+     "accuracy": 0.9578754578754579,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.9784845650140319,
+       "precision": 0.9911560328490209,
+       "recall": 0.9661330049261084,
+       "true_cells": 1624,
+       "pred_cells": 1583
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 14,
+       "pred_cells": 3
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 21
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 31
+      }
+     },
+     "macro_f1": 0.48924228250701596,
+     "confusion": [
+      [
+       1569,
+       3,
+       21,
+       31
+      ],
+      [
+       14,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ]
+     ]
+    },
+    "rule90": {
+     "cells": 1638,
+     "accuracy": 0.9084249084249084,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.9535864978902953,
+       "precision": 0.9651773981603153,
+       "recall": 0.9422706863373957,
+       "true_cells": 1559,
+       "pred_cells": 1522
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.2992125984251969,
+       "precision": 0.3958333333333333,
+       "recall": 0.24050632911392406,
+       "true_cells": 79,
+       "pred_cells": 48
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 25
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 43
+      }
+     },
+     "macro_f1": 0.626399548157746,
+     "confusion": [
+      [
+       1469,
+       29,
+       20,
+       41
+      ],
+      [
+       53,
+       19,
+       5,
+       2
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ]
+     ]
+    }
+   },
+   "2023-10-04": {
+    "cells": 1599,
+    "rule50": {
+     "cells": 1599,
+     "accuracy": 0.7173233270794246,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.014669926650366748,
+       "precision": 0.75,
+       "recall": 0.007407407407407408,
+       "true_cells": 405,
+       "pred_cells": 4
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 9,
+       "pred_cells": 0
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.8354708684499816,
+       "precision": 0.7196969696969697,
+       "recall": 0.9956331877729258,
+       "true_cells": 1145,
+       "pred_cells": 1584
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.15686274509803924,
+       "precision": 0.36363636363636365,
+       "recall": 0.1,
+       "true_cells": 40,
+       "pred_cells": 11
+      }
+     },
+     "macro_f1": 0.2517508850495969,
+     "confusion": [
+      [
+       3,
+       0,
+       399,
+       3
+      ],
+      [
+       0,
+       0,
+       9,
+       0
+      ],
+      [
+       1,
+       0,
+       1140,
+       4
+      ],
+      [
+       0,
+       0,
+       36,
+       4
+      ]
+     ]
+    },
+    "rule90": {
+     "cells": 1599,
+     "accuracy": 0.6441525953721076,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 176,
+       "pred_cells": 0
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 21,
+       "pred_cells": 0
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.7660738714090287,
+       "precision": 0.7329842931937173,
+       "recall": 0.8022922636103151,
+       "true_cells": 1047,
+       "pred_cells": 1146
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.47029702970297027,
+       "precision": 0.4194260485651214,
+       "recall": 0.5352112676056338,
+       "true_cells": 355,
+       "pred_cells": 453
+      }
+     },
+     "macro_f1": 0.30909272527799975,
+     "confusion": [
+      [
+       0,
+       0,
+       127,
+       49
+      ],
+      [
+       0,
+       0,
+       14,
+       7
+      ],
+      [
+       0,
+       0,
+       840,
+       207
+      ],
+      [
+       0,
+       0,
+       165,
+       190
+      ]
+     ]
+    }
+   },
+   "2024-04-21": {
+    "cells": 1639,
+    "rule50": {
+     "cells": 1639,
+     "accuracy": 0.6748017083587553,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.3225806451612903,
+       "precision": 0.22727272727272727,
+       "recall": 0.5555555555555556,
+       "true_cells": 54,
+       "pred_cells": 132
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.1276595744680851,
+       "precision": 0.18181818181818182,
+       "recall": 0.09836065573770492,
+       "true_cells": 61,
+       "pred_cells": 33
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.6549349655700076,
+       "precision": 0.7379310344827587,
+       "recall": 0.5887207702888583,
+       "true_cells": 727,
+       "pred_cells": 580
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.7593140153755175,
+       "precision": 0.7181208053691275,
+       "recall": 0.8055207026348808,
+       "true_cells": 797,
+       "pred_cells": 894
+      }
+     },
+     "macro_f1": 0.46612230014372513,
+     "confusion": [
+      [
+       30,
+       3,
+       15,
+       6
+      ],
+      [
+       19,
+       6,
+       13,
+       23
+      ],
+      [
+       65,
+       11,
+       428,
+       223
+      ],
+      [
+       18,
+       13,
+       124,
+       642
+      ]
+     ]
+    },
+    "rule90": {
+     "cells": 1639,
+     "accuracy": 0.7803538743136058,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.023529411764705882,
+       "precision": 0.012195121951219513,
+       "recall": 0.3333333333333333,
+       "true_cells": 3,
+       "pred_cells": 82
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.08108108108108107,
+       "precision": 0.08823529411764706,
+       "recall": 0.075,
+       "true_cells": 40,
+       "pred_cells": 34
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.5605536332179931,
+       "precision": 0.4835820895522388,
+       "recall": 0.6666666666666666,
+       "true_cells": 243,
+       "pred_cells": 335
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.8760330578512396,
+       "precision": 0.9368686868686869,
+       "recall": 0.8226164079822617,
+       "true_cells": 1353,
+       "pred_cells": 1188
+      }
+     },
+     "macro_f1": 0.3852992959787549,
+     "confusion": [
+      [
+       1,
+       1,
+       1,
+       0
+      ],
+      [
+       8,
+       3,
+       7,
+       22
+      ],
+      [
+       24,
+       4,
+       162,
+       53
+      ],
+      [
+       49,
+       26,
+       165,
+       1113
+      ]
+     ]
+    }
+   },
+   "2024-06-22": {
+    "cells": 1641,
+    "rule50": {
+     "cells": 1641,
+     "accuracy": 0.9902498476538696,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.9951010410287813,
+       "precision": 0.9969325153374233,
+       "recall": 0.9932762836185819,
+       "true_cells": 1636,
+       "pred_cells": 1630
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 5,
+       "pred_cells": 1
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 10
+      }
+     },
+     "macro_f1": 0.49755052051439064,
+     "confusion": [
+      [
+       1625,
+       1,
+       10,
+       0
+      ],
+      [
+       5,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ]
+     ]
+    },
+    "rule90": {
+     "cells": 1641,
+     "accuracy": 0.9207800121876905,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.9591836734693878,
+       "precision": 0.9543147208121827,
+       "recall": 0.9641025641025641,
+       "true_cells": 1560,
+       "pred_cells": 1576
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.1473684210526316,
+       "precision": 0.5,
+       "recall": 0.08641975308641975,
+       "true_cells": 81,
+       "pred_cells": 14
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 51
+      }
+     },
+     "macro_f1": 0.5532760472610097,
+     "confusion": [
+      [
+       1504,
+       7,
+       49,
+       0
+      ],
+      [
+       72,
+       7,
+       2,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ]
+     ]
+    }
+   },
+   "2026-03-26": {
+    "cells": 1529,
+    "rule50": {
+     "cells": 1529,
+     "accuracy": 0.7710922171353826,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 63
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 89
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.323943661971831,
+       "precision": 0.7040816326530612,
+       "recall": 0.21036585365853658,
+       "true_cells": 328,
+       "pred_cells": 98
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.8951612903225806,
+       "precision": 0.8678655199374511,
+       "recall": 0.9242298084929226,
+       "true_cells": 1201,
+       "pred_cells": 1279
+      }
+     },
+     "macro_f1": 0.6095524761472058,
+     "confusion": [
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       50,
+       40,
+       69,
+       169
+      ],
+      [
+       13,
+       49,
+       29,
+       1110
+      ]
+     ]
+    },
+    "rule90": {
+     "cells": 1529,
+     "accuracy": 0.9398299542184434,
+     "per_state": {
+      "ice_free_river_snow_free_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 2
+      },
+      "ice_free_river_snow_covered_land": {
+       "f1": 0.0,
+       "precision": 0.0,
+       "recall": 0.0,
+       "true_cells": 0,
+       "pred_cells": 17
+      },
+      "ice_covered_river_snow_free_land": {
+       "f1": 0.02631578947368421,
+       "precision": 0.06666666666666667,
+       "recall": 0.01639344262295082,
+       "true_cells": 61,
+       "pred_cells": 15
+      },
+      "ice_covered_river_snow_covered_land": {
+       "f1": 0.9692878839014513,
+       "precision": 0.9605351170568562,
+       "recall": 0.9782016348773842,
+       "true_cells": 1468,
+       "pred_cells": 1495
+      }
+     },
+     "macro_f1": 0.4978018366875677,
+     "confusion": [
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       1,
+       1,
+       59
+      ],
+      [
+       2,
+       16,
+       14,
+       1436
+      ]
+     ]
+    }
+   }
+  },
+  "rule50": {
+   "cells": 9645,
+   "accuracy": 0.8116122343182997,
+   "per_state": {
+    "ice_free_river_snow_free_land": {
+     "f1": 0.897450110864745,
+     "precision": 0.9328723710746183,
+     "recall": 0.8646194926568759,
+     "true_cells": 3745,
+     "pred_cells": 3471
+    },
+    "ice_free_river_snow_covered_land": {
+     "f1": 0.19254658385093168,
+     "precision": 0.1751412429378531,
+     "recall": 0.21379310344827587,
+     "true_cells": 145,
+     "pred_cells": 177
+    },
+    "ice_covered_river_snow_free_land": {
+     "f1": 0.6934972244250595,
+     "precision": 0.662249148049981,
+     "recall": 0.7278401997503121,
+     "true_cells": 2403,
+     "pred_cells": 2641
+    },
+    "ice_covered_river_snow_covered_land": {
+     "f1": 0.8378056052474656,
+     "precision": 0.8373063170441001,
+     "recall": 0.8383054892601431,
+     "true_cells": 3352,
+     "pred_cells": 3356
+    }
+   },
+   "macro_f1": 0.6553248810970504,
+   "confusion": [
+    [
+     3238,
+     8,
+     455,
+     44
+    ],
+    [
+     48,
+     31,
+     33,
+     33
+    ],
+    [
+     130,
+     55,
+     1749,
+     469
+    ],
+    [
+     55,
+     83,
+     404,
+     2810
+    ]
+   ]
+  },
+  "rule90": {
+   "cells": 9645,
+   "accuracy": 0.8539139450492483,
+   "per_state": {
+    "ice_free_river_snow_free_land": {
+     "f1": 0.915499461289826,
+     "precision": 0.9296655204751485,
+     "recall": 0.9017586416009703,
+     "true_cells": 3298,
+     "pred_cells": 3199
+    },
+    "ice_free_river_snow_covered_land": {
+     "f1": 0.16842105263157897,
+     "precision": 0.23529411764705882,
+     "recall": 0.13114754098360656,
+     "true_cells": 244,
+     "pred_cells": 136
+    },
+    "ice_covered_river_snow_free_land": {
+     "f1": 0.6755942417140944,
+     "precision": 0.6267080745341614,
+     "recall": 0.7327523602033406,
+     "true_cells": 1377,
+     "pred_cells": 1610
+    },
+    "ice_covered_river_snow_covered_land": {
+     "f1": 0.895607893061744,
+     "precision": 0.8980851063829787,
+     "recall": 0.8931443080829454,
+     "true_cells": 4726,
+     "pred_cells": 4700
+    }
+   },
+   "macro_f1": 0.6637806621743109,
+   "confusion": [
+    [
+     2974,
+     37,
+     197,
+     90
+    ],
+    [
+     133,
+     32,
+     28,
+     51
+    ],
+    [
+     24,
+     6,
+     1009,
+     338
+    ],
+    [
+     68,
+     61,
+     376,
+     4221
+    ]
+   ]
+  }
+ }
+}

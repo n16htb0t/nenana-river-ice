@@ -1,0 +1,41 @@
+model,dates,class,n_test_px,precision,recall,f1
+Random Forest,all dates,river,39991,0.951,0.963,0.957
+Random Forest,all dates,ice,1732,0.703,0.73,0.716
+Random Forest,all dates,snow,564,0.495,0.289,0.365
+Random Forest,all dates,land,43071,0.966,0.959,0.962
+Random Forest,2023-07-24,river,31021,1.0,0.988,0.994
+Random Forest,2023-07-24,ice,0,0.0,0.0,0.0
+Random Forest,2023-07-24,snow,0,0.0,0.0,0.0
+Random Forest,2023-07-24,land,7,0.0,0.0,0.0
+Random Forest,2023-10-04,river,974,0.773,0.769,0.771
+Random Forest,2023-10-04,ice,1308,0.722,0.773,0.746
+Random Forest,2023-10-04,snow,521,0.509,0.313,0.388
+Random Forest,2023-10-04,land,5217,0.95,0.97,0.96
+Random Forest,2024-04-21,river,1886,0.885,0.934,0.909
+Random Forest,2024-04-21,ice,424,0.639,0.597,0.617
+Random Forest,2024-04-21,snow,43,0.0,0.0,0.0
+Random Forest,2024-04-21,land,728,0.917,0.864,0.89
+Random Forest,2024-06-22,river,6110,0.78,0.877,0.826
+Random Forest,2024-06-22,ice,0,0.0,0.0,0.0
+Random Forest,2024-06-22,snow,0,0.0,0.0,0.0
+Random Forest,2024-06-22,land,37119,0.979,0.959,0.969
+UNet++,all dates,river,39991,0.951,0.966,0.958
+UNet++,all dates,ice,1732,0.517,0.709,0.598
+UNet++,all dates,snow,564,0.298,0.289,0.293
+UNet++,all dates,land,43071,0.968,0.94,0.954
+UNet++,2023-07-24,river,31021,1.0,0.997,0.999
+UNet++,2023-07-24,ice,0,0.0,0.0,0.0
+UNet++,2023-07-24,snow,0,0.0,0.0,0.0
+UNet++,2023-07-24,land,7,0.0,0.0,0.0
+UNet++,2023-10-04,river,974,0.65,0.659,0.655
+UNet++,2023-10-04,ice,1308,0.503,0.69,0.582
+UNet++,2023-10-04,snow,521,0.338,0.309,0.323
+UNet++,2023-10-04,land,5217,0.922,0.841,0.88
+UNet++,2024-04-21,river,1886,0.886,0.945,0.915
+UNet++,2024-04-21,ice,424,0.785,0.767,0.776
+UNet++,2024-04-21,snow,43,0.032,0.047,0.038
+UNet++,2024-04-21,land,728,0.954,0.777,0.857
+UNet++,2024-06-22,river,6110,0.787,0.861,0.823
+UNet++,2024-06-22,ice,0,0.0,0.0,0.0
+UNet++,2024-06-22,snow,0,0.0,0.0,0.0
+UNet++,2024-06-22,land,37119,0.977,0.957,0.967

@@ -1,0 +1,37 @@
+Random Forest — Binary: river vs not river (river = open water + ice)
+dataset: 3. external_test_daksh: trained on the 4 patch dates, tested on daksh 2024-03-12
+
+MODEL
+  Random Forest (scikit-learn 1.9)
+  300 trees, minimum 2 samples per leaf, class weights balanced per tree
+  (balanced_subsample). Each pixel is classified on its own inputs, no neighbourhood.
+
+INPUTS
+  9 per pixel: blue, green, red, nir, swir1, water_occ, NDWI, NDSI, NDVI
+
+DATA
+  training dates: 2023-07-24, 2023-10-04, 2024-04-21, 2024-06-22
+  test dates:     2024-03-12
+  training pixels: not_river 43,635, river 41,723
+  test pixels:     not_river 190, river 342
+  evaluation: trained once on all training dates, scored on the test date (no cross-validation)
+
+SCORES (all dates; per-date scores in metrics.txt)
+
+Random Forest — external test: trained on 2023-07-24, 2023-10-04, 2024-04-21, 2024-06-22, scored on daksh 2024-03-12
+
+class             n  precision   recall     F1
+not_river       190      0.367    0.916  0.524
+river           342      0.724    0.123  0.210
+
+overall accuracy 0.406   macro F1 0.367
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river        174        16
+river            300        42
+
+FILES
+  metrics.txt       scores, confusion matrix, per date, input importance
+  oof.npz           every scored pixel: date, row, col, true, predicted
+  pred_<date>.tif   30 m map of every date (+ .qml colours for QGIS)

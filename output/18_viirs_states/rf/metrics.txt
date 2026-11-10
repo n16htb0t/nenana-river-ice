@@ -1,0 +1,23 @@
+=== Random Forest: leave-one-date-out, 60068 cells
+part MAE (percentage points) / R2: open_river 1.6 / 0.84, ice 1.4 / 0.90, snow 11.3 / 0.79, snow_free_land 11.4 / 0.82
+--- rule50: state accuracy 0.759   macro F1 0.574
+state                                     F1  prec   rec   true   pred
+ice_free_river_snow_free_land           0.80  0.68  0.97  20978  29918
+ice_free_river_snow_covered_land        0.01  0.01  0.05    188   1394
+ice_covered_river_snow_free_land        0.67  0.93  0.52  20630  11618
+ice_covered_river_snow_covered_land     0.82  0.84  0.79  18272  17138
+confusion (rows true 1-4, columns predicted 1-4): [[20396, 208, 165, 209], [83, 10, 11, 84], [7197, 303, 10750, 2380], [2242, 873, 692, 14465]]
+--- rule90: state accuracy 0.846   macro F1 0.637
+state                                     F1  prec   rec   true   pred
+ice_free_river_snow_free_land           0.90  0.87  0.94  20384  21914
+ice_free_river_snow_covered_land        0.07  0.04  0.25    414   2601
+ice_covered_river_snow_free_land        0.67  0.96  0.52  12577   6753
+ice_covered_river_snow_covered_land     0.91  0.87  0.94  26693  28800
+confusion (rows true 1-4, columns predicted 1-4): [[19122, 526, 90, 646], [168, 102, 1, 143], [2409, 808, 6482, 2878], [215, 1165, 180, 25133]]
+date         acc50 acc90   open_river t/p %          ice t/p %         snow t/p %   snow_free_ t/p %
+2023-05-05    0.71  0.96        0.2/1.3            3.8/5.4           70.1/59.9          26.0/33.4   
+2023-07-24    0.96  0.89        3.9/4.1            0.0/0.3            0.4/5.9           95.7/89.6   
+2023-10-04    0.93  0.79        1.8/0.9            1.9/1.0            6.2/13.0          90.0/85.1   
+2024-04-21    0.11  0.52        0.4/3.3            3.5/3.3           34.9/27.3          61.2/66.1   
+2024-06-22    1.00  0.98        3.9/3.6            0.0/0.1            0.3/0.9           95.8/95.3   
+2026-03-26    0.87  0.93        0.0/0.4            4.2/4.7           64.8/62.9          31.0/32.0   

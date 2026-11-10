@@ -1,0 +1,43 @@
+external test 2024-03-12, WITH river penalty (scale 600.0 m)
+
+class                       n  precision   recall     F1
+river                       0      0.000    0.000  0.000
+ice                       342      0.587    0.079  0.139
+snow                      150      0.280    0.900  0.427
+forest                     35      0.000    0.000  0.000
+shrub_grass_wetland         1      0.000    0.000  0.000
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.307   macro F1 0.142
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                                  0                   0                   0                   0                   0                   0
+ice                                    0                  27                 315                   0                   0                   0
+snow                                   0                  15                 135                   0                   0                   0
+forest                                 0                   4                  31                   0                   0                   0
+shrub_grass_wetland                    0                   0                   1                   0                   0                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+
+external test 2024-03-12, without penalty
+
+class                       n  precision   recall     F1
+river                       0      0.000    0.000  0.000
+ice                       342      0.587    0.079  0.139
+snow                      150      0.280    0.900  0.427
+forest                     35      0.000    0.000  0.000
+shrub_grass_wetland         1      0.000    0.000  0.000
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.307   macro F1 0.142
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                                  0                   0                   0                   0                   0                   0
+ice                                    0                  27                 315                   0                   0                   0
+snow                                   0                  15                 135                   0                   0                   0
+forest                                 0                   4                  31                   0                   0                   0
+shrub_grass_wetland                    0                   0                   1                   0                   0                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+
+final penalty scale: 600.0 m (D0 60 m, floor 0.1); inputs (25): nlcd_barren, nlcd_woody_wetland, green, blue, blue_mean7, nlcd_deciduous_forest, blue_mean3, cos_incidence, vis_brightness, nd_green_nir, red, nlcd_evergreen_forest, blue_std3, diff_green_swir1, diff_green_nir, NDWI_mean3, blue_std7, diff_green_red, nlcd_water, diff_red_swir1, NDWI_mean7, nd_blue_green, diff_blue_green, nd_blue_swir1, SAVI

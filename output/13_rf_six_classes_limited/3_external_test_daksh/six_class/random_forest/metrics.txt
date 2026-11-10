@@ -1,0 +1,49 @@
+Random Forest, limited (top 25 inputs, depth 16) — external test on 2024-03-12
+
+class                       n  precision   recall     F1
+river                       0      0.000    0.000  0.000
+ice                       342      0.587    0.079  0.139
+snow                      150      0.280    0.900  0.427
+forest                     35      0.000    0.000  0.000
+shrub_grass_wetland         1      0.000    0.000  0.000
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.307   macro F1 0.142
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                                  0                   0                   0                   0                   0                   0
+ice                                    0                  27                 315                   0                   0                   0
+snow                                   0                  15                 135                   0                   0                   0
+forest                                 0                   4                  31                   0                   0                   0
+shrub_grass_wetland                    0                   0                   1                   0                   0                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+
+training accuracy 0.968
+
+inputs used (25) and importance
+  nlcd_barren              0.1233
+  nlcd_woody_wetland       0.1041
+  green                    0.0741
+  vis_brightness           0.0522
+  blue_mean3               0.0491
+  cos_incidence            0.0482
+  nd_green_nir             0.0460
+  red                      0.0431
+  blue_mean7               0.0426
+  NDWI_mean3               0.0411
+  nlcd_deciduous_forest    0.0390
+  blue                     0.0388
+  diff_green_nir           0.0328
+  blue_std7                0.0315
+  nlcd_evergreen_forest    0.0278
+  diff_green_swir1         0.0257
+  diff_red_swir1           0.0255
+  diff_green_red           0.0229
+  NDWI_mean7               0.0220
+  nlcd_water               0.0213
+  SAVI                     0.0210
+  diff_blue_green          0.0209
+  blue_std3                0.0207
+  nd_blue_swir1            0.0204
+  nd_blue_green            0.0060

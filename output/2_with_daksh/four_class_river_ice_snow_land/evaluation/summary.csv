@@ -1,0 +1,49 @@
+model,dates,class,n_test_px,precision,recall,f1
+Random Forest,all dates,river,39991,0.948,0.956,0.952
+Random Forest,all dates,ice,2074,0.675,0.687,0.681
+Random Forest,all dates,snow,714,0.37,0.307,0.335
+Random Forest,all dates,land,43111,0.96,0.955,0.958
+Random Forest,2023-07-24,river,31021,1.0,0.979,0.989
+Random Forest,2023-07-24,ice,0,0.0,0.0,0.0
+Random Forest,2023-07-24,snow,0,0.0,0.0,0.0
+Random Forest,2023-07-24,land,7,0.0,0.0,0.0
+Random Forest,2023-10-04,river,974,0.665,0.806,0.729
+Random Forest,2023-10-04,ice,1308,0.714,0.677,0.695
+Random Forest,2023-10-04,snow,521,0.495,0.263,0.343
+Random Forest,2023-10-04,land,5217,0.944,0.963,0.953
+Random Forest,2024-03-12,river,0,0.0,0.0,0.0
+Random Forest,2024-03-12,ice,342,0.702,0.468,0.561
+Random Forest,2024-03-12,snow,150,0.272,0.547,0.363
+Random Forest,2024-03-12,land,40,0.0,0.0,0.0
+Random Forest,2024-04-21,river,1886,0.95,0.875,0.911
+Random Forest,2024-04-21,ice,424,0.592,0.892,0.711
+Random Forest,2024-04-21,snow,43,0.0,0.0,0.0
+Random Forest,2024-04-21,land,728,0.894,0.853,0.873
+Random Forest,2024-06-22,river,6110,0.773,0.887,0.826
+Random Forest,2024-06-22,ice,0,0.0,0.0,0.0
+Random Forest,2024-06-22,snow,0,0.0,0.0,0.0
+Random Forest,2024-06-22,land,37119,0.981,0.957,0.969
+UNet++,all dates,river,39991,0.936,0.973,0.954
+UNet++,all dates,ice,2074,0.488,0.655,0.559
+UNet++,all dates,snow,714,0.196,0.22,0.208
+UNet++,all dates,land,43111,0.97,0.917,0.943
+UNet++,2023-07-24,river,31021,1.0,0.998,0.999
+UNet++,2023-07-24,ice,0,0.0,0.0,0.0
+UNet++,2023-07-24,snow,0,0.0,0.0,0.0
+UNet++,2023-07-24,land,7,0.0,0.0,0.0
+UNet++,2023-10-04,river,974,0.616,0.711,0.66
+UNet++,2023-10-04,ice,1308,0.605,0.703,0.65
+UNet++,2023-10-04,snow,521,0.343,0.242,0.284
+UNet++,2023-10-04,land,5217,0.922,0.885,0.903
+UNet++,2024-03-12,river,0,0.0,0.0,0.0
+UNet++,2024-03-12,ice,342,0.691,0.588,0.635
+UNet++,2024-03-12,snow,150,0.246,0.193,0.216
+UNet++,2024-03-12,land,40,0.264,0.6,0.366
+UNet++,2024-04-21,river,1886,0.851,0.939,0.893
+UNet++,2024-04-21,ice,424,0.677,0.564,0.615
+UNet++,2024-04-21,snow,43,0.012,0.047,0.02
+UNet++,2024-04-21,land,728,0.872,0.582,0.699
+UNet++,2024-06-22,river,6110,0.744,0.895,0.813
+UNet++,2024-06-22,ice,0,0.0,0.0,0.0
+UNet++,2024-06-22,snow,0,0.0,0.0,0.0
+UNet++,2024-06-22,land,37119,0.982,0.929,0.954

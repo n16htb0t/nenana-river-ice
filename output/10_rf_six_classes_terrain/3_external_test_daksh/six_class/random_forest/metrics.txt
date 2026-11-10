@@ -1,0 +1,100 @@
+Random Forest, all bands — external test: trained on 2023-07-24, 2023-10-04, 2024-04-21, 2024-06-22, scored on 2024-03-12
+
+class                       n  precision   recall     F1
+river                       0      0.000    0.000  0.000
+ice                       342      0.683    0.082  0.146
+snow                      150      0.281    0.913  0.430
+forest                     35      0.000    0.000  0.000
+shrub_grass_wetland         1      0.000    0.000  0.000
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.312   macro F1 0.144
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                                  0                   0                   0                   0                   0                   0
+ice                                    0                  28                 314                   0                   0                   0
+snow                                   0                  13                 137                   0                   0                   0
+forest                                 0                   0                  35                   0                   0                   0
+shrub_grass_wetland                    0                   0                   1                   0                   0                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+
+settings (from with_daksh tuning): {'max_features': 'sqrt', 'min_samples_leaf': 10}, 500 trees
+
+input importance (final model, 76 inputs)
+  nlcd_barren            0.0764
+  nlcd_woody_wetland     0.0748
+  green                  0.0419
+  nlcd_deciduous_forest  0.0306
+  blue                   0.0306
+  vis_brightness         0.0284
+  red                    0.0261
+  blue_mean3             0.0258
+  blue_mean7             0.0227
+  blue_std7              0.0226
+  vis_brightness_ctx15   0.0222
+  vis_brightness_ctx31   0.0217
+  elev_m                 0.0206
+  nd_green_nir           0.0205
+  nlcd_evergreen_forest  0.0204
+  NDWI_mean3             0.0192
+  blue_std3              0.0180
+  nd_green_swir1         0.0175
+  diff_green_swir1       0.0173
+  dist_nlcd_water_m      0.0170
+  rel_elev_1km_m         0.0162
+  diff_red_swir1         0.0133
+  diff_green_nir         0.0133
+  diff_blue_swir1        0.0133
+  nd_red_swir1           0.0122
+  diff_blue_nir          0.0122
+  diff_blue_green        0.0121
+  diff_green_red         0.0120
+  NDWI_mean7             0.0119
+  nd_blue_swir1          0.0119
+  nlcd_water             0.0113
+  nd_blue_nir            0.0111
+  rel_elev_300m_m        0.0111
+  nir_plus_swir1         0.0110
+  diff_nir_swir1         0.0109
+  nd_green_red           0.0107
+  swir1                  0.0107
+  nlcd_shrub             0.0104
+  SAVI                   0.0103
+  nd_red_nir             0.0100
+  NDWI_ctx31             0.0099
+  nir                    0.0098
+  NDSI_mean3             0.0098
+  diff_red_nir           0.0093
+  NDVI_mean3             0.0091
+  MSAVI                  0.0091
+  NDVI_ctx31             0.0084
+  nir_mean7              0.0083
+  nd_nir_swir1           0.0075
+  NDVI_std7              0.0075
+  NDWI_std7              0.0074
+  EVI                    0.0073
+  nd_blue_green          0.0072
+  nir_mean3              0.0070
+  MNDWI_ctx31            0.0067
+  NDWI_ctx15             0.0053
+  slope_deg              0.0052
+  BSI                    0.0051
+  NDSI_mean7             0.0050
+  diff_blue_red          0.0049
+  NDVI_ctx15             0.0048
+  nir_std7               0.0048
+  NDSI_std7              0.0041
+  MNDWI_ctx15            0.0037
+  NDVI_mean7             0.0034
+  nd_blue_red            0.0029
+  NDWI_std3              0.0027
+  NDVI_std3              0.0027
+  nlcd_mixed_forest      0.0026
+  nir_std3               0.0025
+  NDSI_std3              0.0021
+  northness              0.0017
+  eastness               0.0012
+  nlcd_emergent_wetland  0.0011
+  nlcd_grass_sedge       0.0000
+  nlcd_developed         0.0000

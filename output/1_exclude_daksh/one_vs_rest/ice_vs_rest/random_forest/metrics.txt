@@ -1,0 +1,77 @@
+Random Forest — 5-fold spatial CV, all labelled dates
+
+class            n  precision   recall     F1
+not_ice     83,626      0.994    0.995  0.994
+ice          1,732      0.737    0.695  0.716
+
+overall accuracy 0.989   macro F1 0.855
+
+confusion (rows = true, cols = predicted)
+           not_ice      ice
+not_ice     83,197      429
+ice            528    1,204
+
+--- 2023-07-24
+
+class            n  precision   recall     F1
+not_ice     31,028      1.000    1.000  1.000
+ice              0      0.000    0.000  0.000
+
+overall accuracy 1.000   macro F1 1.000
+
+confusion (rows = true, cols = predicted)
+           not_ice      ice
+not_ice     31,028        0
+ice              0        0
+
+--- 2023-10-04
+
+class            n  precision   recall     F1
+not_ice      6,712      0.947    0.952  0.950
+ice          1,308      0.746    0.729  0.738
+
+overall accuracy 0.915   macro F1 0.844
+
+confusion (rows = true, cols = predicted)
+           not_ice      ice
+not_ice      6,388      324
+ice            354      954
+
+--- 2024-04-21
+
+class            n  precision   recall     F1
+not_ice      2,657      0.936    0.960  0.948
+ice            424      0.704    0.590  0.642
+
+overall accuracy 0.909   macro F1 0.795
+
+confusion (rows = true, cols = predicted)
+           not_ice      ice
+not_ice      2,552      105
+ice            174      250
+
+--- 2024-06-22
+
+class            n  precision   recall     F1
+not_ice     43,229      1.000    1.000  1.000
+ice              0      0.000    0.000  0.000
+
+overall accuracy 1.000   macro F1 1.000
+
+confusion (rows = true, cols = predicted)
+           not_ice      ice
+not_ice     43,229        0
+ice              0        0
+
+feature importance (final model)
+  SR_B4      0.260
+  SR_B3      0.229
+  ST_B10     0.176
+  SR_B2      0.162
+  NDSI       0.054
+  NDVI       0.052
+  NDWI       0.030
+  SR_B5      0.012
+  SR_B7      0.010
+  water_occ  0.009
+  SR_B6      0.007

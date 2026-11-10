@@ -1,0 +1,81 @@
+=== RUN 12 Tue Nov  3 08:26:58 AM EST 2026
+
+=== exclude_daksh: 85 inputs, dates 2023-07-24, 2023-10-04, 2024-04-21, 2024-06-22
+  {'max_features': 'sqrt', 'min_samples_leaf': 10}   macro F1 0.837  accuracy 0.969  (110 s)
+  {'max_features': 0.1, 'min_samples_leaf': 5}       macro F1 0.837  accuracy 0.970  (102 s)
+  {'max_features': 'sqrt', 'min_samples_leaf': 5}    macro F1 0.836  accuracy 0.970  (109 s)
+Random Forest, all bands — 5-fold spatial CV, all labelled dates (best settings {'max_features': 'sqrt', 'min_samples_leaf': 10}, 500 trees)
+
+class                       n  precision   recall     F1
+river                  39,991      0.988    0.971  0.980
+ice                     1,732      0.683    0.796  0.735
+snow                      564      0.448    0.394  0.419
+forest                 22,173      0.977    0.989  0.983
+shrub_grass_wetland    15,626      0.977    0.977  0.977
+bare_developed          2,726      0.901    0.963  0.931
+
+overall accuracy 0.969   macro F1 0.837
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                             38,843                 212                   5                 327                 322                 282
+ice                                  168               1,378                 165                  12                   9                   0
+snow                                  16                 313                 222                   2                   8                   3
+forest                               145                  53                  39              21,926                   8                   2
+shrub_grass_wetland                   87                  49                  44                 176              15,269                   1
+bare_developed                        49                  12                  21                   6                  12               2,626
+/home/nia/Desktop/nenana_crops/daksh/rf_all_bands.py:86: RuntimeWarning: divide by zero encountered in divide
+  add("EVI", 2.5 * (N - R) / (N + 6 * R - 7.5 * B + 1))
+wrote /home/nia/Desktop/nenana_crops/daksh/output/12_rf_six_classes_bands_angles_nlcd/1_exclude_daksh/six_class/random_forest
+
+=== with_daksh: 68 inputs, dates 2023-07-24, 2023-10-04, 2024-04-21, 2024-06-22, 2024-03-12
+  {'max_features': 'sqrt', 'min_samples_leaf': 10}   macro F1 0.835  accuracy 0.968  (91 s)
+  {'max_features': 0.1, 'min_samples_leaf': 5}       macro F1 0.830  accuracy 0.967  (74 s)
+  {'max_features': 'sqrt', 'min_samples_leaf': 5}    macro F1 0.831  accuracy 0.969  (80 s)
+Random Forest, all bands — 5-fold spatial CV, all labelled dates (best settings {'max_features': 'sqrt', 'min_samples_leaf': 10}, 500 trees)
+
+class                       n  precision   recall     F1
+river                  39,991      0.989    0.971  0.980
+ice                     2,074      0.680    0.789  0.730
+snow                      714      0.427    0.388  0.406
+forest                 22,208      0.979    0.988  0.984
+shrub_grass_wetland    15,627      0.977    0.981  0.979
+bare_developed          2,726      0.897    0.966  0.931
+
+overall accuracy 0.968   macro F1 0.835
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                             38,833                 222                   5                 323                 319                 289
+ice                                  143               1,636                 275                  10                   9                   1
+snow                                  14                 410                 277                   3                   7                   3
+forest                               136                  82                  33              21,938                  14                   5
+shrub_grass_wetland                   81                  43                  39                 124              15,337                   3
+bare_developed                        50                  13                  20                   2                   7               2,634
+/home/nia/Desktop/nenana_crops/daksh/rf_all_bands.py:86: RuntimeWarning: divide by zero encountered in divide
+  add("EVI", 2.5 * (N - R) / (N + 6 * R - 7.5 * B + 1))
+wrote /home/nia/Desktop/nenana_crops/daksh/output/12_rf_six_classes_bands_angles_nlcd/2_with_daksh/six_class/random_forest
+
+=== external_daksh: 68 inputs, dates 2023-07-24, 2023-10-04, 2024-04-21, 2024-06-22, 2024-03-12
+Random Forest, all bands — external test: trained on 2023-07-24, 2023-10-04, 2024-04-21, 2024-06-22, scored on 2024-03-12
+
+class                       n  precision   recall     F1
+river                       0      0.000    0.000  0.000
+ice                       342      0.527    0.085  0.146
+snow                      150      0.277    0.873  0.421
+forest                     35      0.000    0.000  0.000
+shrub_grass_wetland         1      0.000    0.000  0.000
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.303   macro F1 0.142
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                                  0                   0                   0                   0                   0                   0
+ice                                    0                  29                 313                   0                   0                   0
+snow                                   0                  19                 131                   0                   0                   0
+forest                                 0                   7                  28                   0                   0                   0
+shrub_grass_wetland                    0                   0                   1                   0                   0                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+wrote /home/nia/Desktop/nenana_crops/daksh/output/12_rf_six_classes_bands_angles_nlcd/3_external_test_daksh/six_class/random_forest
+=== RUN 12 END Tue Nov  3 08:44:02 AM EST 2026

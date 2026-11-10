@@ -1,0 +1,158 @@
+best input combination — 5-fold spatial CV, all labelled dates
+
+class                       n  precision   recall     F1
+river                  39,991      0.970    0.958  0.964
+ice                     2,074      0.685    0.853  0.760
+snow                      714      0.544    0.262  0.353
+forest                 22,208      0.975    0.981  0.978
+shrub_grass_wetland    15,627      0.958    0.977  0.967
+bare_developed          2,726      0.866    0.840  0.853
+
+overall accuracy 0.955   macro F1 0.813
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                             38,308                 222                   3                 462                 646                 350
+ice                                  173               1,769                 117                   8                   7                   0
+snow                                  22                 475                 187                  16                  11                   3
+forest                               327                  76                  16              21,789                   0                   0
+shrub_grass_wetland                  237                  33                   9                  83              15,265                   0
+bare_developed                       416                   7                  12                   0                   0               2,291
+
+inputs: diff_pairs+nlcd+terrain+brightness+dist_water (29 inputs); forest {'n_estimators': 500, 'max_features': 0.1, 'min_samples_leaf': 5}
+
+--- 2023-07-24
+
+class                       n  precision   recall     F1
+river                  31,021      1.000    0.969  0.984
+ice                         0      0.000    0.000  0.000
+snow                        0      0.000    0.000  0.000
+forest                      5      0.010    0.600  0.019
+shrub_grass_wetland         2      0.002    0.500  0.005
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.969   macro F1 0.252
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                             30,059                   0                   0                 303                 407                 252
+ice                                    0                   0                   0                   0                   0                   0
+snow                                   0                   0                   0                   0                   0                   0
+forest                                 2                   0                   0                   3                   0                   0
+shrub_grass_wetland                    0                   0                   0                   1                   1                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+
+--- 2023-10-04
+
+class                       n  precision   recall     F1
+river                     974      0.688    0.855  0.763
+ice                     1,308      0.753    0.789  0.771
+snow                      521      0.552    0.349  0.428
+forest                  2,184      0.957    0.957  0.957
+shrub_grass_wetland     2,703      0.965    0.957  0.961
+bare_developed            157      0.931    0.427  0.585
+
+overall accuracy 0.865   macro F1 0.744
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                                833                  21                   3                  39                  76                   2
+ice                                  149               1,032                 112                   8                   7                   0
+snow                                  13                 297                 182                  15                  11                   3
+forest                                77                   5                  13               2,089                   0                   0
+shrub_grass_wetland                   67                   8                   8                  33               2,587                   0
+bare_developed                        71                   7                  12                   0                   0                  67
+
+--- 2024-03-12
+
+class                       n  precision   recall     F1
+river                       0      0.000    0.000  0.000
+ice                       342      0.652    0.974  0.781
+snow                      150      0.500    0.033  0.062
+forest                     35      0.000    0.000  0.000
+shrub_grass_wetland         1      0.000    0.000  0.000
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.640   macro F1 0.169
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                                  0                   0                   0                   0                   0                   0
+ice                                    4                 333                   5                   0                   0                   0
+snow                                   2                 142                   5                   1                   0                   0
+forest                                 0                  35                   0                   0                   0                   0
+shrub_grass_wetland                    0                   1                   0                   0                   0                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+
+--- 2024-04-21
+
+class                       n  precision   recall     F1
+river                   1,886      0.967    0.890  0.927
+ice                       424      0.576    0.953  0.718
+snow                       43      0.000    0.000  0.000
+forest                    654      0.992    0.898  0.942
+shrub_grass_wetland        53      1.000    0.491  0.658
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.881   macro F1 0.541
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                              1,679                 201                   0                   5                   0                   1
+ice                                   20                 404                   0                   0                   0                   0
+snow                                   7                  36                   0                   0                   0                   0
+forest                                28                  36                   3                 587                   0                   0
+shrub_grass_wetland                    2                  24                   1                   0                  26                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+
+--- 2024-06-22
+
+class                       n  precision   recall     F1
+river                   6,110      0.887    0.939  0.912
+ice                         0      0.000    0.000  0.000
+snow                        0      0.000    0.000  0.000
+forest                 19,330      0.991    0.989  0.990
+shrub_grass_wetland    12,868      0.987    0.983  0.985
+bare_developed          2,569      0.959    0.866  0.910
+
+overall accuracy 0.972   macro F1 0.949
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                              5,737                   0                   0                 115                 163                  95
+ice                                    0                   0                   0                   0                   0                   0
+snow                                   0                   0                   0                   0                   0                   0
+forest                               220                   0                   0              19,110                   0                   0
+shrub_grass_wetland                  168                   0                   0                  49              12,651                   0
+bare_developed                       345                   0                   0                   0                   0               2,224
+
+input importance
+  nlcd_woody_wetland       0.0745
+  nlcd_barren              0.0742
+  diff_green_swir1         0.0710
+  vis_brightness           0.0684
+  diff_red_swir1           0.0647
+  diff_blue_swir1          0.0628
+  diff_nir_swir1           0.0488
+  dist_nlcd_water_m        0.0451
+  diff_blue_nir            0.0424
+  diff_red_nir             0.0407
+  nir_plus_swir1           0.0402
+  diff_green_red           0.0390
+  diff_green_nir           0.0382
+  elev_m                   0.0361
+  diff_blue_green          0.0345
+  rel_elev_1km_m           0.0341
+  nlcd_deciduous_forest    0.0320
+  diff_blue_red            0.0317
+  nlcd_evergreen_forest    0.0274
+  rel_elev_300m_m          0.0258
+  nlcd_water               0.0216
+  slope_deg                0.0150
+  nlcd_shrub               0.0112
+  northness                0.0082
+  eastness                 0.0070
+  nlcd_mixed_forest        0.0038
+  nlcd_emergent_wetland    0.0018
+  nlcd_grass_sedge         0.0000
+  nlcd_developed           0.0000

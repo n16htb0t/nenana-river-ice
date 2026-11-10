@@ -1,0 +1,39 @@
+UNet++ — One vs rest: ice
+dataset: 2. with_daksh: trained and cross-validated on the 4 patch dates + daksh 2024-03-12
+
+MODEL
+  UNet++ (segmentation-models-pytorch 0.6, PyTorch 2.14, RTX 3080)
+  ResNet-34 encoder with ImageNet weights, 1,500 steps of 8 random 256 x 256 crops
+  centred near labelled pixels, random 90-degree turns and flips, cross-entropy
+  weighted by 1/sqrt(class frequency) on labelled pixels only, AdamW lr 1e-3 with
+  one-cycle schedule, mixed precision. Sees the neighbourhood (shape, texture).
+  Weights + input scaling: unetpp_final.pt.
+
+INPUTS
+  9 per pixel: blue, green, red, nir, swir1, water_occ, NDWI, NDSI, NDVI
+
+DATA
+  training dates: 2023-07-24, 2023-10-04, 2024-03-12, 2024-04-21, 2024-06-22
+  test dates:     2023-07-24, 2023-10-04, 2024-03-12, 2024-04-21, 2024-06-22
+  training pixels: not_ice 83,816, ice 2,074
+  evaluation: 5-fold spatial cross-validation (64-row east-west bands, 12-row buffer), then one final model on all labels for the maps
+
+SCORES (all dates; per-date scores in metrics.txt)
+
+UNet++ — 5-fold spatial CV, all labelled dates
+
+class            n  precision   recall     F1
+not_ice     83,816      0.994    0.943  0.968
+ice          2,074      0.256    0.786  0.386
+
+overall accuracy 0.940   macro F1 0.677
+
+confusion (rows = true, cols = predicted)
+           not_ice      ice
+not_ice     79,068    4,748
+ice            443    1,631
+
+FILES
+  metrics.txt       scores, confusion matrix, per date
+  oof.npz           every scored pixel: date, row, col, true, predicted
+  pred_<date>.tif   30 m map of every date (+ .qml colours for QGIS)

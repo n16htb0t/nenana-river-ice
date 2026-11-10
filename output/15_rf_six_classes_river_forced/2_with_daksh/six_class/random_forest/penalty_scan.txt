@@ -1,0 +1,7 @@
+forced river penalty scan, with_daksh: 5-fold spatial CV (top 25, depth 16)
+ scale m  CV acc  macroF1  river F1  river recall
+    None   0.943    0.798     0.967         0.951
+  1200.0   0.943    0.798     0.967         0.950
+   600.0   0.942    0.797     0.966         0.950
+   300.0   0.942    0.797     0.966         0.949
+   150.0   0.942    0.797     0.965         0.947

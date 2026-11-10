@@ -1,0 +1,54 @@
+label changes for the rule (water zone = JRC >= 5 %)
+class                  labelled  in zone  -> ice  dropped
+river                         0        0       0        0
+ice                         342      181       0      161
+snow                        150       12      12        0
+forest                       35        0       0        0
+shrub_grass_wetland           1        0       0        0
+bare_developed                0        0       0        0
+
+external test 2024-03-12, rule labels
+
+class                       n  precision   recall     F1
+river                       0      0.000    0.000  0.000
+ice                       193      1.000    1.000  1.000
+snow                      138      0.793    1.000  0.885
+forest                     35      0.000    0.000  0.000
+shrub_grass_wetland         1      0.000    0.000  0.000
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.902   macro F1 0.471
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                                  0                   0                   0                   0                   0                   0
+ice                                    0                 193                   0                   0                   0                   0
+snow                                   0                   0                 138                   0                   0                   0
+forest                                 0                   0                  35                   0                   0                   0
+shrub_grass_wetland                    0                   0                   1                   0                   0                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+
+external test 2024-03-12, original hand labels
+
+class                       n  precision   recall     F1
+river                       0      0.000    0.000  0.000
+ice                       342      0.938    0.529  0.677
+snow                      150      0.412    0.920  0.569
+forest                     35      0.000    0.000  0.000
+shrub_grass_wetland         1      0.000    0.000  0.000
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.604   macro F1 0.311
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                                  0                   0                   0                   0                   0                   0
+ice                                    0                 181                 161                   0                   0                   0
+snow                                   0                  12                 138                   0                   0                   0
+forest                                 0                   0                  35                   0                   0                   0
+shrub_grass_wetland                    0                   0                   1                   0                   0                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+
+water RF inputs (25): blue_mean3, blue, blue_mean7, blue_std7, red, green, blue_std3, cos_incidence, vis_brightness, nd_blue_green, diff_nir_swir1, diff_red_swir1, nir, diff_green_swir1, nd_blue_red, nir_mean3, diff_green_red, nir_std3, diff_blue_red, nd_blue_nir, nir_mean7, NDWI_std7, NDVI_std7, nir_plus_swir1, diff_blue_green
+
+land RF inputs (25): nlcd_barren, nlcd_woody_wetland, blue, nlcd_deciduous_forest, nlcd_evergreen_forest, red, diff_red_swir1, green, vis_brightness, nd_red_swir1, blue_mean3, nd_blue_nir, diff_green_swir1, nd_blue_swir1, nd_red_nir, nir_std7, nlcd_shrub, blue_mean7, nd_green_nir, nd_blue_green, NDSI_mean3, diff_blue_green, SAVI, diff_blue_swir1, nd_green_swir1

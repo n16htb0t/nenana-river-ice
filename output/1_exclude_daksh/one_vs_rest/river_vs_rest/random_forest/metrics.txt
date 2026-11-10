@@ -1,0 +1,77 @@
+Random Forest — 5-fold spatial CV, all labelled dates
+
+class             n  precision   recall     F1
+not_river    45,367      0.968    0.960  0.964
+river        39,991      0.955    0.964  0.959
+
+overall accuracy 0.962   macro F1 0.961
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river     43,542     1,825
+river          1,454    38,537
+
+--- 2023-07-24
+
+class             n  precision   recall     F1
+not_river         7      0.000    0.000  0.000
+river        31,021      1.000    0.988  0.994
+
+overall accuracy 0.988   macro F1 0.497
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river          0         7
+river            373    30,648
+
+--- 2023-10-04
+
+class             n  precision   recall     F1
+not_river     7,046      0.967    0.971  0.969
+river           974      0.784    0.761  0.772
+
+overall accuracy 0.946   macro F1 0.871
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river      6,842       204
+river            233       741
+
+--- 2024-04-21
+
+class             n  precision   recall     F1
+not_river     1,195      0.914    0.885  0.900
+river         1,886      0.929    0.948  0.938
+
+overall accuracy 0.923   macro F1 0.919
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river      1,058       137
+river             99     1,787
+
+--- 2024-06-22
+
+class             n  precision   recall     F1
+not_river    37,119      0.979    0.960  0.970
+river         6,110      0.784    0.877  0.828
+
+overall accuracy 0.949   macro F1 0.899
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river     35,642     1,477
+river            749     5,361
+
+feature importance (final model)
+  NDWI       0.183
+  SR_B3      0.163
+  SR_B2      0.132
+  NDSI       0.120
+  ST_B10     0.103
+  SR_B4      0.074
+  NDVI       0.073
+  SR_B5      0.065
+  water_occ  0.032
+  SR_B7      0.029
+  SR_B6      0.025

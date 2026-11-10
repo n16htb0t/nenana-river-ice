@@ -1,0 +1,66 @@
+UNet++ — 5-fold spatial CV, all labelled dates
+
+class             n  precision   recall     F1
+not_river    43,635      0.968    0.958  0.963
+river        41,723      0.957    0.967  0.962
+
+overall accuracy 0.962   macro F1 0.962
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river     41,806     1,829
+river          1,397    40,326
+
+--- 2023-07-24
+
+class             n  precision   recall     F1
+not_river         7      0.000    0.000  0.000
+river        31,021      1.000    0.997  0.998
+
+overall accuracy 0.997   macro F1 0.499
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river          0         7
+river             91    30,930
+
+--- 2023-10-04
+
+class             n  precision   recall     F1
+not_river     5,738      0.944    0.904  0.924
+river         2,282      0.782    0.866  0.822
+
+overall accuracy 0.893   macro F1 0.873
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river      5,186       552
+river            305     1,977
+
+--- 2024-04-21
+
+class             n  precision   recall     F1
+not_river       771      0.901    0.752  0.820
+river         2,310      0.922    0.972  0.946
+
+overall accuracy 0.917   macro F1 0.883
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river        580       191
+river             64     2,246
+
+--- 2024-06-22
+
+class             n  precision   recall     F1
+not_river    37,119      0.975    0.971  0.973
+river         6,110      0.827    0.847  0.837
+
+overall accuracy 0.953   macro F1 0.905
+
+confusion (rows = true, cols = predicted)
+           not_river     river
+not_river     36,040     1,079
+river            937     5,173
+
+settings: {'iters': 1500, 'batch': 8, 'lr': 0.001, 'encoder': 'resnet34', 'skip_cv': False, 'task': 'river', 'dataset': 'exclude_daksh'}

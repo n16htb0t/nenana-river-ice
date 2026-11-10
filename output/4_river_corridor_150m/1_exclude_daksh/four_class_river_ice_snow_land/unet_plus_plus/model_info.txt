@@ -1,0 +1,44 @@
+UNet++ — Four classes (river, ice, snow, land)
+dataset: 1. exclude_daksh: trained and cross-validated on the 4 patch dates
+
+MODEL
+  UNet++ (segmentation-models-pytorch 0.6, PyTorch 2.14, RTX 3080)
+  ResNet-34 encoder with ImageNet weights, 1,500 steps of 8 random 256 x 256 crops
+  centred near labelled pixels, random 90-degree turns and flips, cross-entropy
+  weighted by 1/sqrt(class frequency) on labelled pixels only, AdamW lr 1e-3 with
+  one-cycle schedule, mixed precision. Sees the neighbourhood (shape, texture).
+  Weights + input scaling: unetpp_final.pt.
+
+INPUTS
+  11 per pixel: SR_B2, SR_B3, SR_B4, SR_B5, SR_B6, SR_B7, ST_B10, water_occ, NDWI, NDSI, NDVI
+
+DATA
+  training dates: 2023-07-24, 2023-10-04, 2024-04-21, 2024-06-22
+  test dates:     2023-07-24, 2023-10-04, 2024-04-21, 2024-06-22
+  training pixels: river 39,677, ice 1,703, snow 553, land 18,006
+  evaluation: 5-fold spatial cross-validation (64-row east-west bands, 12-row buffer), then one final model on all labels for the maps
+
+SCORES (all dates; per-date scores in metrics.txt)
+
+UNet++ — 5-fold spatial CV, all labelled dates
+
+class            n  precision   recall     F1
+river       39,677      0.948    0.968  0.958
+ice          1,703      0.623    0.681  0.651
+snow           553      0.305    0.212  0.250
+land        18,006      0.930    0.888  0.908
+
+overall accuracy 0.929   macro F1 0.692
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river       38,390      202       13    1,072
+ice            348    1,160      136       59
+snow            58      301      117       77
+land         1,700      199      117   15,990
+
+FILES
+  metrics.txt       scores, confusion matrix, per date
+  oof.npz           every scored pixel: date, row, col, true, predicted
+  pred_<date>.tif   30 m map of every date (+ .qml colours for QGIS)
+  scene_mask_*.tif  river/land state per 375 m block; scores in scene_mask_metrics.txt

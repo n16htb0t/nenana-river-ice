@@ -1,0 +1,20 @@
+search on exclude_daksh: 68 inputs, 5-fold spatial CV, six classes
+  kind=rf, leaf=5, mf=sqrt                                     macro F1 0.663  accuracy 0.821  (46 s)
+  kind=rf, leaf=5, mf=0.1                                      macro F1 0.667  accuracy 0.823  (34 s)
+  kind=rf, leaf=5, mf=0.2                                      macro F1 0.663  accuracy 0.822  (70 s)
+  kind=rf, leaf=10, mf=sqrt                                    macro F1 0.666  accuracy 0.821  (42 s)
+  kind=rf, leaf=10, mf=0.1                                     macro F1 0.665  accuracy 0.822  (33 s)
+  kind=rf, leaf=10, mf=0.2                                     macro F1 0.662  accuracy 0.821  (67 s)
+  kind=rf, leaf=20, mf=sqrt                                    macro F1 0.659  accuracy 0.818  (40 s)
+  kind=rf, leaf=20, mf=0.1                                     macro F1 0.660  accuracy 0.817  (31 s)
+  kind=rf, leaf=20, mf=0.2                                     macro F1 0.658  accuracy 0.819  (64 s)
+  kind=rf, leaf=40, mf=sqrt                                    macro F1 0.645  accuracy 0.810  (38 s)
+  kind=rf, leaf=40, mf=0.1                                     macro F1 0.644  accuracy 0.809  (30 s)
+  kind=rf, leaf=40, mf=0.2                                     macro F1 0.647  accuracy 0.811  (60 s)
+  kind=rf, leaf=5, mf=0.1, cw=balanced                         macro F1 0.666  accuracy 0.823  (23 s)
+  kind=rf, leaf=5, mf=0.1, cw=None                             macro F1 0.641  accuracy 0.819  (37 s)
+  kind=topk, leaf=5, mf=0.1, k=20                              macro F1 0.657  accuracy 0.821  (31 s)
+  kind=topk, leaf=5, mf=0.1, k=35                              macro F1 0.665  accuracy 0.821  (36 s)
+  kind=oobw, leaf=5, mf=0.1                                    macro F1 0.659  accuracy 0.818  (41 s)
+
+best: kind=rf, leaf=5, mf=0.1  macro F1 0.667  accuracy 0.823

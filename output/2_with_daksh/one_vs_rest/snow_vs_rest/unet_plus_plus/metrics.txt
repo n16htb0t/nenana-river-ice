@@ -1,0 +1,79 @@
+UNet++ — 5-fold spatial CV, all labelled dates
+
+class            n  precision   recall     F1
+not_snow    85,176      0.994    0.973  0.983
+snow           714      0.095    0.345  0.149
+
+overall accuracy 0.967   macro F1 0.566
+
+confusion (rows = true, cols = predicted)
+          not_snow     snow
+not_snow    82,845    2,331
+snow           468      246
+
+--- 2023-07-24
+
+class            n  precision   recall     F1
+not_snow    31,028      1.000    1.000  1.000
+snow             0      0.000    0.000  0.000
+
+overall accuracy 1.000   macro F1 1.000
+
+confusion (rows = true, cols = predicted)
+          not_snow     snow
+not_snow    31,028        0
+snow             0        0
+
+--- 2023-10-04
+
+class            n  precision   recall     F1
+not_snow     7,499      0.954    0.882  0.916
+snow           521      0.183    0.382  0.248
+
+overall accuracy 0.849   macro F1 0.582
+
+confusion (rows = true, cols = predicted)
+          not_snow     snow
+not_snow     6,613      886
+snow           322      199
+
+--- 2024-03-12
+
+class            n  precision   recall     F1
+not_snow       382      0.662    0.568  0.611
+snow           150      0.191    0.260  0.220
+
+overall accuracy 0.481   macro F1 0.416
+
+confusion (rows = true, cols = predicted)
+          not_snow     snow
+not_snow       217      165
+snow           111       39
+
+--- 2024-04-21
+
+class            n  precision   recall     F1
+not_snow     3,038      0.988    0.961  0.975
+snow            43      0.064    0.186  0.095
+
+overall accuracy 0.951   macro F1 0.535
+
+confusion (rows = true, cols = predicted)
+          not_snow     snow
+not_snow     2,921      117
+snow            35        8
+
+--- 2024-06-22
+
+class            n  precision   recall     F1
+not_snow    43,229      1.000    0.973  0.986
+snow             0      0.000    0.000  0.000
+
+overall accuracy 0.973   macro F1 0.493
+
+confusion (rows = true, cols = predicted)
+          not_snow     snow
+not_snow    42,066    1,163
+snow             0        0
+
+settings: {'iters': 1500, 'batch': 8, 'lr': 0.001, 'encoder': 'resnet34', 'skip_cv': False, 'task': 'ind_snow', 'dataset': 'with_daksh'}

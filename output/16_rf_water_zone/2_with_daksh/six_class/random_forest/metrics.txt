@@ -1,0 +1,159 @@
+label changes for the rule (water zone = JRC >= 5 %)
+class                  labelled  in zone  -> ice  dropped
+river                     39991    32251       0     7740
+ice                        2074     1687       0      387
+snow                        714      387     387        0
+forest                    22208       70       0       70
+shrub_grass_wetland       15627       82       0       82
+bare_developed             2726     1616       0     1616
+
+water-zone RF — 5-fold spatial CV, all labelled dates, rule labels
+
+class                       n  precision   recall     F1
+river                  32,251      0.995    0.993  0.994
+ice                     2,074      0.901    0.927  0.913
+snow                      327      0.527    0.951  0.678
+forest                 22,138      0.988    0.982  0.985
+shrub_grass_wetland    15,545      0.984    0.977  0.981
+bare_developed          1,110      0.993    0.986  0.989
+
+overall accuracy 0.984   macro F1 0.923
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                             32,039                 212                   0                   0                   0                   0
+ice                                  152               1,922                   0                   0                   0                   0
+snow                                   0                   0                 311                   4                   7                   5
+forest                                 0                   0                 164              21,732                 240                   2
+shrub_grass_wetland                    0                   0                  99                 257              15,188                   1
+bare_developed                         0                   0                  16                   0                   0               1,094
+
+water-zone RF — 5-fold spatial CV, all labelled dates, original hand labels
+
+class                       n  precision   recall     F1
+river                  39,991      0.944    0.801  0.867
+ice                     2,074      0.716    0.742  0.729
+snow                      714      0.175    0.436  0.249
+forest                 22,208      0.840    0.979  0.904
+shrub_grass_wetland    15,627      0.867    0.972  0.917
+bare_developed          2,726      0.528    0.401  0.456
+
+overall accuracy 0.863   macro F1 0.687
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                             32,039                 212                 829               3,874               2,068                 969
+ice                                  148               1,539                 363                  15                   8                   1
+snow                                   4                 383                 311                   4                   7                   5
+forest                                70                   0                 164              21,732                 240                   2
+shrub_grass_wetland                   81                   1                  99                 257              15,188                   1
+bare_developed                     1,602                  14                  16                   0                   0               1,094
+
+--- 2023-07-24 (rule labels)
+
+class                       n  precision   recall     F1
+river                  25,495      1.000    1.000  1.000
+ice                         0      0.000    0.000  0.000
+snow                        0      0.000    0.000  0.000
+forest                      5      0.833    1.000  0.909
+shrub_grass_wetland         2      1.000    0.500  0.667
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 1.000   macro F1 0.859
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                             25,495                   0                   0                   0                   0                   0
+ice                                    0                   0                   0                   0                   0                   0
+snow                                   0                   0                   0                   0                   0                   0
+forest                                 0                   0                   0                   5                   0                   0
+shrub_grass_wetland                    0                   0                   0                   1                   1                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+
+--- 2023-10-04 (rule labels)
+
+class                       n  precision   recall     F1
+river                     611      0.880    0.885  0.883
+ice                     1,494      0.953    0.950  0.952
+snow                      158      0.497    0.899  0.640
+forest                  2,183      0.967    0.949  0.958
+shrub_grass_wetland     2,699      0.978    0.949  0.963
+bare_developed            132      0.952    0.894  0.922
+
+overall accuracy 0.942   macro F1 0.886
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                                541                  70                   0                   0                   0                   0
+ice                                   74               1,420                   0                   0                   0                   0
+snow                                   0                   0                 142                   4                   7                   5
+forest                                 0                   0                  61               2,071                  51                   0
+shrub_grass_wetland                    0                   0                  69                  67               2,562                   1
+bare_developed                         0                   0                  14                   0                   0                 118
+
+--- 2024-03-12 (rule labels)
+
+class                       n  precision   recall     F1
+river                       0      0.000    0.000  0.000
+ice                       193      1.000    1.000  1.000
+snow                      138      0.793    1.000  0.885
+forest                     35      0.000    0.000  0.000
+shrub_grass_wetland         1      0.000    0.000  0.000
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.902   macro F1 0.471
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                                  0                   0                   0                   0                   0                   0
+ice                                    0                 193                   0                   0                   0                   0
+snow                                   0                   0                 138                   0                   0                   0
+forest                                 0                   0                  35                   0                   0                   0
+shrub_grass_wetland                    0                   0                   1                   0                   0                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+
+--- 2024-04-21 (rule labels)
+
+class                       n  precision   recall     F1
+river                   1,174      0.930    0.879  0.904
+ice                       387      0.685    0.798  0.737
+snow                       31      0.246    1.000  0.395
+forest                    652      1.000    0.883  0.938
+shrub_grass_wetland        53      0.812    0.491  0.612
+bare_developed              0      0.000    0.000  0.000
+
+overall accuracy 0.859   macro F1 0.598
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                              1,032                 142                   0                   0                   0                   0
+ice                                   78                 309                   0                   0                   0                   0
+snow                                   0                   0                  31                   0                   0                   0
+forest                                 0                   0                  68                 576                   6                   2
+shrub_grass_wetland                    0                   0                  27                   0                  26                   0
+bare_developed                         0                   0                   0                   0                   0                   0
+
+--- 2024-06-22 (rule labels)
+
+class                       n  precision   recall     F1
+river                   4,971      1.000    1.000  1.000
+ice                         0      0.000    0.000  0.000
+snow                        0      0.000    0.000  0.000
+forest                 19,263      0.990    0.990  0.990
+shrub_grass_wetland    12,790      0.986    0.985  0.985
+bare_developed            978      1.000    0.998  0.999
+
+overall accuracy 0.990   macro F1 0.795
+
+confusion (rows = true, cols = predicted)
+                                   river                 ice                snow              forest shrub_grass_wetland      bare_developed
+river                              4,971                   0                   0                   0                   0                   0
+ice                                    0                   0                   0                   0                   0                   0
+snow                                   0                   0                   0                   0                   0                   0
+forest                                 0                   0                   0              19,080                 183                   0
+shrub_grass_wetland                    0                   0                   2                 189              12,599                   0
+bare_developed                         0                   0                   2                   0                   0                 976
+
+water RF inputs (25): blue, blue_mean3, blue_mean7, blue_std7, red, green, cos_incidence, blue_std3, vis_brightness, nd_blue_green, diff_green_swir1, nir, diff_red_swir1, nd_blue_red, diff_nir_swir1, nir_mean3, diff_green_red, nir_std3, diff_blue_swir1, nir_std7, nir_mean7, nd_green_red, diff_blue_red, nd_red_swir1, NDVI_std7
+
+land RF inputs (25): nlcd_barren, nlcd_woody_wetland, blue, nlcd_deciduous_forest, nlcd_evergreen_forest, green, diff_red_swir1, vis_brightness, red, blue_mean3, nd_red_swir1, nd_blue_nir, nir_std7, nd_red_nir, nlcd_shrub, blue_mean7, diff_green_swir1, NDSI_mean3, diff_blue_green, nd_blue_green, nd_blue_swir1, nd_green_nir, diff_blue_swir1, SAVI, nd_green_swir1

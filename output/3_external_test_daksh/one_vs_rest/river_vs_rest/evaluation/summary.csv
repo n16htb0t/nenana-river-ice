@@ -1,0 +1,5 @@
+model,dates,class,n_test_px,precision,recall,f1
+Random Forest,all dates,not_river,532,1.0,0.996,0.998
+Random Forest,all dates,river,0,0.0,0.0,0.0
+UNet++,all dates,not_river,532,1.0,0.959,0.979
+UNet++,all dates,river,0,0.0,0.0,0.0

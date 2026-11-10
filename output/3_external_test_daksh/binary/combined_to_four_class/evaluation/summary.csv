@@ -1,0 +1,17 @@
+model,dates,class,n_test_px,precision,recall,f1
+Random Forest,all dates,river,0,0.0,0.0,0.0
+Random Forest,all dates,ice,342,0.732,0.12,0.206
+Random Forest,all dates,snow,150,0.288,0.907,0.437
+Random Forest,all dates,land,40,1.0,0.025,0.049
+Random Forest,2024-03-12,river,0,0.0,0.0,0.0
+Random Forest,2024-03-12,ice,342,0.732,0.12,0.206
+Random Forest,2024-03-12,snow,150,0.288,0.907,0.437
+Random Forest,2024-03-12,land,40,1.0,0.025,0.049
+UNet++,all dates,river,0,0.0,0.0,0.0
+UNet++,all dates,ice,342,0.786,0.386,0.518
+UNet++,all dates,snow,150,0.284,0.28,0.282
+UNet++,all dates,land,40,0.263,0.9,0.407
+UNet++,2024-03-12,river,0,0.0,0.0,0.0
+UNet++,2024-03-12,ice,342,0.786,0.386,0.518
+UNet++,2024-03-12,snow,150,0.284,0.28,0.282
+UNet++,2024-03-12,land,40,0.263,0.9,0.407

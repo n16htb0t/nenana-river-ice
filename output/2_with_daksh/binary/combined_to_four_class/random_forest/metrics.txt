@@ -1,0 +1,101 @@
+Random Forest binary snow + river combined — 5-fold spatial CV, all labelled dates
+
+class            n  precision   recall     F1
+river       39,991      0.947    0.956  0.952
+ice          2,074      0.679    0.659  0.669
+snow           714      0.372    0.333  0.352
+land        43,111      0.961    0.955  0.958
+
+overall accuracy 0.943   macro F1 0.733
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river       38,246      165        2    1,578
+ice            316    1,367      336       55
+snow            18      400      238       58
+land         1,802       80       63   41,166
+
+--- 2023-07-24
+
+class            n  precision   recall     F1
+river       31,021      1.000    0.979  0.989
+ice              0      0.000    0.000  0.000
+snow             0      0.000    0.000  0.000
+land             7      0.002    0.143  0.003
+
+overall accuracy 0.978   macro F1 0.496
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river       30,358        0        0      663
+ice              0        0        0        0
+snow             0        0        0        0
+land             6        0        0        1
+
+--- 2023-10-04
+
+class            n  precision   recall     F1
+river          974      0.640    0.811  0.715
+ice          1,308      0.715    0.661  0.687
+snow           521      0.461    0.251  0.325
+land         5,217      0.947    0.961  0.954
+
+overall accuracy 0.847   macro F1 0.670
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river          790       13        2      169
+ice            262      864      127       55
+snow             9      324      131       57
+land           174        8       24    5,011
+
+--- 2024-03-12
+
+class            n  precision   recall     F1
+river            0      0.000    0.000  0.000
+ice            342      0.757    0.392  0.516
+snow           150      0.305    0.713  0.427
+land            40      0.000    0.000  0.000
+
+overall accuracy 0.453   macro F1 0.236
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river            0        0        0        0
+ice              1      134      207        0
+snow             1       41      107        1
+land             1        2       37        0
+
+--- 2024-04-21
+
+class            n  precision   recall     F1
+river        1,886      0.944    0.881  0.911
+ice            424      0.589    0.870  0.703
+snow            43      0.000    0.000  0.000
+land           728      0.896    0.849  0.872
+
+overall accuracy 0.860   macro F1 0.621
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river        1,662      152        0       72
+ice             53      369        2        0
+snow             8       35        0        0
+land            38       70        2      618
+
+--- 2024-06-22
+
+class            n  precision   recall     F1
+river        6,110      0.774    0.890  0.828
+ice              0      0.000    0.000  0.000
+snow             0      0.000    0.000  0.000
+land        37,119      0.981    0.957  0.969
+
+overall accuracy 0.948   macro F1 0.899
+
+confusion (rows = true, cols = predicted)
+             river      ice     snow     land
+river        5,436        0        0      674
+ice              0        0        0        0
+snow             0        0        0        0
+land         1,583        0        0   35,536

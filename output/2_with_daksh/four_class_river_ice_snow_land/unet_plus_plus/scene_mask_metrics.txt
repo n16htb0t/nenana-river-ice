@@ -1,0 +1,101 @@
+River/land state per 375 m block — cross-validated, blocks with labelled river and land
+
+class                                       n  precision   recall     F1
+ice_free_river_snow_free_land             160      0.935    0.981  0.957
+ice_free_river_snow_covered_land            3      0.000    0.000  0.000
+ice_covered_river_snow_free_land           22      0.458    0.500  0.478
+ice_covered_river_snow_covered_land        23      0.800    0.522  0.632
+
+overall accuracy 0.865   macro F1 0.517
+
+confusion (rows = true, cols = predicted)
+                                           ice_free_river_snow_free_land    ice_free_river_snow_covered_land    ice_covered_river_snow_free_land ice_covered_river_snow_covered_land
+ice_free_river_snow_free_land                                        157                                   0                                   2                                   1
+ice_free_river_snow_covered_land                                       3                                   0                                   0                                   0
+ice_covered_river_snow_free_land                                       8                                   1                                  11                                   2
+ice_covered_river_snow_covered_land                                    0                                   0                                  11                                  12
+
+--- 2023-07-24
+
+class                                       n  precision   recall     F1
+ice_free_river_snow_free_land               1      1.000    1.000  1.000
+ice_free_river_snow_covered_land            0      0.000    0.000  0.000
+ice_covered_river_snow_free_land            0      0.000    0.000  0.000
+ice_covered_river_snow_covered_land         0      0.000    0.000  0.000
+
+overall accuracy 1.000   macro F1 1.000
+
+confusion (rows = true, cols = predicted)
+                                           ice_free_river_snow_free_land    ice_free_river_snow_covered_land    ice_covered_river_snow_free_land ice_covered_river_snow_covered_land
+ice_free_river_snow_free_land                                          1                                   0                                   0                                   0
+ice_free_river_snow_covered_land                                       0                                   0                                   0                                   0
+ice_covered_river_snow_free_land                                       0                                   0                                   0                                   0
+ice_covered_river_snow_covered_land                                    0                                   0                                   0                                   0
+
+--- 2023-10-04
+
+class                                       n  precision   recall     F1
+ice_free_river_snow_free_land              18      0.696    0.889  0.780
+ice_free_river_snow_covered_land            0      0.000    0.000  0.000
+ice_covered_river_snow_free_land           16      0.538    0.438  0.483
+ice_covered_river_snow_covered_land         8      0.800    0.500  0.615
+
+overall accuracy 0.643   macro F1 0.470
+
+confusion (rows = true, cols = predicted)
+                                           ice_free_river_snow_free_land    ice_free_river_snow_covered_land    ice_covered_river_snow_free_land ice_covered_river_snow_covered_land
+ice_free_river_snow_free_land                                         16                                   0                                   2                                   0
+ice_free_river_snow_covered_land                                       0                                   0                                   0                                   0
+ice_covered_river_snow_free_land                                       7                                   1                                   7                                   1
+ice_covered_river_snow_covered_land                                    0                                   0                                   4                                   4
+
+--- 2024-03-12
+
+class                                       n  precision   recall     F1
+ice_free_river_snow_free_land               0      0.000    0.000  0.000
+ice_free_river_snow_covered_land            0      0.000    0.000  0.000
+ice_covered_river_snow_free_land            3      0.222    0.667  0.333
+ice_covered_river_snow_covered_land        15      0.889    0.533  0.667
+
+overall accuracy 0.556   macro F1 0.500
+
+confusion (rows = true, cols = predicted)
+                                           ice_free_river_snow_free_land    ice_free_river_snow_covered_land    ice_covered_river_snow_free_land ice_covered_river_snow_covered_land
+ice_free_river_snow_free_land                                          0                                   0                                   0                                   0
+ice_free_river_snow_covered_land                                       0                                   0                                   0                                   0
+ice_covered_river_snow_free_land                                       0                                   0                                   2                                   1
+ice_covered_river_snow_covered_land                                    0                                   0                                   7                                   8
+
+--- 2024-04-21
+
+class                                       n  precision   recall     F1
+ice_free_river_snow_free_land               5      0.500    0.800  0.615
+ice_free_river_snow_covered_land            3      0.000    0.000  0.000
+ice_covered_river_snow_free_land            3      1.000    0.667  0.800
+ice_covered_river_snow_covered_land         0      0.000    0.000  0.000
+
+overall accuracy 0.545   macro F1 0.354
+
+confusion (rows = true, cols = predicted)
+                                           ice_free_river_snow_free_land    ice_free_river_snow_covered_land    ice_covered_river_snow_free_land ice_covered_river_snow_covered_land
+ice_free_river_snow_free_land                                          4                                   0                                   0                                   1
+ice_free_river_snow_covered_land                                       3                                   0                                   0                                   0
+ice_covered_river_snow_free_land                                       1                                   0                                   2                                   0
+ice_covered_river_snow_covered_land                                    0                                   0                                   0                                   0
+
+--- 2024-06-22
+
+class                                       n  precision   recall     F1
+ice_free_river_snow_free_land             136      1.000    1.000  1.000
+ice_free_river_snow_covered_land            0      0.000    0.000  0.000
+ice_covered_river_snow_free_land            0      0.000    0.000  0.000
+ice_covered_river_snow_covered_land         0      0.000    0.000  0.000
+
+overall accuracy 1.000   macro F1 1.000
+
+confusion (rows = true, cols = predicted)
+                                           ice_free_river_snow_free_land    ice_free_river_snow_covered_land    ice_covered_river_snow_free_land ice_covered_river_snow_covered_land
+ice_free_river_snow_free_land                                        136                                   0                                   0                                   0
+ice_free_river_snow_covered_land                                       0                                   0                                   0                                   0
+ice_covered_river_snow_free_land                                       0                                   0                                   0                                   0
+ice_covered_river_snow_covered_land                                    0                                   0                                   0                                   0

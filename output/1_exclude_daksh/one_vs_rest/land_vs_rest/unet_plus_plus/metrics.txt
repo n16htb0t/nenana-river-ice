@@ -1,0 +1,66 @@
+UNet++ — 5-fold spatial CV, all labelled dates
+
+class            n  precision   recall     F1
+not_land    42,287      0.958    0.974  0.966
+land        43,071      0.974    0.959  0.966
+
+overall accuracy 0.966   macro F1 0.966
+
+confusion (rows = true, cols = predicted)
+          not_land     land
+not_land    41,189    1,098
+land         1,787   41,284
+
+--- 2023-07-24
+
+class            n  precision   recall     F1
+not_land    31,021      1.000    0.998  0.999
+land             7      0.000    0.000  0.000
+
+overall accuracy 0.998   macro F1 0.500
+
+confusion (rows = true, cols = predicted)
+          not_land     land
+not_land    30,970       51
+land             7        0
+
+--- 2023-10-04
+
+class            n  precision   recall     F1
+not_land     2,803      0.865    0.877  0.871
+land         5,217      0.933    0.926  0.930
+
+overall accuracy 0.909   macro F1 0.900
+
+confusion (rows = true, cols = predicted)
+          not_land     land
+not_land     2,458      345
+land           385    4,832
+
+--- 2024-04-21
+
+class            n  precision   recall     F1
+not_land     2,353      0.925    0.993  0.958
+land           728      0.971    0.740  0.840
+
+overall accuracy 0.933   macro F1 0.899
+
+confusion (rows = true, cols = predicted)
+          not_land     land
+not_land     2,337       16
+land           189      539
+
+--- 2024-06-22
+
+class            n  precision   recall     F1
+not_land     6,110      0.818    0.888  0.851
+land        37,119      0.981    0.968  0.974
+
+overall accuracy 0.956   macro F1 0.913
+
+confusion (rows = true, cols = predicted)
+          not_land     land
+not_land     5,424      686
+land         1,206   35,913
+
+settings: {'iters': 1500, 'batch': 8, 'lr': 0.001, 'encoder': 'resnet34', 'skip_cv': False, 'task': 'ind_land', 'dataset': 'exclude_daksh'}

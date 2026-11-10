@@ -1,0 +1,88 @@
+Random Forest — 5-fold spatial CV, all labelled dates
+
+class            n  precision   recall     F1
+not_land    42,779      0.954    0.960  0.957
+land        43,111      0.960    0.954  0.957
+
+overall accuracy 0.957   macro F1 0.957
+
+confusion (rows = true, cols = predicted)
+          not_land     land
+not_land    41,086    1,693
+land         1,971   41,140
+
+--- 2023-07-24
+
+class            n  precision   recall     F1
+not_land    31,021      1.000    0.979  0.989
+land             7      0.002    0.143  0.003
+
+overall accuracy 0.979   macro F1 0.496
+
+confusion (rows = true, cols = predicted)
+          not_land     land
+not_land    30,364      657
+land             6        1
+
+--- 2023-10-04
+
+class            n  precision   recall     F1
+not_land     2,803      0.923    0.902  0.913
+land         5,217      0.948    0.960  0.954
+
+overall accuracy 0.940   macro F1 0.933
+
+confusion (rows = true, cols = predicted)
+          not_land     land
+not_land     2,529      274
+land           210    5,007
+
+--- 2024-03-12
+
+class            n  precision   recall     F1
+not_land       492      0.925    1.000  0.961
+land            40      0.000    0.000  0.000
+
+overall accuracy 0.925   macro F1 0.480
+
+confusion (rows = true, cols = predicted)
+          not_land     land
+not_land       492        0
+land            40        0
+
+--- 2024-04-21
+
+class            n  precision   recall     F1
+not_land     2,353      0.950    0.969  0.960
+land           728      0.894    0.837  0.864
+
+overall accuracy 0.938   macro F1 0.912
+
+confusion (rows = true, cols = predicted)
+          not_land     land
+not_land     2,281       72
+land           119      609
+
+--- 2024-06-22
+
+class            n  precision   recall     F1
+not_land     6,110      0.773    0.887  0.826
+land        37,119      0.981    0.957  0.969
+
+overall accuracy 0.947   macro F1 0.897
+
+confusion (rows = true, cols = predicted)
+          not_land     land
+not_land     5,420      690
+land         1,596   35,523
+
+feature importance (final model)
+  NDWI       0.294
+  green      0.199
+  blue       0.140
+  NDSI       0.117
+  NDVI       0.093
+  red        0.057
+  nir        0.038
+  water_occ  0.032
+  swir1      0.031
